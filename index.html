@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="codewindy">
+
+
+    
+    
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="codewindy">
+<meta property="og:url" content="https://codewindy.github.io/index.html">
+<meta property="og:site_name" content="codewindy">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="codewindy">
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <style> .article { opacity: 0;} </style>
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>codewindy</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: false,
+        animate: true,
+        isHome: true,
+        isPost: false,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head></html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">codewindy</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" href="https://github.com/codewindy" title="GitHub"></a>
+                            
+                                <a class="fa V2EX" href="https://www.v2ex.com" title="V2EX"></a>
+                            
+                                <a class="fa Email" href="mailto:codewindy@foxmail.com" title="Email"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception/">Exception</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashMap/">HashMap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/books/">books</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/">debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hashmap/">hashmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jvm/">jvm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/life/">life</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">ウシジマ君　</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">codewindy</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">codewindy</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/codewindy" title="GitHub"></a>
+                            
+                                <a class="fa V2EX" target="_blank" href="https://www.v2ex.com" title="V2EX"></a>
+                            
+                                <a class="fa Email" target="_blank" href="mailto:codewindy@foxmail.com" title="Email"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-MacOS-Tutorial" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/25/MacOS-Tutorial/" class="article-date">
+      <time datetime="2019-09-25T14:06:10.000Z" itemprop="datePublished">2019-09-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/25/MacOS-Tutorial/">黑苹果安装教程</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="MacOS-Install-Tutorial"><a href="#MacOS-Install-Tutorial" class="headerlink" title="MacOS Install Tutorial"></a>MacOS Install Tutorial</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
+<li>原先准备入手<strong>thinkpad x1 extreme gen2</strong>或<strong>MacBook pro</strong>，都需要额外买扩展坞迫于预算有限于是默默寻找黑苹果的适配机型<strong>z7-kp7gz</strong>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/09/25/MacOS-Tutorial/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-MASTER-OF-SEARCH" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/03/MASTER-OF-SEARCH/" class="article-date">
+      <time datetime="2019-09-03T15:12:00.000Z" itemprop="datePublished">2019-09-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/03/MASTER-OF-SEARCH/">善于搜索自己需要的资源</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="MASTER-OF-SEARCH"><a href="#MASTER-OF-SEARCH" class="headerlink" title="MASTER OF SEARCH"></a>MASTER OF SEARCH</h2><h2 id="学会获取自己想要的学习资源"><a href="#学会获取自己想要的学习资源" class="headerlink" title="学会获取自己想要的学习资源"></a>学会获取自己想要的学习资源</h2><ul>
+<li><a href="http://pandownload.com/" target="_blank" rel="noopener">http://pandownload.com/</a> 下载并保存资源到百度云</li>
+<li><a href="https://yandex.ru/" target="_blank" rel="noopener">https://yandex.ru/</a> 俄罗斯的搜索引擎,一般用于搜索开发中运到的bug等</li>
+<li><a href="https://rsload.net/" target="_blank" rel="noopener">https://rsload.net/</a>  一般用于下载win软件的时候使用的帐号密码都是<strong>rsload.net</strong></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener">https://sm.ms/</a>  免费好用的图床</li>
+<li>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/09/03/MASTER-OF-SEARCH/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-中島みゆき" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/12/中島みゆき/" class="article-date">
+      <time datetime="2019-05-12T10:33:31.000Z" itemprop="datePublished">2019-05-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/12/中島みゆき/">中島 みゆき</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <ul>
+<li><code>《無家可歸的小孩》家なき子</code>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/05/12/中島みゆき/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Java-Learning" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/16/Java-Learning/" class="article-date">
+      <time datetime="2019-04-16T12:54:23.000Z" itemprop="datePublished">2019-04-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/16/Java-Learning/">Java-Learning-Video</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="以下视频等资源仅供自己翻阅复习"><a href="#以下视频等资源仅供自己翻阅复习" class="headerlink" title="以下视频等资源仅供自己翻阅复习"></a>以下视频等资源仅供自己翻阅复习</h2><ul>
+<li><strong>java编程</strong></li>
+<li>【idea版本2019java就业班】 链接: <a href="https://pan.baidu.com/s/1gBV-EfRsql7UWZJ6NFbrig" target="_blank" rel="noopener">https://pan.baidu.com/s/1gBV-EfRsql7UWZJ6NFbrig</a> 提取码: 24xw </li>
+<li>【冯佳java基础】 链接: <a href="https://pan.baidu.com/s/1PWcnlD1Pvq-P5V0XR7NAoA" target="_blank" rel="noopener">https://pan.baidu.com/s/1PWcnlD1Pvq-P5V0XR7NAoA</a> 提取码: tq2a </li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/16/Java-Learning/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-RouterOS_PPPOE_PacketSniffer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/05/01/RouterOS_PPPOE_PacketSniffer/" class="article-date">
+      <time datetime="2018-05-01T06:10:44.000Z" itemprop="datePublished">2018-05-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/01/RouterOS_PPPOE_PacketSniffer/">RouterOS抓包恢复PPPOE密码</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="RouterOS-PPPOE-Session-Password-Packet-Sniffer"><a href="#RouterOS-PPPOE-Session-Password-Packet-Sniffer" class="headerlink" title="RouterOS PPPOE(Session) Password Packet Sniffer "></a>RouterOS PPPOE(Session) Password Packet Sniffer </h2><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><ul>
+<li>老家的破旧路由器跟不上现在的需求,想升级成更好的,但是宽带密码忘了,管理员密码也不记得了,如何恢复<strong>PPPOE</strong>密码?
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2018/05/01/RouterOS_PPPOE_PacketSniffer/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-JVM-Optimized" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/01/JVM-Optimized/" class="article-date">
+      <time datetime="2017-07-01T06:24:00.000Z" itemprop="datePublished">2017-07-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/01/JVM-Optimized/">JVM学习笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="内存分配"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配</h1><p>堆内存有以下三个主要区域</p>
+<ul>
+<li>新生代<ul>
+<li>Eden空间，新创建的实例都通过Eden空间进入运行时内存区域；</li>
+<li>Survivor 0空间，存活时间长的实例将会从Eden空间移动到 Survivor 0空间；</li>
+<li>Survivor 1空间，存活时间更长的实例将会从Survivor空间移动到 Survivor 1空间；</li>
+</ul>
+</li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/">jvm</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/07/01/JVM-Optimized/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-DataStruture" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/25/DataStruture/" class="article-date">
+      <time datetime="2017-05-25T00:00:00.000Z" itemprop="datePublished">2017-05-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/25/DataStruture/">常见的数据结构和算法(上)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p><font color="red">TreeMap 源码里面有红黑树,要学会自我总结和归纳知识,反思避免错误</font></p>
+<p><font color="red"><strong><a href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html" target="_blank" rel="noopener">红黑树BST的实现</a></strong></font></p>
+<p><font color="blue"><strong><a href="https://www.cs.usfca.edu/~galles/visualization/flash.html" target="_blank" rel="noopener">具体图形化帮助理解请参考,旧金山大学usfca的算法演示</a></strong></font></p>
+<blockquote>
+<p>从简单的开始BubbleSort–&gt;SelectSort–&gt;BinarySort–&gt;QuickSort–&gt;DualPivotQuickSort<br>HashMap(自己实现一个简单的)–&gt;TreeMap–&gt;Red_Black_Tree</p>
+</blockquote>
+<h2 id="一-冒泡排序BubbleSort-2种方式实现"><a href="#一-冒泡排序BubbleSort-2种方式实现" class="headerlink" title="一. 冒泡排序BubbleSort[2种方式实现]"></a>一. 冒泡排序BubbleSort[2种方式实现]</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HashMap/">HashMap</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/05/25/DataStruture/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ConcurrentModificationException" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/22/ConcurrentModificationException/" class="article-date">
+      <time datetime="2017-05-22T15:21:00.000Z" itemprop="datePublished">2017-05-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/22/ConcurrentModificationException/">集合类的并发修改异常分析</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>===</p>
+<p><font color="red">List集合类中并发修改异常的处理</font></p>
+<blockquote>
+<p>在oracle 起别名如果有数字/或者空格特殊字符必须加””<br>主要读源码 String/ArrayList.iterator()/TreeMap/HashMap<br>alt shift  h 生成equals 和hashcode 方法  想通过hashcode 找火车表的座位 ,然后如果hashcode 相同就有backet 桶结构再来比较equals如果相同就不存<br>31 是一个质数 不大不小在int 里面 且 2 的5 次方 -1       2&lt;<4-1 32 100000-1 -->31</4-1></p>
+</blockquote>
+<ul>
+<li>hashcode() 在hashSet添加元素的时候会自动调用如果相同就调用equals 在比较为了提高效率,属性相同的对象返回值必须相同,属性不同的返回值尽量不同</li>
+<li>equals() 属性相同返回true 不存 属性不同返回false ,说明对象不同就存到一个bucket桶子里面 链表的方式存储</li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Exception/">Exception</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/05/22/ConcurrentModificationException/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Keep-Reading-bak" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/20/Keep-Reading-bak/" class="article-date">
+      <time datetime="2017-05-20T14:00:00.000Z" itemprop="datePublished">2017-05-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/20/Keep-Reading-bak/">Keep Reading</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="以下书籍pdf仅供自己翻阅复习"><a href="#以下书籍pdf仅供自己翻阅复习" class="headerlink" title="以下书籍pdf仅供自己翻阅复习"></a>以下书籍pdf仅供自己翻阅复习</h2><ul>
+<li><strong>java编程</strong></li>
+<li><a href="http://ot2hu9qoc.bkt.clouddn.com/design-pattern-java.pdf" target="_blank" rel="noopener">设计模式 design-pattern-java</a></li>
+<li><a href="http://ot2hu9qoc.bkt.clouddn.com/Craig%20Walls%20-%20Spring%20in%20Action%204th%20Edition%20-%202014.pdf" target="_blank" rel="noopener">spring的经典之作 Spring in Action 4th Edition</a></li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/books/">books</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/05/20/Keep-Reading-bak/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Vim-Manual" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/13/Vim-Manual/" class="article-date">
+      <time datetime="2017-05-13T12:18:00.000Z" itemprop="datePublished">2017-05-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/13/Vim-Manual/">vim使用总结笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="Toggle-Vrapper-sublime-Text-IdeaVim-Chrome具有vim插件"><a href="#Toggle-Vrapper-sublime-Text-IdeaVim-Chrome具有vim插件" class="headerlink" title="Toggle Vrapper,sublime Text,IdeaVim,Chrome具有vim插件"></a><font color="red">Toggle Vrapper,sublime Text,IdeaVim,Chrome具有vim插件</font></h1><h2 id="chrome-的vimium-使用shift-进行提示-具体参考里面的快捷键"><a href="#chrome-的vimium-使用shift-进行提示-具体参考里面的快捷键" class="headerlink" title="chrome 的vimium 使用shift+? 进行提示  具体参考里面的快捷键"></a>chrome 的vimium 使用shift+? 进行提示  具体参考里面的快捷键</h2><p>1.<a href="https://github.com/582033/vim" target="_blank" rel="noopener">vimium</a> 的基本入门使用 <code>* j [japan在 k Korea在下面]</code></p>
+<pre><code>* u pageUp  d pageDown
+* o 查找或者打开页面
+* x 退出  X还原
+* f 查询 ---&gt;很关键
+* 有个很重要的是f6在地址栏获取焦点,tab键可以取消默认的搜索焦点然后按f
+* shift +J 往左  K 往右
+* g0 第一个tab  t 开启一个新的tab页面
+* g$ 最后一个tab
+* H 返回history L 跳转当前
+* t 新开一个tab
+* T 查找开启的tab
+* 但如果完全失灵了 可以使用ctrl +W 实现关闭浏览器窗口/chrome
+</code></pre>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/05/13/Vim-Manual/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2019 codewindy
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 1;
+                var backgroundimg = "url(/background/bg-1.jpg)";
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+            
+            
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="//cdn.jsdelivr.net/npm/busuanzi@2.3.0"></script>
+
+  </div>
+</body>
+</html>
