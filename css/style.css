@@ -2248,10 +2248,9 @@ aside.comment-bar:active {
   border-radius: 3px;
   -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.08);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.08);
-  var: 6;
+  var: 1;
   color: #fff;
   background: rgba(153,204,153,0.7);
-  background: rgba(217,83,79,0.45);
 }
 pre .comment,
 pre .title {
