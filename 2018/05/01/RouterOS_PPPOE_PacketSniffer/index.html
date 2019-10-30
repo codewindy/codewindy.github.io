@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/05/02/5ccaa3ba5e19d.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/02/5cca8c8d6a894.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/05/02/5ccaa3bdac0fa.png">
-<meta property="og:updated_time" content="2019-10-29T13:40:20.689Z">
+<meta property="og:updated_time" content="2019-10-30T16:09:54.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RouterOS抓包恢复PPPOE密码">
 <meta name="twitter:description" content="RouterOS PPPOE(Session) Password Packet Sniffer 背景 老家的破旧路由器跟不上现在的需求,想升级成更好的,但是宽带密码忘了,管理员密码也不记得了,如何恢复PPPOE密码?">
@@ -286,7 +286,7 @@
         <script src="/assets/js/APlayer.min.js"> </script><h2 id="RouterOS-PPPOE-Session-Password-Packet-Sniffer"><a href="#RouterOS-PPPOE-Session-Password-Packet-Sniffer" class="headerlink" title="RouterOS PPPOE(Session) Password Packet Sniffer "></a>RouterOS PPPOE(Session) Password Packet Sniffer </h2><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><ul>
 <li>老家的破旧路由器跟不上现在的需求,想升级成更好的,但是宽带密码忘了,管理员密码也不记得了,如何恢复<strong>PPPOE</strong>密码?<a id="more"></a>
 <h1 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h1></li>
-<li>安装了虚拟机<strong>VMware</strong>的电脑并导入<a href="https://crackzsoft.com/mikrotik-routeros/" target="_blank" rel="noopener">routeros6.44.2</a>镜像或淘宝<strong>rb750gr3</strong>等</li>
+<li>安装了虚拟机<strong>VMware</strong>的电脑并导入<a href="https://github.com/codewindy/soft-common/blob/master/MikroTik-RouterOS-6.44.2_crackzsoft.com.ova" target="_blank" rel="noopener">routeros6.44.2</a>镜像或淘宝<strong>rb750gr3</strong>等</li>
 <li>网线一根</li>
 <li><a href="https://rsload.net/soft/10943-vmware-workstation.html" target="_blank" rel="noopener">VMWARE 虚拟机</a> 下载</li>
 <li><a href="https://2.na.dl.wireshark.org/win64/Wireshark-win64-3.0.1.exe" target="_blank" rel="noopener">wireshark</a> 下载</li>
@@ -299,7 +299,7 @@
 <p><img src="https://i.loli.net/2019/05/02/5ccaa3bd57277.png" alt="2019-05-02_152312_003.png"></p>
 </li>
 <li>先将家里老旧路由器的  <font color="red"> WAN口 </font>  插上网线连接到电脑的 <strong>RJ45网口</strong> </li>
-<li>打开虚拟机<strong>vmware</strong> 导入 <a href="https://crackzsoft.com/mikrotik-routeros/" target="_blank" rel="noopener">routeros 镜像</a>, 桥接到<strong><code>物理网卡</code></strong></li>
+<li>打开虚拟机<strong>vmware</strong> 导入 <a href="https://github.com/codewindy/soft-common/blob/master/MikroTik-RouterOS-6.44.2_crackzsoft.com.ova" target="_blank" rel="noopener">routeros 镜像</a>, 桥接到<strong><code>物理网卡</code></strong></li>
 <li><p>下载并打开<strong>winbox</strong>客户端,并通过<strong>winbox</strong> 来登录ros,默认帐号是 <strong>admin</strong> 密码是 <strong>空</strong></p>
 <p><img src="https://i.loli.net/2019/05/02/5ccaa3be54129.png" alt="2019-05-02_152916_004.png"></p>
 <p><img src="https://i.loli.net/2019/05/02/5ccaa3becc873.png" alt="2019-05-02_153222_005.png"></p>
@@ -322,13 +322,18 @@
 <li><a href="https://blog.ich8.com/post/3699" target="_blank" rel="noopener">抓包获取PPPOE账号密码</a></li>
 <li><a href="https://blog.csdn.net/vivianliulu/article/details/77449780" target="_blank" rel="noopener">pppoe源码分析</a></li>
 <li><a href="https://crackzsoft.com/mikrotik-routeros/" target="_blank" rel="noopener">mikrotik routeros 6.44.2 LEVEL 6 FOR VMWARE + CRACK</a></li>
-<li><a href="http://demo.mt.lv/webfig/" target="_blank" rel="noopener">mikrotik demo</a></li>
+<li><a href="http://demo.mt.lv/webfig/" target="_blank" rel="noopener">mikrotik demo</a> MikroTik RouterOS online demo</li>
 <li><a href="https://wiki.edcwifi.com/index.php?title=MikroTik%E6%89%8B%E5%86%8C" target="_blank" rel="noopener">MikroTik手册</a></li>
 <li><a href="https://download.edcwifi.com/index.php?title=MikroTik%E6%89%8B%E5%86%8C" target="_blank" rel="noopener">EDCwifi.com</a></li>
 <li><a href="http://www.rosjb.com" target="_blank" rel="noopener">pppoe自动到期通知</a></li>
 <li><a href="https://gitee.com/jkwindy/pic4blog2/blob/master/RouterOS_RECOVER_PPPOE_PASSWORD/routeros%E5%85%A5%E9%97%A8%E5%88%B0%E7%B2%BE%E9%80%9Av637e.pdf" target="_blank" rel="noopener">routeros入门到精通v637e.pdf</a></li>
-<li><a href="https://wiki.mikrotik.com/wiki/Manual:Tools/Packet_Sniffer" target="_blank" rel="noopener">demo.mt.lv</a> MikroTik RouterOS online demo</li>
-<li><a href="https://wiki.mikrotik.com/wiki/Manual:Interface/PPPoE" target="_blank" rel="noopener">PPPOE Protocal diagram</a></li>
+<li><a href="https://wiki.mikrotik.com/wiki/Manual:Tools/Packet_Sniffer" target="_blank" rel="noopener">Packet_Sniffer</a> </li>
+<li><p><a href="https://wiki.mikrotik.com/wiki/Manual:Interface/PPPoE" target="_blank" rel="noopener">PPPOE Protocal diagram</a></p>
+</li>
+<li><p><a href="https://space.bilibili.com/434853043?spm_id_from=333.788.b_765f7570696e666f.2" target="_blank" rel="noopener">ros大玩家</a> 视频教程 QQ：1247004718（微信同号）</p>
+</li>
+<li><p><a href="https://www.edcwifi.com.cn/wiki/13.pdf" target="_blank" rel="noopener">RouterOS  edcwifi</a></p>
+</li>
 </ul>
 
       
@@ -341,7 +346,7 @@
         <p><span>本文标题:</span><a href="/2018/05/01/RouterOS_PPPOE_PacketSniffer/">RouterOS抓包恢复PPPOE密码</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
         <p><span>发布时间:</span>2018-05-01, 14:10:44</p>
-        <p><span>最后更新:</span>2019-10-29, 21:40:20</p>
+        <p><span>最后更新:</span>2019-10-31, 00:09:54</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/05/01/RouterOS_PPPOE_PacketSniffer/" title="RouterOS抓包恢复PPPOE密码">https://codewindy.github.io/2018/05/01/RouterOS_PPPOE_PacketSniffer/</a>
             <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2018/05/01/RouterOS_PPPOE_PacketSniffer/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
