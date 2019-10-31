@@ -28,9 +28,9 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/24/WBDbdaNM596Ei1o.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/25/MunhEyB5LPKVsji.png">
 <meta property="og:image" content="https://i.loli.net/2019/09/25/Mn6pEXtsLx2wFcW.png">
-<meta property="og:image" content="https://i.loli.net/2019/09/25/YSqhxPa92o5MWTm.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/31/zb8HW6SvpDxdj94.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/09/25/DicFNPE1T6hbzLx.jpg">
-<meta property="og:updated_time" content="2019-10-28T15:46:32.852Z">
+<meta property="og:updated_time" content="2019-10-31T13:08:12.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="黑苹果安装教程">
 <meta name="twitter:description" content="MacOS Install Tutorial一. 背景 原先准备入手thinkpad x1 extreme gen2或MacBook pro，都需要额外买扩展坞迫于预算有限于是默默寻找黑苹果的适配机型z7-kp7gz">
@@ -305,18 +305,16 @@
 <li>后面的步骤一直点击下一步即可直到进入macos系统</li>
 <li>联网下载<a href="https://github.com/codewindy/mac_soft/blob/master/Clover%20Configurator.zip" target="_blank" rel="noopener">clover configuration</a>然后mount EFI分区，并替换成<a href="https://github.com/kirainmoe/hasee-tongfang-macos/releases/download/latest/kp7gz.zip" target="_blank" rel="noopener">github下载的z7-kp7gz</a></li>
 <li><img src="https://i.loli.net/2019/09/25/MunhEyB5LPKVsji.png" alt="Screen Shot 2019-09-25 at 9.57.17 AM.png"></li>
-<li><p><img src="https://i.loli.net/2019/09/25/Mn6pEXtsLx2wFcW.png" alt="Screen Shot 2019-09-25 at 9.59.26 AM.png"></p>
-</li>
-<li><p>执行以下优化shell脚本即可</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> sudo sh -c <span class="string">"$(curl -fsSL https://raw.githubusercontent.com/kirainmoe/hasee-tongfang-macos/master/Addons/optimize.sh)"</span></span><br><span class="line">新脚本 curl -fsSL https:<span class="comment">//efi.kirainmoe.com/installer &gt; inst &amp;&amp; chmod +x ./inst &amp;&amp; sudo ./inst</span></span><br></pre></td></tr></table></figure>
+<li><img src="https://i.loli.net/2019/09/25/Mn6pEXtsLx2wFcW.png" alt="Screen Shot 2019-09-25 at 9.59.26 AM.png"></li>
+<li>执行以下优化shell脚本即可<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/kirainmoe/hasee-tongfang-macos/master/Addons/optimize.sh)"</span><br><span class="line">新脚本 curl -fsSL https://efi.kirainmoe.com/installer &gt; inst &amp;&amp; chmod +x ./inst &amp;&amp; sudo ./inst</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="五-效果如下"><a href="#五-效果如下" class="headerlink" title="五. 效果如下"></a>五. 效果如下</h1><ul>
 <li>优化后的效果如下</li>
-<li><img src="https://i.loli.net/2019/09/25/YSqhxPa92o5MWTm.png" alt="Screen Shot 2019-09-25 at 10.59.12 AM.png"></li>
-</ul>
-<h1 id="六-问题解决"><a href="#六-问题解决" class="headerlink" title="六. 问题解决"></a>六. 问题解决</h1><ul>
-<li>常见：安装完成后重启发生内核 panic，卡在 <code>VTDecoderXPCService</code> 错误：请在 Clover 界面按 O，定位到显卡设置（带有 Graphics 字样），勾选 <strong>inject-intel</strong>，并修改 <strong>-platform-id</strong> 从 <strong>0x12345678</strong> 修改为 <font color="red">0x3E9B0000</font></li>
+<li><p><img src="https://i.loli.net/2019/10/31/zb8HW6SvpDxdj94.jpg" alt="Jietu20191031-205900.jpg"></p>
+<h1 id="六-问题解决"><a href="#六-问题解决" class="headerlink" title="六. 问题解决"></a>六. 问题解决</h1></li>
+<li><p>常见：安装完成后重启发生内核 panic，卡在 <code>VTDecoderXPCService</code> 错误：请在 Clover 界面按 O，定位到显卡设置（带有 Graphics 字样），勾选 <strong>inject-intel</strong>，并修改 <strong>-platform-id</strong> 从 <strong>0x12345678</strong> 修改为 <font color="red">0x3E9B0000</font></p>
+</li>
 <li><img src="https://i.loli.net/2019/09/25/DicFNPE1T6hbzLx.jpg" alt="IMG_1005.JPG"></li>
 </ul>
 <h1 id="七-升级tips"><a href="#七-升级tips" class="headerlink" title="七. 升级tips"></a>七. 升级tips</h1><ul>
@@ -348,7 +346,7 @@
         <p><span>本文标题:</span><a href="/2019/09/25/MacOS-Tutorial/">黑苹果安装教程</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
         <p><span>发布时间:</span>2019-09-25, 22:06:10</p>
-        <p><span>最后更新:</span>2019-10-28, 23:46:32</p>
+        <p><span>最后更新:</span>2019-10-31, 21:08:12</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/09/25/MacOS-Tutorial/" title="黑苹果安装教程">https://codewindy.github.io/2019/09/25/MacOS-Tutorial/</a>
             <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2019/09/25/MacOS-Tutorial/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
