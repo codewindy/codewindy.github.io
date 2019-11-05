@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/25/Mn6pEXtsLx2wFcW.png">
 <meta property="og:image" content="https://i.loli.net/2019/10/31/zb8HW6SvpDxdj94.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/09/25/DicFNPE1T6hbzLx.jpg">
-<meta property="og:updated_time" content="2019-10-31T13:08:12.031Z">
+<meta property="og:updated_time" content="2019-11-05T15:18:11.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="黑苹果安装教程">
 <meta name="twitter:description" content="MacOS Install Tutorial一. 背景 原先准备入手thinkpad x1 extreme gen2或MacBook pro，都需要额外买扩展坞迫于预算有限于是默默寻找黑苹果的适配机型z7-kp7gz">
@@ -327,6 +327,12 @@
 <li><p>解决macOS安装外部软件的问题</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br><span class="line">control + space 空格 切换系统自带输入法</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>系统升级到Catalina10.15.1之后偶尔会卡死在GUI桌面上</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo shutdown -h now  </span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>macOS系统vim语法和配置刷新dns</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cp -r /usr/share/vim/vimrc ~<span class="regexp">/.vimrc</span></span><br><span class="line"><span class="regexp">echo "syntax on"&gt;&gt;~/</span>.vimrc</span><br><span class="line">sudo killall -HUP mDNSResponder;</span><br><span class="line">sudo killall mDNSResponderHelper;</span><br><span class="line">sudo dscacheutil -flushcache</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h1 id="八-参考"><a href="#八-参考" class="headerlink" title="八. 参考"></a>八. 参考</h1><ul>
 <li><a href="https://blog.daliansky.net/" target="_blank" rel="noopener">黑果小兵</a> 下载MacOS 和 tutorial</li>
@@ -346,7 +352,7 @@
         <p><span>本文标题:</span><a href="/2019/09/25/MacOS-Tutorial/">黑苹果安装教程</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
         <p><span>发布时间:</span>2019-09-25, 22:06:10</p>
-        <p><span>最后更新:</span>2019-10-31, 21:08:12</p>
+        <p><span>最后更新:</span>2019-11-05, 23:18:11</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/09/25/MacOS-Tutorial/" title="黑苹果安装教程">https://codewindy.github.io/2019/09/25/MacOS-Tutorial/</a>
             <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2019/09/25/MacOS-Tutorial/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
