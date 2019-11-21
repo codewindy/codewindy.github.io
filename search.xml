@@ -6,7 +6,7 @@
       <title>Linux操作系统加固</title>
       <link href="/2019/11/21/Aliyun-Linux-tips/"/>
       <url>/2019/11/21/Aliyun-Linux-tips/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Linux操作系统加固"><a href="#Linux操作系统加固" class="headerlink" title="Linux操作系统加固"></a>Linux操作系统加固</h1><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li>整理出开发中常见的笔记，发现阿里云上有已经很不错的参考文档<a id="more"></a></li><li><img src="https://i.loli.net/2019/11/21/idqaSKc9sgMHeQR.jpg" alt="Xnip2019-11-21_22-08-49.jpg"><h1 id="二-参考"><a href="#二-参考" class="headerlink" title="二. 参考"></a>二. 参考</h1></li><li><a href="https://help.aliyun.com/knowledge_detail/49809.html" target="_blank" rel="noopener"> Linux操作系统加固</a></li></ul>]]></content>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Linux-tips-from-aliyun"><a href="#Linux-tips-from-aliyun" class="headerlink" title="Linux tips from aliyun"></a>Linux tips from aliyun</h1><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li>整理出开发中常见的笔记，发现阿里云上有已经很不错的参考文档<a id="more"></a></li><li><img src="https://i.loli.net/2019/11/21/idqaSKc9sgMHeQR.jpg" alt="Xnip2019-11-21_22-08-49.jpg"><h1 id="二-参考"><a href="#二-参考" class="headerlink" title="二. 参考"></a>二. 参考</h1></li><li><a href="https://help.aliyun.com/knowledge_detail/49809.html" target="_blank" rel="noopener"> Linux操作系统加固</a></li></ul>]]></content>
       
       
         <tags>
@@ -21,7 +21,7 @@
       <title>不登陆Oracle下载JDK</title>
       <link href="/2019/11/21/Oracle-JDK-Download/"/>
       <url>/2019/11/21/Oracle-JDK-Download/</url>
-      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="Oracle-JDK-Download-No-Need-Login"><a href="#Oracle-JDK-Download-No-Need-Login" class="headerlink" title="Oracle JDK Download No Need Login"></a>Oracle JDK Download No Need Login</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li>目前下载Oracle JDK 都需要登陆才能下载，无意间发现在GitHub上有 </li><li>下载地址是 <code>https://github.com/frekele/oracle-java/releases</code></li></ul><a id="more"></a><h1 id="二-参考"><a href="#二-参考" class="headerlink" title="二. 参考"></a>二. 参考</h1><ul><li><p><a href="https://www.kagura.me/dev/20190424161314.html" target="_blank" rel="noopener">鹞之神乐</a></p></li><li><p><a href="https://github.com/frekele/oracle-java/releases" target="_blank" rel="noopener">Oracle-JDK下载</a></p></li></ul>]]></content>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="Oracle-JDK-Download-No-Need-Login"><a href="#Oracle-JDK-Download-No-Need-Login" class="headerlink" title="Oracle JDK Download No Need Login"></a>Oracle JDK Download No Need Login</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li>目前下载Oracle JDK 都需要登陆才能下载，无意间发现在GitHub上有 </li><li>下载地址是 <code>https://github.com/frekele/oracle-java/releases</code></li></ul><a id="more"></a><h1 id="二-参考"><a href="#二-参考" class="headerlink" title="二. 参考"></a>二. 参考</h1><ul><li><a href="https://www.kagura.me/dev/20190424161314.html" target="_blank" rel="noopener">鹞之神乐</a></li><li><a href="https://github.com/frekele/oracle-java/releases" target="_blank" rel="noopener">Oracle-JDK下载</a></li></ul>]]></content>
       
       
         <tags>
