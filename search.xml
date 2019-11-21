@@ -3,6 +3,51 @@
   
     
     <entry>
+      <title>Linux操作系统加固</title>
+      <link href="/2019/11/21/Aliyun-Linux-tips/"/>
+      <url>/2019/11/21/Aliyun-Linux-tips/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="Linux操作系统加固"><a href="#Linux操作系统加固" class="headerlink" title="Linux操作系统加固"></a>Linux操作系统加固</h1><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li>整理出开发中常见的笔记，发现阿里云上有已经很不错的参考文档<a id="more"></a></li><li><img src="https://i.loli.net/2019/11/21/idqaSKc9sgMHeQR.jpg" alt="Xnip2019-11-21_22-08-49.jpg"><h1 id="二-参考"><a href="#二-参考" class="headerlink" title="二. 参考"></a>二. 参考</h1></li><li><a href="https://help.aliyun.com/knowledge_detail/49809.html" target="_blank" rel="noopener"> Linux操作系统加固</a></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> life </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>不登陆Oracle下载JDK</title>
+      <link href="/2019/11/21/Oracle-JDK-Download/"/>
+      <url>/2019/11/21/Oracle-JDK-Download/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="Oracle-JDK-Download-No-Need-Login"><a href="#Oracle-JDK-Download-No-Need-Login" class="headerlink" title="Oracle JDK Download No Need Login"></a>Oracle JDK Download No Need Login</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li>目前下载Oracle JDK 都需要登陆才能下载，无意间发现在GitHub上有 </li><li>下载地址是 <code>https://github.com/frekele/oracle-java/releases</code></li></ul><a id="more"></a><h1 id="二-参考"><a href="#二-参考" class="headerlink" title="二. 参考"></a>二. 参考</h1><ul><li><p><a href="https://www.kagura.me/dev/20190424161314.html" target="_blank" rel="noopener">鹞之神乐</a></p></li><li><p><a href="https://github.com/frekele/oracle-java/releases" target="_blank" rel="noopener">Oracle-JDK下载</a></p></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> jdk </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>MacOS 下 Terminal 设置代理上网</title>
+      <link href="/2019/11/21/Terminal-Proxy/"/>
+      <url>/2019/11/21/Terminal-Proxy/</url>
+      <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="MacOS-Terminal-Proxy-Settings"><a href="#MacOS-Terminal-Proxy-Settings" class="headerlink" title="MacOS Terminal Proxy Settings"></a>MacOS Terminal Proxy Settings</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一.  背景"></a>一.  背景</h1><ul><li>装完macos系统后，经常使用<code>Terminal</code>终端来写blog提交到github，但是老是丢包，最终通过代理来实现<a id="more"></a></li></ul><h1 id="二-准备"><a href="#二-准备" class="headerlink" title="二.  准备"></a>二.  准备</h1><ul><li><a href="https://github.com/qinyuhang/ShadowsocksX-NG-R/releases" target="_blank" rel="noopener">ShadowsocksX-NG</a>  软件并配置好可用的ssr节点</li></ul><h1 id="三-实现"><a href="#三-实现" class="headerlink" title="三. 实现"></a>三. 实现</h1><ul><li>在<code>~/.zshrc</code>文件中配置<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias setroxy='export http_proxy=http://127.0.0.1:1087;</span><br><span class="line">export https_proxy=http://127.0.0.1:1087;'</span><br><span class="line">alias unsetproxy='unset http_proxy https_proxy'</span><br><span class="line">alias ip='curl cip.cc'</span><br></pre></td></tr></table></figure></li></ul><h1 id="四-效果"><a href="#四-效果" class="headerlink" title="四. 效果"></a>四. 效果</h1><p> <img src="https://i.loli.net/2019/11/21/NalKSW27cfmC5pR.jpg" alt="Xnip2019-11-21_22-02-55.jpg"></p><h1 id="五-参考"><a href="#五-参考" class="headerlink" title="五. 参考"></a>五. 参考</h1><ul><li><a href="https://blog.naaln.com/2019/03/terminal-proxy/" target="_blank" rel="noopener">blog.naaln.com</a></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> mac </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>iPhone 广告限制🚫</title>
       <link href="/2019/11/04/ios-adblock/"/>
       <url>/2019/11/04/ios-adblock/</url>
