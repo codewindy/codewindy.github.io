@@ -23,7 +23,7 @@
 <meta property="og:description" content="— title: MacOS 下 Terminal 设置代理上网date: 2019-11-21 21:34:41 tags: macMacOS Terminal Proxy Settings一.  背景 装完macos系统后，经常使用Terminal终端来写blog提交到github，但是老是丢包，最终通过代理来实现">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/11/21/NalKSW27cfmC5pR.jpg">
-<meta property="og:updated_time" content="2019-11-22T13:12:12.564Z">
+<meta property="og:updated_time" content="2019-11-22T13:21:23.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="codewindy">
 <meta name="twitter:description" content="— title: MacOS 下 Terminal 设置代理上网date: 2019-11-21 21:34:41 tags: macMacOS Terminal Proxy Settings一.  背景 装完macos系统后，经常使用Terminal终端来写blog提交到github，但是老是丢包，最终通过代理来实现">
@@ -240,7 +240,7 @@
   
     <div class="article-meta">
       <a href="/2019/11/22/Terminal-Proxy/" class="article-date">
-      <time datetime="2019-11-22T13:12:12.564Z" itemprop="datePublished">2019-11-22</time>
+      <time datetime="2019-11-22T13:21:23.678Z" itemprop="datePublished">2019-11-22</time>
 </a>
 
 
@@ -265,7 +265,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias setroxy='export http_proxy=http://127.0.0.1:1087;</span><br><span class="line">export https_proxy=http://127.0.0.1:1087;'</span><br><span class="line">alias unsetproxy='unset http_proxy https_proxy'</span><br><span class="line">alias ip='curl cip.cc'</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>只配置git代理</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy 'socks5://127.0.0.1:1086' </span><br><span class="line">git config --global https.proxy 'socks5://127.0.0.1:1086'</span><br><span class="line">git clone https://github.com/codewindy/blog.git --config "http.proxy=127.0.0.1:1086"</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">设置</span></span><br><span class="line">git config --global http.proxy 'socks5://127.0.0.1:1086' </span><br><span class="line">git config --global https.proxy 'socks5://127.0.0.1:1086'</span><br><span class="line"><span class="meta">#</span><span class="bash">取消</span></span><br><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br><span class="line">git clone https://github.com/codewindy/blog.git --config "http.proxy=127.0.0.1:1086"</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="四-效果"><a href="#四-效果" class="headerlink" title="四. 效果"></a>四. 效果</h1><p> <img src="https://i.loli.net/2019/11/21/NalKSW27cfmC5pR.jpg" alt="Xnip2019-11-21_22-02-55.jpg"></p>
@@ -282,8 +282,8 @@
     <div class="copyright">
         <p><span>本文标题:</span><a href="/2019/11/22/Terminal-Proxy/"></a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
-        <p><span>发布时间:</span>2019-11-22, 21:12:12</p>
-        <p><span>最后更新:</span>2019-11-22, 21:12:12</p>
+        <p><span>发布时间:</span>2019-11-22, 21:21:23</p>
+        <p><span>最后更新:</span>2019-11-22, 21:21:23</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/11/22/Terminal-Proxy/" title="">https://codewindy.github.io/2019/11/22/Terminal-Proxy/</a>
             <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2019/11/22/Terminal-Proxy/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
