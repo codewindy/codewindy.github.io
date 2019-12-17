@@ -298,8 +298,10 @@
 <p><img src="https://i.loli.net/2019/05/02/5ccaa3be60e45.png" alt="2019-05-02_151738_002.png"></p>
 <p><img src="https://i.loli.net/2019/05/02/5ccaa3bd57277.png" alt="2019-05-02_152312_003.png"></p>
 </li>
-<li>先将家里老旧路由器的  <font color="red"> WAN口 </font>  插上网线连接到电脑的 <strong>RJ45网口</strong> </li>
-<li>打开虚拟机<strong>vmware</strong> 导入 <a href="https://github.com/codewindy/soft-common/blob/master/MikroTik-RouterOS-6.44.2_crackzsoft.com.ova" target="_blank" rel="noopener">routeros 镜像</a>, 桥接到<strong><code>物理网卡</code></strong></li>
+<li><p>先将家里老旧路由器的  <font color="red"> WAN口 </font>  插上网线连接到电脑的 <strong>RJ45网口</strong> </p>
+</li>
+<li><p>打开虚拟机<strong>vmware</strong> 导入 <a href="https://github.com/codewindy/soft-common/blob/master/MikroTik-RouterOS-6.44.2_crackzsoft.com.ova" target="_blank" rel="noopener">routeros 镜像</a>, 桥接到<strong><code>物理网卡</code></strong></p>
+</li>
 <li><p>下载并打开<strong>winbox</strong>客户端,并通过<strong>winbox</strong> 来登录ros,默认帐号是 <strong>admin</strong> 密码是 <strong>空</strong></p>
 <p><img src="https://i.loli.net/2019/05/02/5ccaa3be54129.png" alt="2019-05-02_152916_004.png"></p>
 <p><img src="https://i.loli.net/2019/05/02/5ccaa3becc873.png" alt="2019-05-02_153222_005.png"></p>
@@ -307,11 +309,12 @@
 </li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[admin@fsm] &gt; ip export </span><br><span class="line"><span class="meta">#</span><span class="bash"> may/02/2019 15:45:48 by RouterOS 6.44.2</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> software id = ZJ3M-ESHW</span></span><br><span class="line"><span class="meta">#</span><span class="bash"></span></span><br><span class="line">/ip pool</span><br><span class="line">add name=pool1 ranges=10.16.0.2-10.16.0.254</span><br><span class="line">/ip address</span><br><span class="line">add address=192.168.199.22/24 comment=defconf interface=ether1 network=192.168.199.0</span><br><span class="line">add address=192.168.199.122/24 interface=ether1 network=192.168.199.0</span><br><span class="line">/ip cloud</span><br><span class="line">set update-time=no</span><br><span class="line">/ip dhcp-client</span><br><span class="line">add dhcp-options=hostname,clientid disabled=no interface=ether1</span><br><span class="line">/ip dns</span><br><span class="line">set allow-remote-requests=yes servers=192.168.199.1</span><br><span class="line">/ip firewall nat</span><br><span class="line">add action=masquerade chain=srcnat out-interface-list=WAN</span><br><span class="line">/ip route</span><br><span class="line">add disabled=yes distance=1 gateway=192.168.199.1</span><br><span class="line">[admin@fsm] &gt; ppp export </span><br><span class="line"><span class="meta">#</span><span class="bash"> may/02/2019 15:45:52 by RouterOS 6.44.2</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> software id = ZJ3M-ESHW</span></span><br><span class="line"></span><br><span class="line">/ppp profile</span><br><span class="line">add dns-server=223.5.5.5 local-address=10.16.0.1 name=8M remote-address=pool1</span><br></pre></td></tr></table></figure>
+
 <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><ul>
-<li><strong>chap </strong> 认证过程是md5加密的,但是<strong>pap </strong>是明文认证方式,所以我们通过ros伪造<strong>pppoe</strong>服务器来抓包获取</li>
+<li><strong>chap ** 认证过程是md5加密的,但是</strong>pap <strong>是明文认证方式,所以我们通过ros伪造</strong>pppoe**服务器来抓包获取</li>
 <li><a href="http://blog.sina.com.cn/s/blog_5384e78b0100fhno.html" target="_blank" rel="noopener">PPP-PAP认证原理</a></li>
 <li><a href="http://blog.sina.com.cn/s/blog_5384e78b0100fhnr.html" target="_blank" rel="noopener">PPP-CHAP认证原理</a><blockquote>
-<p>PPP提供了两种可选的身份认证方法：口令验证协议PAP（Password Authentication Protocol，PAP）和质询握手协议（Challenge Handshake Authentication Protocol，CHAP）。如果双方协商达成一致，也可以不使用任何身份认证方法。　　CHAP认证比PAP认证更安全，因为CHAP不在线路上发送明文密码，而是发送经过摘要算法加工过的随机序列，也 被称为”挑战字符串”.如图所示。同时，身份认证可以随时进行，包括在双方正常通信过程中。因此，非法用户就算截获并成功破解了一次密码，此密码也将在 一段时间内失效<br><img src="https://i.loli.net/2019/05/02/5cca8c8d6a894.jpg" alt="chap认证过程">) </p>
+<p>PPP提供了两种可选的身份认证方法：口令验证协议PAP（Password Authentication Protocol，PAP）和质询握手协议（Challenge Handshake Authentication Protocol，CHAP）。如果双方协商达成一致，也可以不使用任何身份认证方法。　　CHAP认证比PAP认证更安全，因为CHAP不在线路上发送明文密码，而是发送经过摘要算法加工过的随机序列，也 被称为”挑战字符串”.如图所示。同时，身份认证可以随时进行，包括在双方正常通信过程中。因此，非法用户就算截获并成功破解了一次密码，此密码也将在 一段时间内失效<br><img src="https://i.loli.net/2019/05/02/5cca8c8d6a894.jpg" alt="chap认证过程">)) </p>
 </blockquote>
 </li>
 </ul>

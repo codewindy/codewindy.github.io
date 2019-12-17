@@ -291,6 +291,7 @@
 </li>
 </ul>
 <a id="more"></a>
+
 <hr>
 <h2 id="字符串（String）"><a href="#字符串（String）" class="headerlink" title="字符串（String）"></a>字符串（String）</h2><ul>
 <li>字符串是 Redis 中最基础的数据类型，它在 Redis 中是二进制安全的，这意味着 String 类型存入和取出的数据相同。在 Redis 中字符串的 value 最多可以容纳的数据长度是512M。</li>
@@ -342,7 +343,8 @@
 </li>
 <li><p>field 不存在，直接存储。</p>
 </li>
-<li>field 存在，执行覆盖操作。</li>
+<li><p>field 存在，执行覆盖操作。</p>
+</li>
 </ul>
 <hr>
 <h3 id="存储多个键值对（hmset）"><a href="#存储多个键值对（hmset）" class="headerlink" title="存储多个键值对（hmset）"></a><strong>存储多个键值对（hmset）</strong></h3><p><code>hmset</code> <code>key</code> <code>field</code> <code>value</code> <code>field</code> <code>value</code> <code>...</code></p>
@@ -549,7 +551,7 @@
 <hr>
 <h2 id="Keys-的通用操作"><a href="#Keys-的通用操作" class="headerlink" title="Keys 的通用操作"></a>Keys 的通用操作</h2><h3 id="查找-Key（keys）"><a href="#查找-Key（keys）" class="headerlink" title="查找 Key（keys）"></a><strong>查找 Key（keys）</strong></h3><p><code>keys</code> <code>pattern</code></p>
 <ul>
-<li>模糊查找 Key 。<strong>*</strong> 表示任意一个或多个字符，<strong>？</strong>表示任意一个字符。</li>
+<li>模糊查找 Key 。<strong>*** 表示任意一个或多个字符，</strong>？**表示任意一个字符。</li>
 </ul>
 <hr>
 <h3 id="判断-Key-是否存在（exists）"><a href="#判断-Key-是否存在（exists）" class="headerlink" title="判断 Key 是否存在（exists）"></a><strong>判断 Key 是否存在（exists）</strong></h3><p><code>exists</code> <code>key</code></p>

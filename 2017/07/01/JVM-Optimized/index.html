@@ -287,6 +287,7 @@
 </li>
 </ul>
 <a id="more"></a>
+
 <ul>
 <li><p>老年代</p>
 <ul>
@@ -332,36 +333,7 @@
 <li><font color="red">标记-整理算法</font><br>算法不直接对可回收对象进行清理，而是让所有可用的对象都向一端移动。然后直接清理掉边界意外的内存。<br>很显然，整理这一下需要时间，所以与标记清除算法相比，这一步花费了不少时间，但从长远来看，这一步还是很有必要的。<br>该算法可谓“道德高尚，自己栽树，后人乘凉”</li>
 <li><font color="red">分代收集</font><br>根据对象存活周期的不同将内存划分为几块。一般是把Java堆分为新生代和老年代，这样就可以根据各个年代的特点采用最适当的收集算法。在新生代中，每次垃圾收集时都有大批对象死去，只有少量存活，那就使用复制算法，只需要付出少量存活对象的复制成本就可以完成收集。老年代中存活率高，使用标记清理或者标记整理算法来回收。</li>
 </ul>
-<h1 id="GC调优"><a href="#GC调优" class="headerlink" title="GC调优"></a>GC调优</h1><table>
-<thead>
-<tr>
-<th>配置</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-Xms</td>
-<td>初始堆内存大小</td>
-</tr>
-<tr>
-<td>-Xmx</td>
-<td>堆内存最大值（最大不要超过物理内存的80%）</td>
-</tr>
-<tr>
-<td>-Xnm</td>
-<td>新生代大小</td>
-</tr>
-<tr>
-<td>-XX:permSize</td>
-<td>初始永久代大小</td>
-</tr>
-<tr>
-<td>-XX:MaxPermSize</td>
-<td>永久代最大容量</td>
-</tr>
-</tbody>
-</table>
+<h1 id="GC调优"><a href="#GC调优" class="headerlink" title="GC调优"></a>GC调优</h1><p>| 配置 | 描述 |<br>| – |<br>| -Xms | 初始堆内存大小 |<br>| -Xmx | 堆内存最大值（最大不要超过物理内存的80%） |<br>| -Xnm | 新生代大小 |<br>| -XX:permSize | 初始永久代大小 |<br>| -XX:MaxPermSize | 永久代最大容量 |</p>
 <ul>
 <li>对新生代中的Eden区和survivor区以及老年代区域的大小进行调整。</li>
 <li>大对象直接进入老年代</li>

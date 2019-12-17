@@ -471,12 +471,14 @@
           
               <p><strong>TODO_LIST</strong></p>
 <ol>
-<li>springmvc 的servlet启动参数 关系</li>
+<li><p>springmvc 的servlet启动参数 关系</p>
+</li>
 <li><p>整理笔记上线到网上blog</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">springmvc的servlet 开机启动配置</span><br><span class="line">load-on-startup标记容器是否在启动的时候实例化并调用其init()方法的优先级。</span><br><span class="line">它的值表示servlet应该被载入的顺序</span><br><span class="line">当值为0或者大于0时，表示容器在应用启动时就加载并初始化这个servlet；</span><br><span class="line">如果值小于0或未指定时，则表示只有在第一次请求的容器才在该servlet调用初始化函数</span><br><span class="line">正值越小，servlet的优先级越高，应用启动时就越先加载。</span><br><span class="line">值相同时，容器就会自己选择顺序来加载。</span><br><span class="line">SELECT NOW(); 选择现在的时间在redis 里面设置一个倒计时做秒单</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>mysql读写分离的背景介绍</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">服务器压力大,需要读写分离,负载均衡</span><br><span class="line">主服务器通过写入bin-log文件实现[通过授权在master 服务器创建帐号]传递给slave 服务器读取</span><br><span class="line">从服务器读 bin-log 写</span><br><span class="line"> Relay_Master_Log_File: mysql-bin.000050</span><br><span class="line">     Slave_IO_Running: Yes</span><br><span class="line">    Slave_SQL_Running: Yes</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h2 id="一-mysql-主从同步linux和window配置-前提概要实现主从同步-读写分离"><a href="#一-mysql-主从同步linux和window配置-前提概要实现主从同步-读写分离" class="headerlink" title="一 .mysql 主从同步linux和window配置(前提概要实现主从同步,读写分离)"></a>一 .mysql 主从同步linux和window配置(前提概要实现主从同步,读写分离)</h2>
@@ -623,8 +625,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>##Debug 调试快捷键</p>
-<p><font color="red">好记性不如烂笔头,debug不论在学习还是工作中都能很好的分析和解决问题</font><br>
+              <p>##Debug 调试快捷键<br><font color="red">好记性不如烂笔头,debug不论在学习还是工作中都能很好的分析和解决问题</font></p>
           
       
     </div>
@@ -755,6 +756,7 @@
       
           
         <script src="/assets/js/APlayer.min.js"> </script><h2 id="旅の終り"><a href="#旅の終り" class="headerlink" title="旅の終り"></a>旅の終り</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">涙なら、三水に「戻る」と書くのに</span><br><span class="line">僕の目から、心から、体から</span><br><span class="line">零れ落ちてゆくのは</span><br><span class="line">もう戻らないものばかり</span><br><span class="line">どうな悲しい結末の物語より</span><br><span class="line">いつまで立っても終われない物語のほうが悲しい</span><br><span class="line">宙ぶらりんになったエピソード</span><br><span class="line">回収しきれない伏線</span><br><span class="line">黙って伝ったままのは</span><br><span class="line">僕のフラグ</span><br><span class="line">出来損ないの声じゃなくて</span><br><span class="line">それでもよかったな</span><br><span class="line">あなたの夜は終わった</span><br><span class="line">だから僕の夜も終わった</span><br><span class="line">あなたの白い指は</span><br><span class="line">夜気に暖かったなぁ</span><br><span class="line">触れた星と星の名前</span><br><span class="line">なんだったっげなぁ</span><br><span class="line">戻る場所がなくなった</span><br><span class="line">行ける場所ができた</span><br><span class="line">新しい夜が訪れる前に</span><br><span class="line">朝になる</span><br><span class="line">滲んだ涙の意味を探すより</span><br><span class="line">今は次のページを開こうと思う</span><br></pre></td></tr></table></figure>
+
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=3&id=909585280&auto=1&height=66"></iframe>
       
     </div>
