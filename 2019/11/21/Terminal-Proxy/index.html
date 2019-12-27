@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/11/22/2SZVI5WJmxYLdOP.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/11/21/NalKSW27cfmC5pR.jpg">
-<meta property="og:updated_time" content="2019-11-22T13:49:16.270Z">
+<meta property="og:updated_time" content="2019-12-27T17:19:48.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOS 下 Terminal 设置代理上网">
 <meta name="twitter:description" content="MacOS Terminal Proxy Settings一.  背景 装完macos系统后，经常使用Terminal终端来写blog提交到github，但是老是丢包，最终通过代理来实现">
@@ -289,7 +289,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias setroxy='export http_proxy=http://127.0.0.1:1087;</span><br><span class="line">export https_proxy=http://127.0.0.1:1087;'</span><br><span class="line">alias unsetproxy='unset http_proxy https_proxy'</span><br><span class="line">alias ip='curl cip.cc'</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>只配置git代理</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">设置</span></span><br><span class="line">git config --global http.proxy 'socks5://127.0.0.1:1086' </span><br><span class="line">git config --global https.proxy 'socks5://127.0.0.1:1086'</span><br><span class="line"><span class="meta">#</span><span class="bash">取消</span></span><br><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br><span class="line">git clone https://github.com/codewindy/blog.git --config "http.proxy=127.0.0.1:1086"</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"> #</span><span class="bash">设置</span></span><br><span class="line"> git config --global http.proxy 'socks5://127.0.0.1:1086' </span><br><span class="line"> git config --global https.proxy 'socks5://127.0.0.1:1086'</span><br><span class="line"><span class="meta"> #</span><span class="bash">取消</span></span><br><span class="line"> git config --global --unset http.proxy</span><br><span class="line"> git config --global --unset https.proxy</span><br><span class="line"> git clone https://github.com/codewindy/blog.git --config "http.proxy=127.0.0.1:1086"</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta"> #</span><span class="bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:1086</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在斐讯k2路由器刷机geewan或者openwrt/LEDE等石像鬼系统，直接配置ssr节点在路由器里面实现全局代理<br><img src="https://i.loli.net/2019/11/22/2SZVI5WJmxYLdOP.jpg" alt="Xnip2019-11-22_21-36-42.jpg"></p>
 <h1 id="四-效果"><a href="#四-效果" class="headerlink" title="四. 效果"></a>四. 效果</h1><p><img src="https://i.loli.net/2019/11/21/NalKSW27cfmC5pR.jpg" alt="Xnip2019-11-21_22-02-55.jpg"></p>
@@ -297,6 +297,7 @@
 </ul>
 <h1 id="五-参考"><a href="#五-参考" class="headerlink" title="五. 参考"></a>五. 参考</h1><ul>
 <li><a href="https://blog.naaln.com/2019/03/terminal-proxy/" target="_blank" rel="noopener">blog.naaln.com</a></li>
+<li><a href="https://gist.github.com/laispace/666dd7b27e9116faece6" target="_blank" rel="noopener">gist config </a></li>
 </ul>
 
       
@@ -309,7 +310,7 @@
         <p><span>本文标题:</span><a href="/2019/11/21/Terminal-Proxy/">MacOS 下 Terminal 设置代理上网</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
         <p><span>发布时间:</span>2019-11-21, 21:34:41</p>
-        <p><span>最后更新:</span>2019-11-22, 21:49:16</p>
+        <p><span>最后更新:</span>2019-12-28, 01:19:48</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/11/21/Terminal-Proxy/" title="MacOS 下 Terminal 设置代理上网">https://codewindy.github.io/2019/11/21/Terminal-Proxy/</a>
             <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2019/11/21/Terminal-Proxy/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
