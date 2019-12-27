@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="Linux tips from aliyun一. 背景 整理出开发中常见的笔记，发现阿里云上有已经很不错的参考文档">
-<meta name="keywords" content="life">
+<meta name="description" content="install postgresql from source code一. 背景 最近经常需要处理postgres数据库相关环境配置的事情，遂记录一下">
+<meta name="keywords" content="postgres">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux操作系统加固">
-<meta property="og:url" content="https://codewindy.github.io/2018/11/21/Aliyun-Linux-tips/index.html">
+<meta property="og:title" content="Linux源码编译安装postgres">
+<meta property="og:url" content="https://codewindy.github.io/2019/12/28/install-postgresql-from-source-code/index.html">
 <meta property="og:site_name" content="codewindy">
-<meta property="og:description" content="Linux tips from aliyun一. 背景 整理出开发中常见的笔记，发现阿里云上有已经很不错的参考文档">
+<meta property="og:description" content="install postgresql from source code一. 背景 最近经常需要处理postgres数据库相关环境配置的事情，遂记录一下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/11/21/idqaSKc9sgMHeQR.jpg">
-<meta property="og:updated_time" content="2019-12-18T14:08:54.243Z">
+<meta property="og:updated_time" content="2019-12-27T16:37:36.057Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux操作系统加固">
-<meta name="twitter:description" content="Linux tips from aliyun一. 背景 整理出开发中常见的笔记，发现阿里云上有已经很不错的参考文档">
-<meta name="twitter:image" content="https://i.loli.net/2019/11/21/idqaSKc9sgMHeQR.jpg">
+<meta name="twitter:title" content="Linux源码编译安装postgres">
+<meta name="twitter:description" content="install postgresql from source code一. 背景 最近经常需要处理postgres数据库相关环境配置的事情，遂记录一下">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -53,7 +51,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Linux操作系统加固 | codewindy</title>
+<title>Linux源码编译安装postgres | codewindy</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -237,11 +235,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Aliyun-Linux-tips" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-install-postgresql-from-source-code" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/11/21/Aliyun-Linux-tips/" class="article-date">
-      <time datetime="2018-11-21T13:36:15.000Z" itemprop="datePublished">2018-11-21</time>
+      <a href="/2019/12/28/install-postgresql-from-source-code/" class="article-date">
+      <time datetime="2019-12-27T16:31:12.000Z" itemprop="datePublished">2019-12-28</time>
 </a>
 
 
@@ -254,7 +252,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux操作系统加固
+      Linux源码编译安装postgres
     </h1>
   
 
@@ -265,7 +263,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postgres/">postgres</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -275,10 +273,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="Linux-tips-from-aliyun"><a href="#Linux-tips-from-aliyun" class="headerlink" title="Linux tips from aliyun"></a>Linux tips from aliyun</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
-<li>整理出开发中常见的笔记，发现阿里云上有已经很不错的参考文档<a id="more"></a></li>
-<li><img src="https://i.loli.net/2019/11/21/idqaSKc9sgMHeQR.jpg" alt="Xnip2019-11-21_22-08-49.jpg"><h1 id="二-参考"><a href="#二-参考" class="headerlink" title="二. 参考"></a>二. 参考</h1></li>
-<li><a href="https://help.aliyun.com/knowledge_detail/49809.html" target="_blank" rel="noopener"> Linux操作系统加固</a></li>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="install-postgresql-from-source-code"><a href="#install-postgresql-from-source-code" class="headerlink" title="install postgresql from source code"></a>install postgresql from source code</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
+<li>最近经常需要处理postgres数据库相关环境配置的事情，遂记录一下</li>
+</ul>
+<a id="more"></a>
+<h1 id="二-步骤"><a href="#二-步骤" class="headerlink" title="二. 步骤"></a>二. 步骤</h1><ul>
+<li><a href="https://www.tecmint.com/install-postgresql-from-source-code-in-linux/" target="_blank" rel="noopener">tecmint postgres tutorials</a></li>
+<li><a href="https://www.tecmint.com/install-postgresql-on-ubuntu/" target="_blank" rel="noopener">ubuntu apt-get install  postgres</a></li>
 </ul>
 
       
@@ -288,13 +289,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/11/21/Aliyun-Linux-tips/">Linux操作系统加固</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/28/install-postgresql-from-source-code/">Linux源码编译安装postgres</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
-        <p><span>发布时间:</span>2018-11-21, 21:36:15</p>
-        <p><span>最后更新:</span>2019-12-18, 22:08:54</p>
+        <p><span>发布时间:</span>2019-12-28, 00:31:12</p>
+        <p><span>最后更新:</span>2019-12-28, 00:37:36</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/11/21/Aliyun-Linux-tips/" title="Linux操作系统加固">https://codewindy.github.io/2018/11/21/Aliyun-Linux-tips/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2018/11/21/Aliyun-Linux-tips/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/28/install-postgresql-from-source-code/" title="Linux源码编译安装postgres">https://codewindy.github.io/2019/12/28/install-postgresql-from-source-code/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2019/12/28/install-postgresql-from-source-code/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -306,16 +307,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/12/15/reset-ie-broswer/">
-                    打不开网页,重置ie浏览器
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/04/ios-adblock/">
-                    iPhone 广告限制🚫
+                <a href="/2019/12/15/k2-breed-padavan/">
+                    斐讯k2通过编程器刷breed后升级padavan固件
                 </a>
             </div>
         
@@ -358,7 +353,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux-tips-from-aliyun"><span class="toc-number">1.</span> <span class="toc-text">Linux tips from aliyun</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-number"></span> <span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-参考"><span class="toc-number"></span> <span class="toc-text">二. 参考</span></a>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#install-postgresql-from-source-code"><span class="toc-number">1.</span> <span class="toc-text">install postgresql from source code</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-number"></span> <span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-步骤"><span class="toc-number"></span> <span class="toc-text">二. 步骤</span></a>
         
     </div>
     <style>
@@ -406,15 +401,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/12/15/reset-ie-broswer/" title="上一篇: 打不开网页,重置ie浏览器">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/04/ios-adblock/" title="下一篇: iPhone 广告限制🚫">
+            <a href="/2019/12/15/k2-breed-padavan/" title="下一篇: 斐讯k2通过编程器刷breed后升级padavan固件">
                 <i class="fa fa-angle-right"></i>
             </a>
         
