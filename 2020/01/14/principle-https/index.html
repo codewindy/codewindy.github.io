@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="重置ie浏览器一. 背景 电脑设置代理关掉后会经常出现不能打开网页的情况">
-<meta name="keywords" content="life">
+<meta name="description" content="principle of https一. 背景 理解http 和https 的区别 理解http 1.0 和http 1.1 和http2.0 的区别 在对外提供接口的情况下，如何设计和保证数据的安全可靠性">
+<meta name="keywords" content="web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="打不开网页,重置ie浏览器">
-<meta property="og:url" content="https://codewindy.github.io/2018/12/15/reset-ie-broswer/index.html">
+<meta property="og:title" content="principle-https">
+<meta property="og:url" content="https://codewindy.github.io/2020/01/14/principle-https/index.html">
 <meta property="og:site_name" content="codewindy">
-<meta property="og:description" content="重置ie浏览器一. 背景 电脑设置代理关掉后会经常出现不能打开网页的情况">
+<meta property="og:description" content="principle of https一. 背景 理解http 和https 的区别 理解http 1.0 和http 1.1 和http2.0 的区别 在对外提供接口的情况下，如何设计和保证数据的安全可靠性">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-18T13:56:14.367Z">
+<meta property="og:updated_time" content="2020-01-14T14:16:04.076Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="打不开网页,重置ie浏览器">
-<meta name="twitter:description" content="重置ie浏览器一. 背景 电脑设置代理关掉后会经常出现不能打开网页的情况">
+<meta name="twitter:title" content="principle-https">
+<meta name="twitter:description" content="principle of https一. 背景 理解http 和https 的区别 理解http 1.0 和http 1.1 和http2.0 的区别 在对外提供接口的情况下，如何设计和保证数据的安全可靠性">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -51,7 +51,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>打不开网页,重置ie浏览器 | codewindy</title>
+<title>principle-https | codewindy</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -235,11 +235,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-reset-ie-broswer" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-principle-https" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/12/15/reset-ie-broswer/" class="article-date">
-      <time datetime="2018-12-15T14:15:48.000Z" itemprop="datePublished">2018-12-15</time>
+      <a href="/2020/01/14/principle-https/" class="article-date">
+      <time datetime="2020-01-14T12:44:26.000Z" itemprop="datePublished">2020-01-14</time>
 </a>
 
 
@@ -252,7 +252,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      打不开网页,重置ie浏览器
+      principle-https
     </h1>
   
 
@@ -263,7 +263,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -273,13 +273,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="重置ie浏览器"><a href="#重置ie浏览器" class="headerlink" title="重置ie浏览器"></a>重置ie浏览器</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
-<li>电脑设置代理关掉后会经常出现不能打开网页的情况<a id="more"></a>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="principle-of-https"><a href="#principle-of-https" class="headerlink" title="principle of https"></a>principle of https</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
+<li>理解http 和https 的区别</li>
+<li>理解http 1.0 和http 1.1 和http2.0 的区别</li>
+<li>在对外提供接口的情况下，如何设计和保证数据的安全可靠性<a id="more"></a>
+<h1 id="二-原理"><a href="#二-原理" class="headerlink" title="二. 原理"></a>二. 原理</h1></li>
+<li><a href="http://www.ichenpeng.net/1176592" target="_blank" rel="noopener">www.ichenpeng.net</a><h1 id="三-应用"><a href="#三-应用" class="headerlink" title="三. 应用"></a>三. 应用</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> codewindy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020-01-14 8:59 PM</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestAESByHutool</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1. 生成公钥和私钥并指定加密type 和长度</span></span><br><span class="line"></span><br><span class="line">        RSA rsa = <span class="keyword">new</span> RSA();</span><br><span class="line">        String privateKeyBase64 = rsa.getPrivateKeyBase64();</span><br><span class="line">        String publicKeyBase64 = rsa.getPublicKeyBase64();</span><br><span class="line">        System.out.println(<span class="string">"keyPair.getPrivate() 私钥= "</span> + privateKeyBase64);</span><br><span class="line">        System.out.println(<span class="string">"keyPair.getPublic() 公钥= "</span> + publicKeyBase64);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2. 获取待加密的敏感原始数据</span></span><br><span class="line">        String content = HttpRequest</span><br><span class="line">                .get(<span class="string">"https://api.myip.com/"</span>)</span><br><span class="line">                <span class="comment">//超时，毫秒</span></span><br><span class="line">                .timeout(<span class="number">20000</span>)</span><br><span class="line">                .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)</span><br><span class="line">                .execute()</span><br><span class="line">                .body();</span><br><span class="line">        <span class="comment">//3. 每次生成AES 16 位随机密码</span></span><br><span class="line">        String aesKey = RandomStringUtils.randomNumeric(<span class="number">16</span>);</span><br><span class="line">        System.out.println(<span class="string">"每次生成AES 16 位随机密码aesKey = "</span> + aesKey);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 使用公钥加密 aes对称密码 后的key</span></span><br><span class="line">        String encryptAesKey = rsa.encryptBase64(aesKey, KeyType.PrivateKey);</span><br><span class="line">        System.out.println(<span class="string">"使用公钥加密 aes对称密码 后的encryptAesKey = "</span> + encryptAesKey);</span><br><span class="line">        <span class="comment">//5. AES 加密后的内容</span></span><br><span class="line">        String encryptContent = SecureUtil.aes(aesKey.getBytes()).encryptBase64(content);</span><br><span class="line">        System.out.println(<span class="string">"AES 加密后的内容 encryptContent = "</span> + encryptContent);</span><br><span class="line"></span><br><span class="line">        Sign sign = SecureUtil.sign(SignAlgorithm.MD5withRSA);</span><br><span class="line">        <span class="keyword">byte</span>[] signedContent = sign.sign(content.getBytes());</span><br><span class="line">        System.err.println(<span class="string">"对原始数据进行签名signedContent = "</span> + signedContent);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"解密-----------------------------------------------------"</span>);</span><br><span class="line">        <span class="comment">//6. 使用私钥解密后的key</span></span><br><span class="line"></span><br><span class="line">        String decryptAesKey = rsa.decryptStr(encryptAesKey, KeyType.PublicKey);</span><br><span class="line">        System.out.println(<span class="string">"使用私钥解密后的decryptAesKey = "</span> + decryptAesKey);</span><br><span class="line">        <span class="comment">//7. 解密得到明文的 aes 对称密码 解密加密的content数据</span></span><br><span class="line"></span><br><span class="line">        String decryptContent = SecureUtil.aes(decryptAesKey.getBytes()).decryptStr(encryptContent);</span><br><span class="line">        System.out.println(<span class="string">"解密得到明文的 aes 对称密码 解密加密的content数据 = "</span> + decryptContent);</span><br><span class="line">        <span class="comment">//8. 签名和验签 https://hutool.cn/docs/#/crypto/%E7%AD%BE%E5%90%8D%E5%92%8C%E9%AA%8C%E8%AF%81-Sign</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> verify = sign.verify(content.getBytes(), signedContent);</span><br><span class="line">        System.err.println(<span class="string">"验签状态verify = "</span> + verify);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h1 id="二-解决"><a href="#二-解决" class="headerlink" title="二. 解决"></a>二. 解决</h1><ul>
-<li>在win10下新建一个bat脚本文件并执行<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">rundll32 inetcpl.cpl ResetIEtoDefaults</span><br><span class="line">set p=rundll32 inetcpl.cpl ResetIEtoDefaults</span><br><span class="line">set q=reset successful</span><br><span class="line">echo %p%</span><br><span class="line">echo %q%</span><br><span class="line">)</span><br><span class="line">pause</span><br></pre></td></tr></table></figure></li>
+<h1 id="四-参考"><a href="#四-参考" class="headerlink" title="四. 参考"></a>四. 参考</h1><ul>
+<li><a href="https://www.kancloud.cn/ichenpeng/blog/1176592" target="_blank" rel="noopener">https://www.kancloud.cn/ichenpeng/blog/1176592</a></li>
+<li><a href="https://www.kancloud.cn/ichenpeng/blog/1094601" target="_blank" rel="noopener">countdownLatch 使用</a></li>
+<li><a href="https://hutool.cn/docs/#/" target="_blank" rel="noopener">Hutool doc</a></li>
 </ul>
 
       
@@ -289,13 +295,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2018/12/15/reset-ie-broswer/">打不开网页,重置ie浏览器</a></p>
+        <p><span>本文标题:</span><a href="/2020/01/14/principle-https/">principle-https</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
-        <p><span>发布时间:</span>2018-12-15, 22:15:48</p>
-        <p><span>最后更新:</span>2019-12-18, 21:56:14</p>
+        <p><span>发布时间:</span>2020-01-14, 20:44:26</p>
+        <p><span>最后更新:</span>2020-01-14, 22:16:04</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/12/15/reset-ie-broswer/" title="打不开网页,重置ie浏览器">https://codewindy.github.io/2018/12/15/reset-ie-broswer/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2018/12/15/reset-ie-broswer/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/01/14/principle-https/" title="principle-https">https://codewindy.github.io/2020/01/14/principle-https/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2020/01/14/principle-https/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -307,16 +313,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/16/Java-Learning/">
-                    Java-Learning-Video
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/11/21/Aliyun-Linux-tips/">
-                    Linux操作系统加固
+                <a href="/2020/01/02/MacOS-jdk-gradle/">
+                    MacOS 配置JDK和Gradle环境变量
                 </a>
             </div>
         
@@ -359,7 +359,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#重置ie浏览器"><span class="toc-number">1.</span> <span class="toc-text">重置ie浏览器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-number"></span> <span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-解决"><span class="toc-number"></span> <span class="toc-text">二. 解决</span></a>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#principle-of-https"><span class="toc-number">1.</span> <span class="toc-text">principle of https</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-number"></span> <span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-原理"><span class="toc-number"></span> <span class="toc-text">二. 原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-应用"><span class="toc-number"></span> <span class="toc-text">三. 应用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-参考"><span class="toc-number"></span> <span class="toc-text">四. 参考</span></a>
         
     </div>
     <style>
@@ -407,15 +407,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/16/Java-Learning/" title="上一篇: Java-Learning-Video">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/11/21/Aliyun-Linux-tips/" title="下一篇: Linux操作系统加固">
+            <a href="/2020/01/02/MacOS-jdk-gradle/" title="下一篇: MacOS 配置JDK和Gradle环境变量">
                 <i class="fa fa-angle-right"></i>
             </a>
         
