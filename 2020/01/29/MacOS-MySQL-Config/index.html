@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="旅の終り123456789101112131415161718192021222324涙なら、三水に「戻る」と書くのに僕の目から、心から、体から零れ落ちてゆくのはもう戻らないものばかりどうな悲しい結末の物語よりいつまで立っても終われない物語のほうが悲しい宙ぶらりんになったエピソード回収しきれない伏線黙って伝ったままのは僕のフラグ出来損ないの声じゃなくてそれでもよかったなあなたの夜は終わっただから">
-<meta name="keywords" content="life">
+<meta name="description" content="MacOS MySQL Install &amp;amp; Config一. 背景 MySQL8 下载安装">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="旅の終り">
-<meta property="og:url" content="https://codewindy.github.io/2015/06/24/旅の終わり/index.html">
+<meta property="og:title" content="mac系统下安装mysql">
+<meta property="og:url" content="https://codewindy.github.io/2020/01/29/MacOS-MySQL-Config/index.html">
 <meta property="og:site_name" content="codewindy">
-<meta property="og:description" content="旅の終り123456789101112131415161718192021222324涙なら、三水に「戻る」と書くのに僕の目から、心から、体から零れ落ちてゆくのはもう戻らないものばかりどうな悲しい結末の物語よりいつまで立っても終われない物語のほうが悲しい宙ぶらりんになったエピソード回収しきれない伏線黙って伝ったままのは僕のフラグ出来損ないの声じゃなくてそれでもよかったなあなたの夜は終わっただから">
+<meta property="og:description" content="MacOS MySQL Install &amp;amp; Config一. 背景 MySQL8 下载安装">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-27T03:44:39.376Z">
+<meta property="og:updated_time" content="2020-01-29T12:30:33.273Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="旅の終り">
-<meta name="twitter:description" content="旅の終り123456789101112131415161718192021222324涙なら、三水に「戻る」と書くのに僕の目から、心から、体から零れ落ちてゆくのはもう戻らないものばかりどうな悲しい結末の物語よりいつまで立っても終われない物語のほうが悲しい宙ぶらりんになったエピソード回収しきれない伏線黙って伝ったままのは僕のフラグ出来損ないの声じゃなくてそれでもよかったなあなたの夜は終わっただから">
+<meta name="twitter:title" content="mac系统下安装mysql">
+<meta name="twitter:description" content="MacOS MySQL Install &amp;amp; Config一. 背景 MySQL8 下载安装">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -51,7 +51,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>旅の終り | codewindy</title>
+<title>mac系统下安装mysql | codewindy</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -235,11 +235,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-旅の終わり" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-MacOS-MySQL-Config" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/06/24/旅の終わり/" class="article-date">
-      <time datetime="2015-06-24T15:04:18.000Z" itemprop="datePublished">2015-06-24</time>
+      <a href="/2020/01/29/MacOS-MySQL-Config/" class="article-date">
+      <time datetime="2020-01-29T01:41:02.000Z" itemprop="datePublished">2020-01-29</time>
 </a>
 
 
@@ -252,7 +252,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      旅の終り
+      mac系统下安装mysql
     </h1>
   
 
@@ -263,7 +263,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -273,9 +273,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="旅の終り"><a href="#旅の終り" class="headerlink" title="旅の終り"></a>旅の終り</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">涙なら、三水に「戻る」と書くのに</span><br><span class="line">僕の目から、心から、体から</span><br><span class="line">零れ落ちてゆくのは</span><br><span class="line">もう戻らないものばかり</span><br><span class="line">どうな悲しい結末の物語より</span><br><span class="line">いつまで立っても終われない物語のほうが悲しい</span><br><span class="line">宙ぶらりんになったエピソード</span><br><span class="line">回収しきれない伏線</span><br><span class="line">黙って伝ったままのは</span><br><span class="line">僕のフラグ</span><br><span class="line">出来損ないの声じゃなくて</span><br><span class="line">それでもよかったな</span><br><span class="line">あなたの夜は終わった</span><br><span class="line">だから僕の夜も終わった</span><br><span class="line">あなたの白い指は</span><br><span class="line">夜気に暖かったなぁ</span><br><span class="line">触れた星と星の名前</span><br><span class="line">なんだったっげなぁ</span><br><span class="line">戻る場所がなくなった</span><br><span class="line">行ける場所ができた</span><br><span class="line">新しい夜が訪れる前に</span><br><span class="line">朝になる</span><br><span class="line">滲んだ涙の意味を探すより</span><br><span class="line">今は次のページを開こうと思う</span><br></pre></td></tr></table></figure>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="MacOS-MySQL-Install-amp-Config"><a href="#MacOS-MySQL-Install-amp-Config" class="headerlink" title="MacOS MySQL Install &amp; Config"></a>MacOS MySQL Install &amp; Config</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
+<li><a href="https://segmentfault.com/a/1190000019689864" target="_blank" rel="noopener">MySQL8 下载安装</a><a id="more"></a>
+</li>
+</ul>
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=3&id=909585280&auto=1&height=66"></iframe>
       
     </div>
     
@@ -283,13 +285,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/06/24/旅の終わり/">旅の終り</a></p>
+        <p><span>本文标题:</span><a href="/2020/01/29/MacOS-MySQL-Config/">mac系统下安装mysql</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
-        <p><span>发布时间:</span>2015-06-24, 23:04:18</p>
-        <p><span>最后更新:</span>2019-09-27, 11:44:39</p>
+        <p><span>发布时间:</span>2020-01-29, 09:41:02</p>
+        <p><span>最后更新:</span>2020-01-29, 20:30:33</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/06/24/旅の終わり/" title="旅の終り">https://codewindy.github.io/2015/06/24/旅の終わり/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2015/06/24/旅の終わり/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/01/29/MacOS-MySQL-Config/" title="mac系统下安装mysql">https://codewindy.github.io/2020/01/29/MacOS-MySQL-Config/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2020/01/29/MacOS-MySQL-Config/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -302,11 +304,17 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2015/07/01/Hello-World/">
-                    Hello World
+                <a href="/2020/01/29/dose-weather-affect-your-wifi/">
+                    雷雨天温度湿度会影响Wi-Fi
                 </a>
             </div>
         
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2020/01/14/principle-https/">
+                    https 原理和应用
+                </a>
+            </div>
         
     </nav>
 
@@ -347,7 +355,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#旅の終り"><span class="toc-number">1.</span> <span class="toc-text">旅の終り</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-MySQL-Install-amp-Config"><span class="toc-number">1.</span> <span class="toc-text">MacOS MySQL Install &amp; Config</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-number"></span> <span class="toc-text">一. 背景</span></a>
         
     </div>
     <style>
@@ -395,7 +403,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/07/01/Hello-World/" title="上一篇: Hello World">
+            <a href="/2020/01/29/dose-weather-affect-your-wifi/" title="上一篇: 雷雨天温度湿度会影响Wi-Fi">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -403,7 +411,9 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2020/01/14/principle-https/" title="下一篇: https 原理和应用">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
