@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/25/DicFNPE1T6hbzLx.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/11/20/EVbGyz3jLYalPcq.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/11/21/Ot82967gcQGFPWJ.jpg">
-<meta property="og:updated_time" content="2020-03-10T12:16:49.735Z">
+<meta property="og:updated_time" content="2020-03-11T13:52:50.162Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="黑苹果安装教程">
 <meta name="twitter:description" content="MacOS Install Tutorial一. 背景 原先准备入手thinkpad x1 extreme gen2或MacBook pro，都需要额外买扩展坞迫于预算有限于是默默寻找黑苹果的适配机型z7-kp7gz">
@@ -351,7 +351,7 @@
 <li><p><a href="https://hackintosh.kirainmoe.com/an-zhuang-hou/chang-yong-ming-ling-he-you-hua#zheng-que-kai-qi-hidpi" target="_blank" rel="noopener">正确开启HIDPI</a></p>
 </li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">注意必须使用 1424x802 的分辨率，才能在休眠唤醒的时候不遇到四分之一屏和花屏。</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">使用以下代码开启（来自小米 Pro 的仓库）：</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">修改分辨率可以直接在系统设置里面选择显示Display来勾选对应的尺寸</span></span><br><span class="line">sh -c "$(curl -fsSL https://raw.githubusercontent.com/daliansky/XiaoMi-Pro-Hackintosh/master/one-key-hidpi/one-key-hidpi.sh)"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">如要恢复，删除 <span class="comment">#/System/Library/Displays/Contents/Resources/Overrides/DisplayVendorID-9e5 即可。如果你是 Catalina 以上系统，你可能需要进入 Recovery 模式下挂载系统分区操作</span></span></span><br><span class="line">cd /Volumes/"Your System Disk Part"/System/Library/Displays/Contents/Resources/Overrides</span><br><span class="line">rm -rf ./DisplayVendorID-9e5</span><br><span class="line">cp -r ./backup/* ./</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>注意必须使用 1424x802 的分辨率，才能在休眠唤醒的时候不遇到四分之一屏和花屏。</span><br><span class="line"><span class="meta">  #</span>使用以下代码开启（来自小米 Pro 的仓库）：</span><br><span class="line"><span class="meta">  #</span>修改分辨率可以直接在系统设置里面选择显示Display来勾选对应的尺寸</span><br><span class="line">sh -c "$(curl -fsSL https://raw.githubusercontent.com/daliansky/XiaoMi-Pro-Hackintosh/master/one-key-hidpi/one-key-hidpi.sh)"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span>如要恢复，删除 #/System/Library/Displays/Contents/Resources/Overrides/DisplayVendorID-9e5 即可。如果你是 Catalina 以上系统，你可能需要进入 Recovery 模式下挂载系统分区操作</span><br><span class="line">cd /Volumes/"Your System Disk Part"/System/Library/Displays/Contents/Resources/Overrides</span><br><span class="line">rm -rf ./DisplayVendorID-9e5</span><br><span class="line">cp -r ./backup/* ./</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p><a href="https://zh.wikihow.com/%E5%9C%A8Mac%E4%B8%8A%E5%8F%B3%E9%94%AE%E7%82%B9%E5%87%BB" target="_blank" rel="noopener">在macOS系统下右键点击</a> </p>
@@ -372,6 +372,7 @@
 <li><a href="http://en.haseecomputer.com/PC/detail_1078.html" target="_blank" rel="noopener">hasee kp7gz</a></li>
 <li><a href="https://www.macappdownload.com/cleanmymac-x/" target="_blank" rel="noopener">macAppDownload.com</a></li>
 <li><a href="https://www.appstorrent.ru/programs/" target="_blank" rel="noopener">appsTorrent.ru</a></li>
+<li><a href="https://macwk.com/" target="_blank" rel="noopener">macwk</a></li>
 </ul>
 
       
@@ -384,7 +385,7 @@
         <p><span>本文标题:</span><a href="/2019/09/25/MacOS-Tutorial/">黑苹果安装教程</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
         <p><span>发布时间:</span>2019-09-25, 22:06:10</p>
-        <p><span>最后更新:</span>2020-03-10, 20:16:49</p>
+        <p><span>最后更新:</span>2020-03-11, 21:52:50</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/09/25/MacOS-Tutorial/" title="黑苹果安装教程">https://codewindy.github.io/2019/09/25/MacOS-Tutorial/</a>
             <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2019/09/25/MacOS-Tutorial/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
