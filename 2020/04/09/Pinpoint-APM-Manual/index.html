@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="斐讯k2路由器通过ch340编程板刷入breed一. 背景 2017年在jd自营买的斐讯k2路由器自动更新固件到22.6.532.231，网络经常会出现卡顿，于是动了刷机的心思">
+<meta name="description" content="Pinpoint  APM  Manual背景 在日常开发过程中需要通过APM(Application Performance Management)工具来监控我们部署的应用服务是否稳定正常，目前常用的有skywalking和pinpint">
 <meta name="keywords" content="life">
 <meta property="og:type" content="article">
-<meta property="og:title" content="斐讯k2通过编程器刷breed后升级padavan固件">
-<meta property="og:url" content="https://codewindy.github.io/2019/12/15/k2-breed-padavan/index.html">
+<meta property="og:title" content="Pinpoint 安装部署教程">
+<meta property="og:url" content="https://codewindy.github.io/2020/04/09/Pinpoint-APM-Manual/index.html">
 <meta property="og:site_name" content="codewindy">
-<meta property="og:description" content="斐讯k2路由器通过ch340编程板刷入breed一. 背景 2017年在jd自营买的斐讯k2路由器自动更新固件到22.6.532.231，网络经常会出现卡顿，于是动了刷机的心思">
+<meta property="og:description" content="Pinpoint  APM  Manual背景 在日常开发过程中需要通过APM(Application Performance Management)工具来监控我们部署的应用服务是否稳定正常，目前常用的有skywalking和pinpint">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-23T04:41:20.647Z">
+<meta property="og:updated_time" content="2020-04-09T14:04:35.180Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="斐讯k2通过编程器刷breed后升级padavan固件">
-<meta name="twitter:description" content="斐讯k2路由器通过ch340编程板刷入breed一. 背景 2017年在jd自营买的斐讯k2路由器自动更新固件到22.6.532.231，网络经常会出现卡顿，于是动了刷机的心思">
+<meta name="twitter:title" content="Pinpoint 安装部署教程">
+<meta name="twitter:description" content="Pinpoint  APM  Manual背景 在日常开发过程中需要通过APM(Application Performance Management)工具来监控我们部署的应用服务是否稳定正常，目前常用的有skywalking和pinpint">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -51,7 +51,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>斐讯k2通过编程器刷breed后升级padavan固件 | codewindy</title>
+<title>Pinpoint 安装部署教程 | codewindy</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -235,11 +235,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-k2-breed-padavan" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Pinpoint-APM-Manual" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/15/k2-breed-padavan/" class="article-date">
-      <time datetime="2019-12-15T13:07:45.000Z" itemprop="datePublished">2019-12-15</time>
+      <a href="/2020/04/09/Pinpoint-APM-Manual/" class="article-date">
+      <time datetime="2020-04-09T13:46:24.000Z" itemprop="datePublished">2020-04-09</time>
 </a>
 
 
@@ -252,7 +252,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      斐讯k2通过编程器刷breed后升级padavan固件
+      Pinpoint 安装部署教程
     </h1>
   
 
@@ -273,35 +273,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="斐讯k2路由器通过ch340编程板刷入breed"><a href="#斐讯k2路由器通过ch340编程板刷入breed" class="headerlink" title="斐讯k2路由器通过ch340编程板刷入breed"></a>斐讯k2路由器通过ch340编程板刷入breed</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
-<li>2017年在<code>jd自营</code>买的斐讯k2路由器自动更新固件到<code>22.6.532.231</code>，网络经常会出现卡顿，于是动了刷机的心思<a id="more"></a>
-<h1 id="二-准备条件"><a href="#二-准备条件" class="headerlink" title="二. 准备条件"></a>二. 准备条件</h1></li>
-<li>先认真阅读这篇恩山论坛的教程  <font color="red"><a href="https://www.right.com.cn/FORUM/thread-636761-1-1.html" target="_blank" rel="noopener"><strong>航校门口二楼修</strong></a></font></li>
-<li>淘宝购买 ch340编程板并下载<a href="http://www.wch.cn/products/CH340.html" target="_blank" rel="noopener">相应的驱动</a>也可以找卖家要</li>
-<li>下载<a href="http://tftpd32.jounin.net/" target="_blank" rel="noopener">tftpd32</a> 服务器</li>
-<li>下载k2 对应的 <a href="https://github.com/hanwckf/rt-n56u/releases" target="_blank" rel="noopener">老毛子padavan 固件</a>/或<a href="http://dl.geewan.com/" target="_blank" rel="noopener">极玩固件</a></li>
-<li>下载<a href="https://github.com/codewindy/mac_soft/blob/master/Xshell-6.0.0181p_2.exe.7z" target="_blank" rel="noopener">xshell免费版</a>或secureCRT或putty等可以连接 串口软件</li>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="Pinpoint-APM-Manual"><a href="#Pinpoint-APM-Manual" class="headerlink" title="Pinpoint  APM  Manual"></a>Pinpoint  APM  Manual</h2><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><ul>
+<li>在日常开发过程中需要通过<code>APM(Application Performance Management)</code>工具来监控我们部署的应用服务是否稳定正常，目前常用的有<code>skywalking</code>和<code>pinpint</code><a id="more"></a>
+<h1 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h1></li>
+<li>CentOS 8</li>
+<li>JDK1.8</li>
+<li>Tomcat 9</li>
+<li>pinpoint 2.0.1源码包</li>
+<li>pinpoint agent 2.0.1</li>
+<li>pinpoint collector 2.0.1</li>
+<li>pinpoint web 2.0.1</li>
+<li>hbase 2.2.4<h1 id="安装部署"><a href="#安装部署" class="headerlink" title="安装部署"></a>安装部署</h1></li>
+<li>首先安装jdk，配置java 环境</li>
+<li>解压hbase，安装部署并能 打开 <code>http://127.0.0.1:16010/master-status</code> 查看hbase web管控台</li>
+<li>解压tomcat并将collector和web分别部署到webapps里面</li>
+<li>打包springboot项目并整合agent参数<code>java -javaagent:/pinpoint-agent/pinpoint-bootstrap-1.6.2.jar -Dpinpoint.agentId=spring-boot-app -Dpinpoint.applicationName=spring-boot-app -jar spring-boot-docker-example-1.0.jar</code></li>
 </ul>
-<h1 id="三-操作"><a href="#三-操作" class="headerlink" title="三. 操作"></a>三. 操作</h1><ul>
-<li>关闭win10防火墙，总共需要关闭三个地方</li>
-<li>安装ch340驱动 <code>win+pause</code>打开win10属性后点击设备管理器里面会多一个串口，短接5v <strong>注意接好线后只会亮一个红灯，我试了2个晚上，第一次错以为要三个灯全部亮，其实还是接线的问题浪费大量时间</strong></li>
-<li>插入ch340，并打开xshell按serial串口方式接入</li>
-<li>给k2路由器接电然后一直按9就行了，后面直接输入路由器的ip地址和breed.bin输入成功</li>
-<li>断电然后按住reset按钮5s 后 等路由器重启之后xshell会打印出<code>breed&gt;</code>成功进入breed，后面可以刷入任意固件了<h1 id="四-问题解决"><a href="#四-问题解决" class="headerlink" title="四. 问题解决"></a>四. 问题解决</h1></li>
-<li><code>按9 没反应一直使用默认的3 启动的</code>是因为淘宝5块钱买的ch340 杜邦线是母对母，需要自己额外买母对公或者自己把线割开用铜丝接入*<em>是线跟编程器接触不良导致的rx线信号没有传入，需要重新插好线，电源短接5v *</em></li>
-<li>刷完<code>padavan 老毛子固件</code>之后需要重置reset 到出厂设置，然后设置Wi-Fi 信号地区选择 <strong>Australia</strong><h1 id="五-参考"><a href="#五-参考" class="headerlink" title="五. 参考"></a>五. 参考</h1></li>
-<li><a href="https://www.right.com.cn/FORUM/thread-636761-1-1.html" target="_blank" rel="noopener">https://www.right.com.cn/FORUM/thread-636761-1-1.html</a></li>
-<li><a href="http://www.wch.cn/products/CH340.html" target="_blank" rel="noopener">http://www.wch.cn/products/CH340.html</a> 编程器板驱动</li>
-<li><a href="https://github.com/codewindy/mac_soft/blob/master/Xshell-6.0.0181p_2.exe.7z" target="_blank" rel="noopener">https://github.com/codewindy/mac_soft/blob/master/Xshell-6.0.0181p_2.exe.7z</a> xhell 串口模式连接</li>
-<li><a href="http://tftpd32.jounin.net/" target="_blank" rel="noopener">http://tftpd32.jounin.net/</a> tftp服务器</li>
-<li><a href="https://github.com/hanwckf/rt-n56u/releases" target="_blank" rel="noopener">https://github.com/hanwckf/rt-n56u/releases</a> k2刷机固件</li>
-<li><a href="http://dl.geewan.com/" target="_blank" rel="noopener">http://dl.geewan.com/</a> 极玩固件</li>
-<li><a href="https://github.com/codewindy/soft-common/blob/master/k2_breed_padavan.7z" target="_blank" rel="noopener">https://github.com/codewindy/soft-common/blob/master/k2_breed_padavan.7z</a></li>
-<li><a href="http://opt.cn2qq.com/padavan/" target="_blank" rel="noopener">http://opt.cn2qq.com/padavan/</a></li>
-<li><a href="https://www.right.com.cn/FORUM/thread-636761-1-1.html" target="_blank" rel="noopener">https://www.right.com.cn/FORUM/thread-636761-1-1.html</a></li>
-<li><a href="http://www.duomingxing.com/down/mtk68.php" target="_blank" rel="noopener">www.duomingxing.com/down/mtk68.php</a></li>
-<li><a href="https://www.mingjinglu.com/write/548.html" target="_blank" rel="noopener">k2p官改固件下载</a></li>
-<li><a href="https://github.com/mayunbaba2/K2" target="_blank" rel="noopener">K2官改固件github下载</a></li>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://github.com/ameizi/DevArticles/issues/166" target="_blank" rel="noopener">pinpoint 安装部署教程</a></li>
+<li><a href="https://github.com/naver/pinpoint/releases" target="_blank" rel="noopener">pinpoint-agent-collector -web下载</a></li>
 </ul>
 
       
@@ -311,13 +301,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/15/k2-breed-padavan/">斐讯k2通过编程器刷breed后升级padavan固件</a></p>
+        <p><span>本文标题:</span><a href="/2020/04/09/Pinpoint-APM-Manual/">Pinpoint 安装部署教程</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
-        <p><span>发布时间:</span>2019-12-15, 21:07:45</p>
-        <p><span>最后更新:</span>2020-02-23, 12:41:20</p>
+        <p><span>发布时间:</span>2020-04-09, 21:46:24</p>
+        <p><span>最后更新:</span>2020-04-09, 22:04:35</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/15/k2-breed-padavan/" title="斐讯k2通过编程器刷breed后升级padavan固件">https://codewindy.github.io/2019/12/15/k2-breed-padavan/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2019/12/15/k2-breed-padavan/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/04/09/Pinpoint-APM-Manual/" title="Pinpoint 安装部署教程">https://codewindy.github.io/2020/04/09/Pinpoint-APM-Manual/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2020/04/09/Pinpoint-APM-Manual/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -330,15 +320,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/12/28/install-postgresql-from-source-code/">
-                    Linux源码编译安装postgres
+                <a href="/2020/04/12/Temp-File-SMS-Email/">
+                    在线临时文件短信邮箱服务
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/11/21/Terminal-Proxy/">
-                    MacOS 下 Terminal 设置代理上网
+                <a href="/2020/01/29/weather-affect-your-wifi/">
+                    雷雨天温度湿度会影响Wi-Fi
                 </a>
             </div>
         
@@ -381,7 +371,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#斐讯k2路由器通过ch340编程板刷入breed"><span class="toc-number">1.</span> <span class="toc-text">斐讯k2路由器通过ch340编程板刷入breed</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-number"></span> <span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-准备条件"><span class="toc-number"></span> <span class="toc-text">二. 准备条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-操作"><span class="toc-number"></span> <span class="toc-text">三. 操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-问题解决"><span class="toc-number"></span> <span class="toc-text">四. 问题解决</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-参考"><span class="toc-number"></span> <span class="toc-text">五. 参考</span></a>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pinpoint-APM-Manual"><span class="toc-number">1.</span> <span class="toc-text">Pinpoint  APM  Manual</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-number"></span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#准备条件"><span class="toc-number"></span> <span class="toc-text">准备条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装部署"><span class="toc-number"></span> <span class="toc-text">安装部署</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-number"></span> <span class="toc-text">参考</span></a>
         
     </div>
     <style>
@@ -429,7 +419,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/28/install-postgresql-from-source-code/" title="上一篇: Linux源码编译安装postgres">
+            <a href="/2020/04/12/Temp-File-SMS-Email/" title="上一篇: 在线临时文件短信邮箱服务">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -437,7 +427,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/11/21/Terminal-Proxy/" title="下一篇: MacOS 下 Terminal 设置代理上网">
+            <a href="/2020/01/29/weather-affect-your-wifi/" title="下一篇: 雷雨天温度湿度会影响Wi-Fi">
                 <i class="fa fa-angle-right"></i>
             </a>
         

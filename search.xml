@@ -23,6 +23,25 @@
     
     
     <entry>
+      <title>Pinpoint 安装部署教程</title>
+      <link href="/2020/04/09/Pinpoint-APM-Manual/"/>
+      <url>/2020/04/09/Pinpoint-APM-Manual/</url>
+      
+        <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="Pinpoint-APM-Manual"><a href="#Pinpoint-APM-Manual" class="headerlink" title="Pinpoint  APM  Manual"></a>Pinpoint  APM  Manual</h2><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><ul><li>在日常开发过程中需要通过<code>APM(Application Performance Management)</code>工具来监控我们部署的应用服务是否稳定正常，目前常用的有<code>skywalking</code>和<code>pinpint</code><a id="more"></a><h1 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h1></li><li>CentOS 8</li><li>JDK1.8</li><li>Tomcat 9</li><li>pinpoint 2.0.1源码包</li><li>pinpoint agent 2.0.1</li><li>pinpoint collector 2.0.1</li><li>pinpoint web 2.0.1</li><li>hbase 2.2.4<h1 id="安装部署"><a href="#安装部署" class="headerlink" title="安装部署"></a>安装部署</h1></li><li>首先安装jdk，配置java 环境</li><li>解压hbase，安装部署并能 打开 <code>http://127.0.0.1:16010/master-status</code> 查看hbase web管控台</li><li>解压tomcat并将collector和web分别部署到webapps里面</li><li>打包springboot项目并整合agent参数<code>java -javaagent:/pinpoint-agent/pinpoint-bootstrap-1.6.2.jar -Dpinpoint.agentId=spring-boot-app -Dpinpoint.applicationName=spring-boot-app -jar spring-boot-docker-example-1.0.jar</code></li></ul><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul><li><a href="https://github.com/ameizi/DevArticles/issues/166" target="_blank" rel="noopener">pinpoint 安装部署教程</a></li><li><a href="https://github.com/naver/pinpoint/releases" target="_blank" rel="noopener">pinpoint-agent-collector -web下载</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> life </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>雷雨天温度湿度会影响Wi-Fi</title>
       <link href="/2020/01/29/weather-affect-your-wifi/"/>
       <url>/2020/01/29/weather-affect-your-wifi/</url>

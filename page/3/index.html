@@ -237,6 +237,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Oracle-JDK-Download" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/11/21/Oracle-JDK-Download/" class="article-date">
+      <time datetime="2017-11-21T13:35:27.000Z" itemprop="datePublished">2017-11-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/21/Oracle-JDK-Download/">不登陆Oracle下载JDK</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="Oracle-JDK-Download-No-Need-Login"><a href="#Oracle-JDK-Download-No-Need-Login" class="headerlink" title="Oracle JDK Download No Need Login"></a>Oracle JDK Download No Need Login</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
+<li>目前下载Oracle JDK 都需要登陆才能下载，无意间发现在GitHub上有 </li>
+<li>下载地址是 <code>https://github.com/frekele/oracle-java/releases</code>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jdk/">jdk</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2017/11/21/Oracle-JDK-Download/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-JVM-Optimized" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -832,82 +898,6 @@
       
         <p class="article-more-link">
           <a href="/2016/08/16/Nginx01/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-MySQL-Master-Slave-Sync" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/12/MySQL-Master-Slave-Sync/" class="article-date">
-      <time datetime="2016-05-12T08:38:45.000Z" itemprop="datePublished">2016-05-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/12/MySQL-Master-Slave-Sync/">MySQL-Master-Slave-Sync</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong>TODO_LIST</strong></p>
-<ol>
-<li><p>springmvc 的servlet启动参数 关系</p>
-</li>
-<li><p>整理笔记上线到网上blog</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">springmvc的servlet 开机启动配置</span><br><span class="line">load-on-startup标记容器是否在启动的时候实例化并调用其init()方法的优先级。</span><br><span class="line">它的值表示servlet应该被载入的顺序</span><br><span class="line">当值为0或者大于0时，表示容器在应用启动时就加载并初始化这个servlet；</span><br><span class="line">如果值小于0或未指定时，则表示只有在第一次请求的容器才在该servlet调用初始化函数</span><br><span class="line">正值越小，servlet的优先级越高，应用启动时就越先加载。</span><br><span class="line">值相同时，容器就会自己选择顺序来加载。</span><br><span class="line">SELECT NOW(); 选择现在的时间在redis 里面设置一个倒计时做秒单</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>mysql读写分离的背景介绍</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">服务器压力大,需要读写分离,负载均衡</span><br><span class="line">主服务器通过写入bin-log文件实现[通过授权在master 服务器创建帐号]传递给slave 服务器读取</span><br><span class="line">从服务器读 bin-log 写</span><br><span class="line"> Relay_Master_Log_File: mysql-bin.000050</span><br><span class="line">     Slave_IO_Running: Yes</span><br><span class="line">    Slave_SQL_Running: Yes</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h2 id="一-mysql-主从同步linux和window配置-前提概要实现主从同步-读写分离"><a href="#一-mysql-主从同步linux和window配置-前提概要实现主从同步-读写分离" class="headerlink" title="一 .mysql 主从同步linux和window配置(前提概要实现主从同步,读写分离)"></a>一 .mysql 主从同步linux和window配置(前提概要实现主从同步,读写分离)</h2>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2016/05/12/MySQL-Master-Slave-Sync/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
