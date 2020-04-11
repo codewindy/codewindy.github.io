@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="codewindy">
 <meta property="og:description" content="Pinpoint  APM  Manual背景 在日常开发过程中需要通过APM(Application Performance Management)工具来监控我们部署的应用服务是否稳定正常，目前常用的有skywalking和pinpint">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-09T14:04:35.180Z">
+<meta property="og:updated_time" content="2020-04-11T02:54:09.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pinpoint 安装部署教程">
 <meta name="twitter:description" content="Pinpoint  APM  Manual背景 在日常开发过程中需要通过APM(Application Performance Management)工具来监控我们部署的应用服务是否稳定正常，目前常用的有skywalking和pinpint">
@@ -274,20 +274,39 @@
       
           
         <script src="/assets/js/APlayer.min.js"> </script><h2 id="Pinpoint-APM-Manual"><a href="#Pinpoint-APM-Manual" class="headerlink" title="Pinpoint  APM  Manual"></a>Pinpoint  APM  Manual</h2><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><ul>
-<li>在日常开发过程中需要通过<code>APM(Application Performance Management)</code>工具来监控我们部署的应用服务是否稳定正常，目前常用的有<code>skywalking</code>和<code>pinpint</code><a id="more"></a>
+<li><p>在日常开发过程中需要通过<code>APM(Application Performance Management)</code>工具来监控我们部署的应用服务是否稳定正常，目前常用的有<code>skywalking</code>和<code>pinpint</code></p>
+<a id="more"></a>
 <h1 id="准备条件"><a href="#准备条件" class="headerlink" title="准备条件"></a>准备条件</h1></li>
-<li>CentOS 8</li>
-<li>JDK1.8</li>
-<li>Tomcat 9</li>
-<li>pinpoint 2.0.1源码包</li>
-<li>pinpoint agent 2.0.1</li>
-<li>pinpoint collector 2.0.1</li>
-<li>pinpoint web 2.0.1</li>
-<li>hbase 2.2.4<h1 id="安装部署"><a href="#安装部署" class="headerlink" title="安装部署"></a>安装部署</h1></li>
-<li>首先安装jdk，配置java 环境</li>
-<li>解压hbase，安装部署并能 打开 <code>http://127.0.0.1:16010/master-status</code> 查看hbase web管控台</li>
-<li>解压tomcat并将collector和web分别部署到webapps里面</li>
-<li>打包springboot项目并整合agent参数<code>java -javaagent:/pinpoint-agent/pinpoint-bootstrap-1.6.2.jar -Dpinpoint.agentId=spring-boot-app -Dpinpoint.applicationName=spring-boot-app -jar spring-boot-docker-example-1.0.jar</code></li>
+<li><p><a href="http://mirrors.aliyun.com/centos/7.7.1908/isos/x86_64/" target="_blank" rel="noopener">CentOS 7</a></p>
+</li>
+<li><p><a href="https://injdk.cn/" target="_blank" rel="noopener">JDK1.8</a></p>
+</li>
+<li><p><a href="https://www.jetbrains.com/idea/download/#section=mac" target="_blank" rel="noopener">IntelliJ IDEA</a></p>
+</li>
+<li><p><a href="https://mirror.olnevhost.net/pub/apache/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz" target="_blank" rel="noopener">Tomcat 9</a></p>
+</li>
+<li><p><a href="https://github.com/naver/pinpoint/releases/download/v2.0.1/pinpoint-agent-2.0.1.tar.gz" target="_blank" rel="noopener">pinpoint-agent-2.0.1.tar.gz</a>  源码包</p>
+</li>
+<li><p><a href="https://github.com/naver/pinpoint/releases/download/v2.0.1/pinpoint-collector-2.0.1.war" target="_blank" rel="noopener">pinpoint-collector-2.0.1.war</a></p>
+</li>
+<li><p><a href="https://github.com/naver/pinpoint/releases/download/v2.0.1/pinpoint-web-2.0.1.war" target="_blank" rel="noopener">pinpoint-web-2.0.1.war</a></p>
+</li>
+<li><p><a href="http://hbase.apache.org/downloads.html" target="_blank" rel="noopener">hbase 2.2.4</a></p>
+</li>
+<li><p><a href="https://downloads.apache.org/zookeeper/zookeeper-3.6.0/apache-zookeeper-3.6.0-bin.tar.gz" target="_blank" rel="noopener">Apache ZooKeeper 3.6.0 </a> 单机部署的话也可以使用<code>hbase内置的zookeeper</code></p>
+<h1 id="安装部署"><a href="#安装部署" class="headerlink" title="安装部署"></a>安装部署</h1></li>
+<li><p>首先安装jdk，配置java 环境</p>
+</li>
+<li><p>解压hbase，安装部署并能 打开 <code>http://127.0.0.1:16010/master-status</code> 查看hbase web管控台</p>
+</li>
+<li><p>解压tomcat并将collector和web分别部署到webapps里面</p>
+</li>
+<li><p>打包springboot项目并整合agent参数<code>java -javaagent:/root/pinpoint-agent-2.0.1/pinpoint-bootstrap-2.0.1.jar -Dpinpoint.agentId=codewindy-mongodb -Dpinpoint.applicationName=codewindy-mongodb -jar mongodb-1.0.jar</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;hbase.rootdir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;/root/hbase-2.2.4/data/hbase&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;/root/hbase-2.2.4/data/zookeeper&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;hbase.master.port&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;60000&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;hbase.regionserver.port&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;60020&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br><span class="line"></span><br><span class="line">java -javaagent:/root/pinpoint-agent-2.0.1/pinpoint-bootstrap-2.0.1.jar -Dpinpoint.agentId=codewindy-mongodb -Dpinpoint.applicationName=codewindy-mongodb -jar mongodb-1.0.jar</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
 </ul>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
 <li><a href="https://github.com/ameizi/DevArticles/issues/166" target="_blank" rel="noopener">pinpoint 安装部署教程</a></li>
@@ -304,7 +323,7 @@
         <p><span>本文标题:</span><a href="/2020/04/09/Pinpoint-APM-Manual/">Pinpoint 安装部署教程</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
         <p><span>发布时间:</span>2020-04-09, 21:46:24</p>
-        <p><span>最后更新:</span>2020-04-09, 22:04:35</p>
+        <p><span>最后更新:</span>2020-04-11, 10:54:09</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/04/09/Pinpoint-APM-Manual/" title="Pinpoint 安装部署教程">https://codewindy.github.io/2020/04/09/Pinpoint-APM-Manual/</a>
             <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2020/04/09/Pinpoint-APM-Manual/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
