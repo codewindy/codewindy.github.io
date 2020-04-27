@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="codewindy">
 <meta property="og:description" content="Redis 的数据结构 redis 是以 key-value 的存储系统，其中 value 支持五种数据类型。  字符串（String） 哈希（hash） 字符串列表（list） 字符串集合（set） 有序字符串集合（sorted set）   定义key的注意事项  key 最好不超过1024个字节，否则会降低查询效率同时消耗更多的内存。 key 要做到见名知意，在项目中最好统一规范。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-05T06:52:28.000Z">
+<meta property="og:updated_time" content="2020-04-27T14:09:46.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis-Basic">
 <meta name="twitter:description" content="Redis 的数据结构 redis 是以 key-value 的存储系统，其中 value 支持五种数据类型。  字符串（String） 哈希（hash） 字符串列表（list） 字符串集合（set） 有序字符串集合（sorted set）   定义key的注意事项  key 最好不超过1024个字节，否则会降低查询效率同时消耗更多的内存。 key 要做到见名知意，在项目中最好统一规范。">
@@ -441,7 +441,7 @@
 <hr>
 <h2 id="集合（set）"><a href="#集合（set）" class="headerlink" title=" 集合（set）"></a> 集合（set）</h2><ul>
 <li>在 Redis 中，我们可以将 Set 类型看作没有排序的字符集合，和 List 类型一样，我们也可以在该类型的数据值上执行添加、删除或判断某一元素是否存在等操作。这些操作的时间复杂度为 O(1)，即常量时间内完成。Set 可包含的最大元素数量是 4294967295。</li>
-<li>和List集合不同的是，<font color="red">Set集合中不允许出现重复的元素</font>。相比 List 类型，Set 类型在功能上还存在着一些非常重要的特性，即在服务端完成多个 Set 之间的聚合计算操作，如 unions、intersections、defferences。由于这些操作均在服务端完成，因此效率极高，而且也节省了大量的网络 IO 开销。</li>
+<li>和List集合不同的是，<font style="color:black; background:yellow">Set集合中不允许出现重复的元素</font>。相比 List 类型，Set 类型在功能上还存在着一些非常重要的特性，即在服务端完成多个 Set 之间的聚合计算操作，如 unions、intersections、defferences。由于这些操作均在服务端完成，因此效率极高，而且也节省了大量的网络 IO 开销。</li>
 </ul>
 <hr>
 <h3 id="存储（sadd）"><a href="#存储（sadd）" class="headerlink" title="存储（sadd）"></a><strong>存储（sadd）</strong></h3><p><code>sadd</code> <code>key</code> <code>value</code> <code>value</code> <code>...</code></p>
@@ -586,7 +586,7 @@
         <p><span>本文标题:</span><a href="/2016/03/01/Redis-Basic/">Redis-Basic</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
         <p><span>发布时间:</span>2016-03-01, 14:48:00</p>
-        <p><span>最后更新:</span>2017-08-05, 14:52:28</p>
+        <p><span>最后更新:</span>2020-04-27, 22:09:46</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/01/Redis-Basic/" title="Redis-Basic">https://codewindy.github.io/2016/03/01/Redis-Basic/</a>
             <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2016/03/01/Redis-Basic/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

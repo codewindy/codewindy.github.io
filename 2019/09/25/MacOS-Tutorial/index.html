@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/09/25/DicFNPE1T6hbzLx.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/11/20/EVbGyz3jLYalPcq.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/11/21/Ot82967gcQGFPWJ.jpg">
-<meta property="og:updated_time" content="2020-03-11T13:52:50.162Z">
+<meta property="og:updated_time" content="2020-04-27T14:09:46.298Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="黑苹果安装教程">
 <meta name="twitter:description" content="MacOS Install Tutorial一. 背景 原先准备入手thinkpad x1 extreme gen2或MacBook pro，都需要额外买扩展坞迫于预算有限于是默默寻找黑苹果的适配机型z7-kp7gz">
@@ -298,7 +298,7 @@
 <li>bcm94360cs2 NGFF转接卡 请自己淘宝</li>
 </ul>
 <h1 id="三-安装过程"><a href="#三-安装过程" class="headerlink" title="三.安装过程"></a>三.安装过程</h1><ul>
-<li><font color="red">注意安装过程中不需要安装多次，即第一次从u盘启动，格式化硬盘后后面都是boot from mac启动</font></li>
+<li><font style="color:black; background:yellow">注意安装过程中不需要安装多次，即第一次从u盘启动，格式化硬盘后后面都是boot from mac启动</font></li>
 <li>将电脑 D面的11个螺丝取下，断开内置电源排线，替换内置的无线网卡Intel AC9560为淘宝165元买的白苹果<code>bcm94360cs2</code>，注意安装NGFF转接卡的时候固定螺丝用电胶带绝缘处理，黑白色的天线也需要替换，向上拔就行</li>
 <li><img src="https://i.loli.net/2019/09/24/A1YPOstH7yBRUCN.jpg" alt="IMG_6578.JPG"></li>
 <li><img src="https://i.loli.net/2019/09/25/XIdeuJBRcy4pjri.jpg" alt="51569325210_.pic_hd copy.jpg"></li>
@@ -321,7 +321,7 @@
 </li>
 <li><p><img src="https://i.loli.net/2020/03/10/qoLNDKrF1BUXvjg.jpg" alt="Xnip2020-03-03_22-30-12_cpu"></p>
 <h1 id="六-问题解决"><a href="#六-问题解决" class="headerlink" title="六. 问题解决"></a>六. 问题解决</h1></li>
-<li><p>常见：安装完成后重启发生内核 panic，卡在 <code>VTDecoderXPCService</code> 错误：请在 Clover 界面按 O，定位到显卡设置（带有 Graphics 字样），勾选 <strong>inject-intel</strong>，并修改 <strong>-platform-id</strong> 从 <strong>0x12345678</strong> 修改为 <font color="red">0x3E9B0000</font></p>
+<li><p>常见：安装完成后重启发生内核 panic，卡在 <code>VTDecoderXPCService</code> 错误：请在 Clover 界面按 O，定位到显卡设置（带有 Graphics 字样），勾选 <strong>inject-intel</strong>，并修改 <strong>-platform-id</strong> 从 <strong>0x12345678</strong> 修改为 <font style="color:black; background:yellow">0x3E9B0000</font></p>
 </li>
 <li><p><img src="https://i.loli.net/2019/09/25/DicFNPE1T6hbzLx.jpg" alt="IMG_1005.JPG"></p>
 </li>
@@ -333,7 +333,7 @@
 </li>
 </ul>
 <h1 id="七-升级tips"><a href="#七-升级tips" class="headerlink" title="七. 升级tips"></a>七. 升级tips</h1><ul>
-<li><p><font color="red">如果你是第一次替换完配置文件，或者你在系统内 OTA 更新了新版本的系统，那么请在终端中执行以下命令重建 kext 缓存，并重启电脑：</font></p>
+<li><p><font style="color:black; background:yellow">如果你是第一次替换完配置文件，或者你在系统内 OTA 更新了新版本的系统，那么请在终端中执行以下命令重建 kext 缓存，并重启电脑：</font></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo kextcache -i /</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>解决电脑睡眠后摄像头问题</p>
@@ -385,7 +385,7 @@
         <p><span>本文标题:</span><a href="/2019/09/25/MacOS-Tutorial/">黑苹果安装教程</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
         <p><span>发布时间:</span>2019-09-25, 22:06:10</p>
-        <p><span>最后更新:</span>2020-03-11, 21:52:50</p>
+        <p><span>最后更新:</span>2020-04-27, 22:09:46</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/09/25/MacOS-Tutorial/" title="黑苹果安装教程">https://codewindy.github.io/2019/09/25/MacOS-Tutorial/</a>
             <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2019/09/25/MacOS-Tutorial/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
