@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Linux 版本间区别</title>
+      <link href="/2020/05/18/Linux-kernel-diff/"/>
+      <url>/2020/05/18/Linux-kernel-diff/</url>
+      
+        <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="Linux-kernel-diff"><a href="#Linux-kernel-diff" class="headerlink" title="Linux kernel diff"></a>Linux kernel diff</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li>Linux Kernel 各版本间的区别和特性<a id="more"></a></li></ul><h1 id="二-参考"><a href="#二-参考" class="headerlink" title="二. 参考"></a>二. 参考</h1><ul><li><a href="https://www.cnblogs.com/tcicy/p/8461344.html" target="_blank" rel="noopener">Linux 2.6-5.x区别</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> kernel </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>RouterOS 常用配置优化和安全加固</title>
       <link href="/2020/04/18/RouterOS-Optimized/"/>
       <url>/2020/04/18/RouterOS-Optimized/</url>
