@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="codewindy">
 <meta property="og:description" content="Squashes  Bug一. 需要注意⚠️的问题 因为八进制导致的问题，开发中尽量使用String来定义code变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-04T08:09:35.437Z">
+<meta property="og:updated_time" content="2020-07-05T02:32:00.698Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bug汇总">
 <meta name="twitter:description" content="Squashes  Bug一. 需要注意⚠️的问题 因为八进制导致的问题，开发中尽量使用String来定义code变量">
@@ -274,17 +274,14 @@
       
           
         <script src="/assets/js/APlayer.min.js"> </script><h2 id="Squashes-Bug"><a href="#Squashes-Bug" class="headerlink" title=" Squashes  Bug"></a> Squashes  Bug</h2><h1 id="一-需要注意⚠️的问题"><a href="#一-需要注意⚠️的问题" class="headerlink" title="一. 需要注意⚠️的问题"></a>一. 需要注意⚠️的问题</h1><ul>
-<li><p>因为八进制导致的问题，开发中尽量使用String来定义code变量</p>
-<a id="more"></a>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer code =<span class="number">001001</span>;</span><br><span class="line"><span class="comment">// 结果确是 被转换成8进制code = 513</span></span><br><span class="line">System.out.println(<span class="string">"code = "</span> + code);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>数据库字段和代码编写的过程中多注意 <code>数据可能包含多余的空格</code> 导致的问题</p>
-</li>
-<li><p>在前端传时间参数在后台需要进行处理TimeZone时区的问题</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入hutool依赖</span></span><br><span class="line">DateUtil.beginOfDay(startDate);</span><br><span class="line">DateUtil.endOfDay(endDate);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>maven依赖项目common模块</code> 没有deploy到仓库, 导致打包的应用有代码没更新出错</p>
-</li>
+<li>因为八进制导致的问题，开发中尽量使用String来定义code变量<a id="more"></a></li>
+<li>数据库字段和代码编写的过程中多注意 <font color="red">数据可能包含多余的空格</font>导致的问题</li>
+<li>在前端传时间参数在后台需要进行处理TimeZone时区的问题</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Integer code =<span class="number">001001</span>;</span><br><span class="line"><span class="comment">// 结果确是 被转换成8进制code = 513</span></span><br><span class="line">System.out.println(<span class="string">"code = "</span> + code);</span><br><span class="line"><span class="comment">// 引入hutool依赖</span></span><br><span class="line">DateUtil.beginOfDay(startDate);</span><br><span class="line">DateUtil.endOfDay(endDate);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><font color="blue">maven依赖项目common模块</font> 没有deploy到仓库, 导致打包的应用有代码没更新出错</li>
 </ul>
 
       
@@ -297,7 +294,7 @@
         <p><span>本文标题:</span><a href="/2020/07/04/Squashes-Bugs/">bug汇总</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
         <p><span>发布时间:</span>2020-07-04, 13:42:16</p>
-        <p><span>最后更新:</span>2020-07-04, 16:09:35</p>
+        <p><span>最后更新:</span>2020-07-05, 10:32:00</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/07/04/Squashes-Bugs/" title="bug汇总">https://codewindy.github.io/2020/07/04/Squashes-Bugs/</a>
             <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2020/07/04/Squashes-Bugs/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
