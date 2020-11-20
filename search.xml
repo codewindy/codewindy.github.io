@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>springboot-rabbitmq-tutorials</title>
+      <link href="/2020/11/20/springboot-rabbitmq-tutorials/"/>
+      <url>/2020/11/20/springboot-rabbitmq-tutorials/</url>
+      
+        <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li>springboot项目整合rabbitmq 基础代码实现系统间解耦合，削峰填谷<a id="more"></a><h1 id="二-实现"><a href="#二-实现" class="headerlink" title="二. 实现"></a>二. 实现</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">死信队列 听上去像 消息“死”了     其实也有点这个意思，死信队列  是 当消息在一个队列 因为下列原因：</span><br><span class="line"></span><br><span class="line">消息被拒绝（basic.reject/ basic.nack）并且不再重新投递 requeue=<span class="keyword">false</span></span><br><span class="line">消息超期 (rabbitmq  Time-To-Live -&gt; messageProperties.setExpiration()) </span><br><span class="line">队列超载</span><br></pre></td></tr></table></figure></li></ul><h1 id="三-参考"><a href="#三-参考" class="headerlink" title="三. 参考"></a>三. 参考</h1><ul><li><a href="https://my.oschina.net/10000000000/blog/1626278" target="_blank" rel="noopener">springboot rabbitmq 之死信队列 延迟消费消息</a></li><li><a href="https://my.oschina.net/10000000000/blog/1624963" target="_blank" rel="noopener">springboot 集成rabbitmq</a></li><li><a href="https://github.com/codewindy/mac_soft/blob/master/rabbitmq_ppt.zip" target="_blank" rel="noopener">rabbitmq_ppt_reference</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> rabbitmq </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>springboot-redis-tips</title>
+      <link href="/2020/11/20/springboot-redis-tips/"/>
+      <url>/2020/11/20/springboot-redis-tips/</url>
+      
+        <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li><code>springboot2.x</code> 之后默认redis客户端不是<code>jedis</code>而是<code>lettuce</code>但是在集群环境中如果有一个节点挂了就会导致服务不可用<a id="more"></a></li></ul><h1 id="二-解决"><a href="#二-解决" class="headerlink" title="二. 解决"></a>二. 解决</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># Example 37. Enabling periodic cluster topology view updates</span><br><span class="line">RedisClusterClient clusterClient = RedisClusterClient.create(RedisURI.create(<span class="string">"localhost"</span>, <span class="number">6379</span>));</span><br><span class="line"></span><br><span class="line">ClusterTopologyRefreshOptions topologyRefreshOptions = ClusterTopologyRefreshOptions.builder()</span><br><span class="line">                                .enablePeriodicRefresh(<span class="number">10</span>, TimeUnit.MINUTES)</span><br><span class="line">                                .build();</span><br><span class="line"></span><br><span class="line">clusterClient.setOptions(ClusterClientOptions.builder()</span><br><span class="line">                                .topologyRefreshOptions(topologyRefreshOptions)</span><br><span class="line">                                .build());</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">clusterClient.shutdown();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Example 38. Enabling adaptive cluster topology view updates</span><br><span class="line">RedisURI node1 = RedisURI.create(<span class="string">"node1"</span>, <span class="number">6379</span>);</span><br><span class="line">RedisURI node2 = RedisURI.create(<span class="string">"node2"</span>, <span class="number">6379</span>);</span><br><span class="line"></span><br><span class="line">RedisClusterClient clusterClient = RedisClusterClient.create(Arrays.asList(node1, node2));</span><br><span class="line"></span><br><span class="line">ClusterTopologyRefreshOptions topologyRefreshOptions = ClusterTopologyRefreshOptions.builder()</span><br><span class="line">                                .enableAdaptiveRefreshTrigger(RefreshTrigger.MOVED_REDIRECT, RefreshTrigger.PERSISTENT_RECONNECTS)</span><br><span class="line">                                .adaptiveRefreshTriggersTimeout(<span class="number">30</span>, TimeUnit.SECONDS)</span><br><span class="line">                                .build();</span><br><span class="line"></span><br><span class="line">clusterClient.setOptions(ClusterClientOptions.builder()</span><br><span class="line">                                .topologyRefreshOptions(topologyRefreshOptions)</span><br><span class="line">                                .build());</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">clusterClient.shutdown();</span><br></pre></td></tr></table></figure><h1 id="三-参考"><a href="#三-参考" class="headerlink" title="三. 参考"></a>三. 参考</h1><ul><li><a href="https://www.colabug.com/2020/0107/6815444/" target="_blank" rel="noopener">redis整合letture自动拓扑更新</a></li><li><a href="https://juejin.cn/post/6844904039096778759" target="_blank" rel="noopener">SpringBoot2.X与redis Lettuce集成踩坑</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>每周跑一次</title>
       <link href="/2020/08/24/running-once-a-week/"/>
       <url>/2020/08/24/running-once-a-week/</url>
