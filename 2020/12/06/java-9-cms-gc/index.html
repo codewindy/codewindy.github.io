@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="Oracle JDK Download No Need Login一. 背景 目前下载Oracle JDK 都需要登陆才能下载，无意间发现在GitHub上有  国内镜像地址 https://injdk.cn/ 下载地址是 https://github.com/frekele/oracle-java/releases">
-<meta name="keywords" content="jdk">
+<meta name="description" content="Java中9种常见的CMS GC问题分析与解决一. 背景 主要针对 Hotspot VM 中“CMS + ParNew”组合的一些使用场景进行总结。重点通过部分源码对根因进行分析以及对排查方法进行总结，排查过程会省略较多，另外本文专业术语较多，有一定的阅读门槛，如未介绍清楚，还请自行查阅相关材料。">
+<meta name="keywords" content="jvm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="不登陆Oracle下载JDK">
-<meta property="og:url" content="https://codewindy.github.io/2017/11/21/Oracle-JDK-Download/index.html">
+<meta property="og:title" content="java-9-cms-gc">
+<meta property="og:url" content="https://codewindy.github.io/2020/12/06/java-9-cms-gc/index.html">
 <meta property="og:site_name" content="codewindy">
-<meta property="og:description" content="Oracle JDK Download No Need Login一. 背景 目前下载Oracle JDK 都需要登陆才能下载，无意间发现在GitHub上有  国内镜像地址 https://injdk.cn/ 下载地址是 https://github.com/frekele/oracle-java/releases">
+<meta property="og:description" content="Java中9种常见的CMS GC问题分析与解决一. 背景 主要针对 Hotspot VM 中“CMS + ParNew”组合的一些使用场景进行总结。重点通过部分源码对根因进行分析以及对排查方法进行总结，排查过程会省略较多，另外本文专业术语较多，有一定的阅读门槛，如未介绍清楚，还请自行查阅相关材料。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/11/21/Qed3YCRy57qpKcM.jpg">
-<meta property="og:updated_time" content="2020-09-02T14:31:14.695Z">
+<meta property="og:updated_time" content="2020-12-06T08:35:15.067Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不登陆Oracle下载JDK">
-<meta name="twitter:description" content="Oracle JDK Download No Need Login一. 背景 目前下载Oracle JDK 都需要登陆才能下载，无意间发现在GitHub上有  国内镜像地址 https://injdk.cn/ 下载地址是 https://github.com/frekele/oracle-java/releases">
-<meta name="twitter:image" content="https://i.loli.net/2019/11/21/Qed3YCRy57qpKcM.jpg">
+<meta name="twitter:title" content="java-9-cms-gc">
+<meta name="twitter:description" content="Java中9种常见的CMS GC问题分析与解决一. 背景 主要针对 Hotspot VM 中“CMS + ParNew”组合的一些使用场景进行总结。重点通过部分源码对根因进行分析以及对排查方法进行总结，排查过程会省略较多，另外本文专业术语较多，有一定的阅读门槛，如未介绍清楚，还请自行查阅相关材料。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -53,7 +51,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>不登陆Oracle下载JDK | codewindy</title>
+<title>java-9-cms-gc | codewindy</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -237,11 +235,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-Oracle-JDK-Download" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-java-9-cms-gc" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/11/21/Oracle-JDK-Download/" class="article-date">
-      <time datetime="2017-11-21T13:35:27.000Z" itemprop="datePublished">2017-11-21</time>
+      <a href="/2020/12/06/java-9-cms-gc/" class="article-date">
+      <time datetime="2020-12-06T08:32:24.000Z" itemprop="datePublished">2020-12-06</time>
 </a>
 
 
@@ -254,7 +252,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      不登陆Oracle下载JDK
+      java-9-cms-gc
     </h1>
   
 
@@ -265,7 +263,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jdk/">jdk</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jvm/">jvm</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -275,18 +273,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><h2 id="Oracle-JDK-Download-No-Need-Login"><a href="#Oracle-JDK-Download-No-Need-Login" class="headerlink" title="Oracle JDK Download No Need Login"></a>Oracle JDK Download No Need Login</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
-<li>目前下载Oracle JDK 都需要登陆才能下载，无意间发现在GitHub上有 </li>
-<li>国内镜像地址 <a href="https://injdk.cn/" target="_blank" rel="noopener">https://injdk.cn/</a></li>
-<li>下载地址是 <code>https://github.com/frekele/oracle-java/releases</code><a id="more"></a></li>
-<li><img src="https://i.loli.net/2019/11/21/Qed3YCRy57qpKcM.jpg" alt="Xnip2019-11-21_23-10-25.jpg"><!--more-->
-
-</li>
-</ul>
-<h1 id="二-参考"><a href="#二-参考" class="headerlink" title="二. 参考"></a>二. 参考</h1><ul>
-<li><a href="https://www.kagura.me/dev/20190424161314.html" target="_blank" rel="noopener">鹞之神乐</a></li>
-<li><a href="https://github.com/frekele/oracle-java/releases" target="_blank" rel="noopener">Oracle-JDK下载</a></li>
-<li><a href="https://mirrors.huaweicloud.com/java/jdk/8u172-b11/" target="_blank" rel="noopener">https://mirrors.huaweicloud.com/java/jdk/8u172-b11/</a> 华为云镜像下载</li>
+        <script src="/assets/js/APlayer.min.js"> </script><h1 id="Java中9种常见的CMS-GC问题分析与解决"><a href="#Java中9种常见的CMS-GC问题分析与解决" class="headerlink" title="Java中9种常见的CMS GC问题分析与解决"></a>Java中9种常见的CMS GC问题分析与解决</h1><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
+<li>主要针对 Hotspot VM 中“CMS + ParNew”组合的一些使用场景进行总结。重点通过部分源码对根因进行分析以及对排查方法进行总结，排查过程会省略较多，另外本文专业术语较多，有一定的阅读门槛，如未介绍清楚，还请自行查阅相关材料。<a id="more"></a></li>
+<li><a href="https://tech.meituan.com/2020/11/12/java-9-cms-gc.html" target="_blank" rel="noopener">Java中9种常见的CMS GC问题分析与解决</a></li>
 </ul>
 
       
@@ -296,13 +285,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2017/11/21/Oracle-JDK-Download/">不登陆Oracle下载JDK</a></p>
+        <p><span>本文标题:</span><a href="/2020/12/06/java-9-cms-gc/">java-9-cms-gc</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">codewindy</a></p>
-        <p><span>发布时间:</span>2017-11-21, 21:35:27</p>
-        <p><span>最后更新:</span>2020-09-02, 22:31:14</p>
+        <p><span>发布时间:</span>2020-12-06, 16:32:24</p>
+        <p><span>最后更新:</span>2020-12-06, 16:35:15</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/11/21/Oracle-JDK-Download/" title="不登陆Oracle下载JDK">https://codewindy.github.io/2017/11/21/Oracle-JDK-Download/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2017/11/21/Oracle-JDK-Download/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/12/06/java-9-cms-gc/" title="java-9-cms-gc">https://codewindy.github.io/2020/12/06/java-9-cms-gc/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://codewindy.github.io/2020/12/06/java-9-cms-gc/　　作者: codewindy" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -314,16 +303,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/05/01/RouterOS_PPPOE_PacketSniffer/">
-                    RouterOS抓包恢复PPPOE密码
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/07/01/JVM-Optimized/">
-                    JVM学习笔记
+                <a href="/2020/11/20/springboot-rabbitmq-tutorials/">
+                    springboot-rabbitmq-tutorials
                 </a>
             </div>
         
@@ -366,7 +349,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Oracle-JDK-Download-No-Need-Login"><span class="toc-number">1.</span> <span class="toc-text">Oracle JDK Download No Need Login</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-number"></span> <span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-参考"><span class="toc-number"></span> <span class="toc-text">二. 参考</span></a>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java中9种常见的CMS-GC问题分析与解决"><span class="toc-number">1.</span> <span class="toc-text">Java中9种常见的CMS GC问题分析与解决</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-number">2.</span> <span class="toc-text">一. 背景</span></a></li></ol>
         
     </div>
     <style>
@@ -414,15 +397,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/05/01/RouterOS_PPPOE_PacketSniffer/" title="上一篇: RouterOS抓包恢复PPPOE密码">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/07/01/JVM-Optimized/" title="下一篇: JVM学习笔记">
+            <a href="/2020/11/20/springboot-rabbitmq-tutorials/" title="下一篇: springboot-rabbitmq-tutorials">
                 <i class="fa fa-angle-right"></i>
             </a>
         
