@@ -23,25 +23,6 @@
     
     
     <entry>
-      <title>Charles-Tips</title>
-      <link href="2021/01/01/Charles-Tips/"/>
-      <url>2021/01/01/Charles-Tips/</url>
-      
-        <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="配置Charles-抓包手机和电脑流量"><a href="#配置Charles-抓包手机和电脑流量" class="headerlink" title="配置Charles 抓包手机和电脑流量"></a>配置Charles 抓包手机和电脑流量</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li>学习http和https的区别<a id="more"></a></li><li>钉钉app 找不到web端入口，且已购买的教程视频课程被禁止下载，通过抓包找到下载接口实现资源保存<h1 id="二-步骤"><a href="#二-步骤" class="headerlink" title="二. 步骤"></a>二. 步骤</h1></li><li>下载charles 4.6.1</li><li>点击<code>help =&gt;SSL Proxying =&gt; Install Charles Root Certificate安装根证书</code></li><li>注意点击trust并选择始终信任<br><img src="https://i.loli.net/2021/01/20/CB6srH8SYb5upcF.png" alt="image.png"></li><li>然后对在<code>SSL Proxying Settings里面配置对应的要抓取的https网站</code><br><img src="https://i.loli.net/2021/01/20/hXfjpol7Sg5VLxY.png" alt="image.png"><h1 id="三-参考"><a href="#三-参考" class="headerlink" title="三. 参考"></a>三. 参考</h1></li><li><a href="https://www.jianshu.com/p/14fdd1a2454a" target="_blank" rel="noopener">https://www.jianshu.com/p/14fdd1a2454a</a></li><li><a href="https://www.bilibili.com/video/BV1mQ4y1N7dn?p=1" target="_blank" rel="noopener">软件测试教程Charles抓包工具测试实战</a></li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>BaiduYunPan Downloader</title>
       <link href="2021/01/01/BaiduYunPanDownloader/"/>
       <url>2021/01/01/BaiduYunPanDownloader/</url>
@@ -53,6 +34,25 @@
         <tags>
             
             <tag> life </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Charles-Tips</title>
+      <link href="2021/01/01/Charles-Tips/"/>
+      <url>2021/01/01/Charles-Tips/</url>
+      
+        <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><h2 id="配置Charles-抓包手机和电脑流量"><a href="#配置Charles-抓包手机和电脑流量" class="headerlink" title="配置Charles 抓包手机和电脑流量"></a>配置Charles 抓包手机和电脑流量</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul><li>学习http和https的区别<a id="more"></a></li><li>钉钉app 找不到web端入口，且已购买的教程视频课程被禁止下载，通过抓包找到下载接口实现资源保存<h1 id="二-步骤"><a href="#二-步骤" class="headerlink" title="二. 步骤"></a>二. 步骤</h1></li><li>下载charles 4.6.1</li><li>点击<code>help =&gt;SSL Proxying =&gt; Install Charles Root Certificate安装根证书</code></li><li>注意点击trust并选择始终信任<br><img src="https://i.loli.net/2021/01/20/CB6srH8SYb5upcF.png" alt="image.png"></li><li>然后对在<code>SSL Proxying Settings里面配置对应的要抓取的https网站</code><br><img src="https://i.loli.net/2021/01/20/hXfjpol7Sg5VLxY.png" alt="image.png"><h1 id="三-参考"><a href="#三-参考" class="headerlink" title="三. 参考"></a>三. 参考</h1></li><li><a href="https://www.jianshu.com/p/14fdd1a2454a" target="_blank" rel="noopener">https://www.jianshu.com/p/14fdd1a2454a</a></li><li><a href="https://www.bilibili.com/video/BV1mQ4y1N7dn?p=1" target="_blank" rel="noopener">软件测试教程Charles抓包工具测试实战</a></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> network </tag>
             
         </tags>
       
@@ -863,7 +863,7 @@
       <link href="2015/07/01/Hello-World/"/>
       <url>2015/07/01/Hello-World/</url>
       
-        <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><hr><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><a id="more"></a><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<script src="/assets/js/APlayer.min.js"> </script><hr><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><a id="more"></a><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p><ul><li><a href="https://alanlee.fun/2021/02/28/hexo-empty-html/" target="_blank" rel="noopener">nodejs版本太高导致deploy 为0 bytes</a></li><li><a href="https://nodejs.org/dist/latest-v12.x/" target="_blank" rel="noopener">node下载地址 hexo3.9 对应nodejs12</a></li></ul>]]></content>
       
       
       
