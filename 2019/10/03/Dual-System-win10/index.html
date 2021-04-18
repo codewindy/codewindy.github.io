@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>安装win10双系统 | codewindy</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="win10,">
+  
+
+  <meta name="description" content="Dual System Boot win10 and MacOS一. 背景 在安装完MacOS之后，发现不能上Google试了n种方式都失败告终，并且mac下载文件速度很慢、占用太多内存">
+<meta name="keywords" content="win10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装win10双系统">
+<meta property="og:url" content="https://codewindy.github.io/2019/10/03/Dual-System-win10/index.html">
+<meta property="og:site_name" content="codewindy">
+<meta property="og:description" content="Dual System Boot win10 and MacOS一. 背景 在安装完MacOS之后，发现不能上Google试了n种方式都失败告终，并且mac下载文件速度很慢、占用太多内存">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/10/03/adyUKQw6WrCJnXq.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/10/03/Xt8G1yuhC29LWlx.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/10/04/W59GQXP2SuvmEx1.png">
+<meta property="og:image" content="https://i.loli.net/2019/11/20/AKyIxW2hPLsV6lX.png">
+<meta property="og:image" content="https://i.loli.net/2019/10/03/P81dwv63MJDqzam.png">
+<meta property="og:updated_time" content="2021-04-18T10:05:55.923Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安装win10双系统">
+<meta name="twitter:description" content="Dual System Boot win10 and MacOS一. 背景 在安装完MacOS之后，发现不能上Google试了n种方式都失败告终，并且mac下载文件速度很慢、占用太多内存">
+<meta name="twitter:image" content="https://i.loli.net/2019/10/03/adyUKQw6WrCJnXq.jpg">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dual-System-Boot-win10-and-MacOS"><span class="toc-text">Dual System Boot win10 and MacOS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-准备"><span class="toc-text">二. 准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-安装步骤"><span class="toc-text">三. 安装步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-问题解决"><span class="toc-text">四. 问题解决</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-参考"><span class="toc-text">五. 参考</span></a>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Dual-System-win10" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">安装win10双系统</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.10.03</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>codewindy</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <script src="/assets/js/APlayer.min.js"> </script><h2 id="Dual-System-Boot-win10-and-MacOS"><a href="#Dual-System-Boot-win10-and-MacOS" class="headerlink" title="Dual System Boot win10 and MacOS"></a>Dual System Boot win10 and MacOS</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
+<li>在安装完MacOS之后，发现不能上Google试了n种方式都失败告终，并且mac下载文件速度很慢、占用太多内存<a id="more"></a></li>
+<li>因为z7-kp7gz电脑一到手就只安装了MacOS10.14.6 mojave，现在只需按照正常流程安装win10 企业版1809到机械硬盘上即可。</li>
+</ul>
+<ul>
+<li>先安装macOS后安装win10的好处就是不需要自己去重建uefi引导和创建200M以上的esp分区</li>
+</ul>
+<h1 id="二-准备"><a href="#二-准备" class="headerlink" title="二. 准备"></a>二. 准备</h1><ul>
+<li><a href="https://msdn.itellyou.cn" target="_blank" rel="noopener">msdn I tell you</a> 下载<a href="ed2k://|file|cn_windows_10_enterprise_ltsc_2019_x64_dvd_9c09ff24.iso|4478906368|E7C526499308841A4A6D116C857DB669|/" target="_blank" rel="noopener">win10企业版系统</a>，注意<code>intel cpu 6</code>代以后不支持win7了</li>
+<li>8G以上U盘一个</li>
+<li><a href="https://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/" target="_blank" rel="noopener"><strong>Universal-USB-Installer-1.9.8.9.exe</strong> </a>请在win环境下格式化成fat32制作启动盘，否则会无法识别</li>
+<li><strong>注意：</strong> 西数固态sn750安装系统前使用<code>DiskGenius</code>格式化成GPT(GUID格式），否则会识别不出nvme的ssd</li>
+</ul>
+<h1 id="三-安装步骤"><a href="#三-安装步骤" class="headerlink" title="三. 安装步骤"></a>三. 安装步骤</h1><ul>
+<li><p>按<strong>F2</strong> 进入bios或者<strong>F7</strong>引导项，选择win10安装u盘进入</p>
+</li>
+<li><p><img src="https://i.loli.net/2019/10/03/adyUKQw6WrCJnXq.jpg" alt="Jietu20191003-115130安装引导0.jpg"></p>
+</li>
+<li><p>格式化机械硬盘的C盘，并点击一下步</p>
+</li>
+<li><p><img src="https://i.loli.net/2019/10/03/Xt8G1yuhC29LWlx.jpg" alt="Jietu20191003-114902安装引导.jpg"></p>
+</li>
+<li><p>依次安装即可，重启后选择从硬盘启动，也可以拔出u盘</p>
+</li>
+<li><p><a href="https://github.com/codewindy/soft-common/blob/master/HWIDGen%2030.10.rar" target="_blank" rel="noopener">win10激活工具HWIDGen v52.01</a>下载和<a href="http://www.hasee.com/Chinese/drivers/drivers/index.php/Download/Index/model.html?id=525" target="_blank" rel="noopener">相应的驱动</a></p>
+</li>
+<li><p>直接Win键+X，打开Windows Powershell输入以下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">slmgr /skms kms.03k.org</span><br><span class="line">slmgr /ato</span><br><span class="line">最后可以cmd命令输入”slmgr.vbs -dlv”来查看windows10激活状态。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最终效果如下<br><img src="https://i.loli.net/2019/10/04/W59GQXP2SuvmEx1.png" alt="151570158264_.pic_hd.jpg"></p>
+</li>
+<li><p>sn750 固态测速如下，感觉挺快的，质量一般<br><img src="https://i.loli.net/2019/11/20/AKyIxW2hPLsV6lX.png" alt="IMG_7039.PNG"></p>
+<h1 id="四-问题解决"><a href="#四-问题解决" class="headerlink" title="四. 问题解决"></a>四. 问题解决</h1></li>
+<li><p>记得安装所有驱动，包括游戏管理中心的驱动，会在任务管理器的性能选项中显示2个独立显卡</p>
+</li>
+<li><p>安装双系统之后重启进入win10会出现<a href="https://imac.hk/mac-os-x-windows-systme-time.html" target="_blank" rel="noopener">时间差8小时</a></p>
+</li>
+<li><p>win+x 进入管理员cmd模式执行代码</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><img src="https://i.loli.net/2019/10/03/P81dwv63MJDqzam.png" alt="IMG_6635.PNG"></li>
+</ul>
+<h1 id="五-参考"><a href="#五-参考" class="headerlink" title="五. 参考"></a>五. 参考</h1><ul>
+<li><a href="https://www.isharepc.com/2137.html" target="_blank" rel="noopener">永久激活win10企业版</a></li>
+<li><a href="ed2k://|file|cn_windows_10_enterprise_ltsc_2019_x64_dvd_9c09ff24.iso|4478906368|E7C526499308841A4A6D116C857DB669|/" target="_blank" rel="noopener">msdn.itellyou.cn</a> Windows 10 Enterprise LTSC 2019 (x64) - DVD (Chinese-Simplified) 系统下载</li>
+<li><a href="https://u.diannaodian.com/" target="_blank" rel="noopener">电脑店pe制作工具</a></li>
+</ul>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wx.png" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/images/zfb.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/09/25/MacOS-Tutorial/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2019/10/14/Proxifier-MacOS-Setting/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+    <div id="comment" class="vcomment" ></div>
+    <script>
+        var notify = 'false' == true ? true : false;
+        var verify = 'false' == true ? true : false;
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+            return GUEST_INFO.indexOf(item) > -1
+        });
+        guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+        window.valine = new Valine({
+            el: '.vcomment',
+            notify: notify,
+            verify: verify,
+            appId: "qe3Kl6NAUeYp0pQjDQJn2K50-gzGzoHsz",
+            appKey: "bIsb5tY0ibN5kvEYaTvmXkBL",
+            avatar:'mm',
+            placeholder: "Keep coding !",
+            guest_info:guest_info,
+            pageSize:'10'
+        });
+    </script>
+  
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

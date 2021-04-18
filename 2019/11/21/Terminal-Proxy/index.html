@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>MacOS 下 Terminal 设置代理上网 | codewindy</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="mac,">
+  
+
+  <meta name="description" content="MacOS Terminal Proxy Settings一.  背景 装完macos系统后，经常使用Terminal终端来写blog提交到github，但是老是丢包，最终通过代理来实现">
+<meta name="keywords" content="mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacOS 下 Terminal 设置代理上网">
+<meta property="og:url" content="https://codewindy.github.io/2019/11/21/Terminal-Proxy/index.html">
+<meta property="og:site_name" content="codewindy">
+<meta property="og:description" content="MacOS Terminal Proxy Settings一.  背景 装完macos系统后，经常使用Terminal终端来写blog提交到github，但是老是丢包，最终通过代理来实现">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/11/22/2SZVI5WJmxYLdOP.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/11/21/NalKSW27cfmC5pR.jpg">
+<meta property="og:updated_time" content="2021-04-18T10:05:55.928Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MacOS 下 Terminal 设置代理上网">
+<meta name="twitter:description" content="MacOS Terminal Proxy Settings一.  背景 装完macos系统后，经常使用Terminal终端来写blog提交到github，但是老是丢包，最终通过代理来实现">
+<meta name="twitter:image" content="https://i.loli.net/2019/11/22/2SZVI5WJmxYLdOP.jpg">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-Terminal-Proxy-Settings"><span class="toc-text">MacOS Terminal Proxy Settings</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-text">一.  背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-准备"><span class="toc-text">二.  准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-实现"><span class="toc-text">三. 实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-效果"><span class="toc-text">四. 效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-参考"><span class="toc-text">五. 参考</span></a>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Terminal-Proxy" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">MacOS 下 Terminal 设置代理上网</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.11.21</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>codewindy</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <script src="/assets/js/APlayer.min.js"> </script><h2 id="MacOS-Terminal-Proxy-Settings"><a href="#MacOS-Terminal-Proxy-Settings" class="headerlink" title="MacOS Terminal Proxy Settings"></a>MacOS Terminal Proxy Settings</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一.  背景"></a>一.  背景</h1><ul>
+<li>装完macos系统后，经常使用<code>Terminal</code>终端来写blog提交到github，但是老是丢包，最终通过代理来实现<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="二-准备"><a href="#二-准备" class="headerlink" title="二.  准备"></a>二.  准备</h1><ul>
+<li><a href="https://github.com/qinyuhang/ShadowsocksX-NG-R/releases" target="_blank" rel="noopener">ShadowsocksX-NG</a>  软件并配置好可用的ssr节点</li>
+</ul>
+<h1 id="三-实现"><a href="#三-实现" class="headerlink" title="三. 实现"></a>三. 实现</h1><ul>
+<li><p>打开<a href="https://www.diggui.com/" target="_blank" rel="noopener">https://www.diggui.com/</a> 查询<code>github.com</code>的A 记录并添加到<code>sudo vim /etc/hosts</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">A:github.com@8.8.8.8</span><br><span class="line">; &lt;&lt;&gt;&gt; DiG diggui.com &lt;&lt;&gt;&gt; @8.8.8.8 github.com A</span><br><span class="line">; (1 server found)</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 46485</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1</span><br><span class="line"></span><br><span class="line">;; OPT PSEUDOSECTION:</span><br><span class="line">; EDNS: version: 0, flags:; udp: 512</span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;github.com.			IN	A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">github.com.		59	IN	A	140.82.113.4</span><br><span class="line"></span><br><span class="line">;; Query time: 9 msec</span><br><span class="line">;; SERVER: 8.8.8.8#53(8.8.8.8)</span><br><span class="line">;; WHEN: Tue Jan 14 14:24:33 UTC 2020</span><br><span class="line">;; MSG SIZE  rcvd: 55</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>~/.zshrc</code>文件中配置</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias setroxy='export http_proxy=http://127.0.0.1:1087;</span><br><span class="line">export https_proxy=http://127.0.0.1:1087;'</span><br><span class="line">alias unsetproxy='unset http_proxy https_proxy'</span><br><span class="line">alias ip='curl cip.cc'</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>只配置git代理</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"> #</span><span class="bash">设置</span></span><br><span class="line"> git config --global http.proxy 'socks5://127.0.0.1:1086' </span><br><span class="line"> git config --global https.proxy 'socks5://127.0.0.1:1086'</span><br><span class="line"><span class="meta"> #</span><span class="bash">取消</span></span><br><span class="line"> git config --global --unset http.proxy</span><br><span class="line"> git config --global --unset https.proxy</span><br><span class="line"> git clone https://github.com/codewindy/blog.git --config "http.proxy=127.0.0.1:1086"</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta"> #</span><span class="bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:1086</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:7891</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在斐讯k2路由器刷机geewan或者openwrt/LEDE等石像鬼系统，直接配置ssr节点在路由器里面实现全局代理<br><img src="https://i.loli.net/2019/11/22/2SZVI5WJmxYLdOP.jpg" alt="Xnip2019-11-22_21-36-42.jpg"></p>
+<h1 id="四-效果"><a href="#四-效果" class="headerlink" title="四. 效果"></a>四. 效果</h1><p><img src="https://i.loli.net/2019/11/21/NalKSW27cfmC5pR.jpg" alt="Xnip2019-11-21_22-02-55.jpg"></p>
+</li>
+</ul>
+<h1 id="五-参考"><a href="#五-参考" class="headerlink" title="五. 参考"></a>五. 参考</h1><ul>
+<li><a href="https://blog.naaln.com/2019/03/terminal-proxy/" target="_blank" rel="noopener">blog.naaln.com</a></li>
+<li><a href="https://gist.github.com/laispace/666dd7b27e9116faece6" target="_blank" rel="noopener">gist config </a></li>
+<li><a href="https://www.diggui.com/" target="_blank" rel="noopener">https://www.diggui.com/</a></li>
+</ul>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wx.png" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/images/zfb.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/10/28/daily-note/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2019/12/15/k2-breed-padavan/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+    <div id="comment" class="vcomment" ></div>
+    <script>
+        var notify = 'false' == true ? true : false;
+        var verify = 'false' == true ? true : false;
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+            return GUEST_INFO.indexOf(item) > -1
+        });
+        guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+        window.valine = new Valine({
+            el: '.vcomment',
+            notify: notify,
+            verify: verify,
+            appId: "qe3Kl6NAUeYp0pQjDQJn2K50-gzGzoHsz",
+            appKey: "bIsb5tY0ibN5kvEYaTvmXkBL",
+            avatar:'mm',
+            placeholder: "Keep coding !",
+            guest_info:guest_info,
+            pageSize:'10'
+        });
+    </script>
+  
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>

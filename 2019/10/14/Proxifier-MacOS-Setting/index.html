@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Proxifier 全局代理 | codewindy</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="mac,">
+  
+
+  <meta name="description" content="Proxifier MacOS Setting一.  背景 装完macos系统后，一直不能像win10一样轻松上Twitter和Google，试了n种软件终于找到一种可用的方式">
+<meta name="keywords" content="mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Proxifier 全局代理">
+<meta property="og:url" content="https://codewindy.github.io/2019/10/14/Proxifier-MacOS-Setting/index.html">
+<meta property="og:site_name" content="codewindy">
+<meta property="og:description" content="Proxifier MacOS Setting一.  背景 装完macos系统后，一直不能像win10一样轻松上Twitter和Google，试了n种软件终于找到一种可用的方式">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/10/14/EUSiaK9mWbBgNJH.jpg">
+<meta property="og:updated_time" content="2021-04-18T10:05:55.926Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Proxifier 全局代理">
+<meta name="twitter:description" content="Proxifier MacOS Setting一.  背景 装完macos系统后，一直不能像win10一样轻松上Twitter和Google，试了n种软件终于找到一种可用的方式">
+<meta name="twitter:image" content="https://i.loli.net/2019/10/14/EUSiaK9mWbBgNJH.jpg">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Proxifier-MacOS-Setting"><span class="toc-text">Proxifier MacOS Setting</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-text">一.  背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-准备条件"><span class="toc-text">二.  准备条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-安装"><span class="toc-text">三.  安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-效果"><span class="toc-text">四.  效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-其他方式"><span class="toc-text">五.  其他方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六-免费节点"><span class="toc-text">六.  免费节点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七-参考"><span class="toc-text">七.  参考</span></a>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Proxifier-MacOS-Setting" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">Proxifier 全局代理</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2019.10.14</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>codewindy</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <script src="/assets/js/APlayer.min.js"> </script><h2 id="Proxifier-MacOS-Setting"><a href="#Proxifier-MacOS-Setting" class="headerlink" title="Proxifier MacOS Setting"></a>Proxifier MacOS Setting</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一.  背景"></a>一.  背景</h1><ul>
+<li>装完macos系统后，一直不能像win10一样轻松上Twitter和Google，试了n种软件终于找到一种可用的方式<a id="more"></a>
+
+</li>
+</ul>
+<h1 id="二-准备条件"><a href="#二-准备条件" class="headerlink" title="二.  准备条件"></a>二.  准备条件</h1><ul>
+<li>*<em>license key for mac *</em>  <code>P427L-9Y552-5433E-8DSR3-58Z68</code> </li>
+<li>下载   <a href="https://proxifier.com/download/ProxifierMac.dmg" target="_blank" rel="noopener">Proxifier v2.24</a> </li>
+<li>下载  配置文件 <a href="https://github.com/codewindy/mac_soft/blob/master/proxifierRules4mac.ppx" target="_blank" rel="noopener">proxifierRules4mac.ppx</a></li>
+<li>下载  <a href="https://github.com/codewindy/mac_soft/blob/master/ShadowsocksX-NG-R8.dmg" target="_blank" rel="noopener">shadowsocksX-NG-R8</a></li>
+</ul>
+<h1 id="三-安装"><a href="#三-安装" class="headerlink" title="三.  安装"></a>三.  安装</h1><ul>
+<li>先安装 <code>shadowsocksX-NG-R8</code></li>
+<li>然后安装 <code>Proxifier</code> 并使用license注册</li>
+<li>然后导入配置文件<code>proxifierRules4mac.ppx</code></li>
+</ul>
+<h1 id="四-效果"><a href="#四-效果" class="headerlink" title="四.  效果"></a>四.  效果</h1><ul>
+<li>已经能正常使用Google和Twitterrific了</li>
+<li><img src="https://i.loli.net/2019/10/14/EUSiaK9mWbBgNJH.jpg" alt="Proxifier-Tutorial.jpg"><h1 id="五-其他方式"><a href="#五-其他方式" class="headerlink" title="五.  其他方式"></a>五.  其他方式</h1></li>
+<li>直接在<code>路由器geewan</code><a href="http://dl.geewan.com/%E5%85%A8%E9%83%A8%E5%8E%86%E5%8F%B2%E5%9B%BA%E4%BB%B6/0.0.23/" target="_blank" rel="noopener">固件GF_PSG1218_K2 - bigwan 0.0.23-fix10 </a>或者<code>极路由等LEDE</code>刷机里面配置好<code>ssr</code>代理即可全局上网，但是使用过程中发现灵活性较差</li>
+<li>直接使用chrome免费插件 <a href="https://github.com/codewindy/soft-common/blob/master/skyzip.crx" target="_blank" rel="noopener"><strong>skyzip</strong></a></li>
+</ul>
+<h1 id="六-免费节点"><a href="#六-免费节点" class="headerlink" title="六.  免费节点"></a>六.  免费节点</h1><ul>
+<li><a href="https://ji-f.pw/signin" target="_blank" rel="noopener">几鸡-学习助理</a> 台湾的学习免费节点网速很棒，注册需要能先上Google</li>
+<li><a href="https://lncn.org/" target="_blank" rel="noopener">lncn.org</a> 能满足日常使用，但需要配置hosts文件</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">在本地host文件中将本站域名绑定到 69.194.14.16</span><br><span class="line">安卓可下载 Hosts Go 添加 ， windows具体操作方法如下↓</span><br><span class="line">目录：C:/Windows/System32/drivers/etc，记事本打开host文件</span><br><span class="line">在最后一行添加(注意空格)： 69.194.14.16 lncn.org</span><br><span class="line">win+R 输入cmd回车，执行： ipconfig /flushdns</span><br><span class="line">重新刷新页面即可,如失效请还原host并用代理访问！</span><br><span class="line">macOS/Linux 下直接 echo "69.194.14.16 lncn.org" &gt;&gt; /etc/hosts </span><br><span class="line">export http_proxy=http://127.0.0.1:1087 经常会github连不上 可以curl cip.cc查看ip地址</span><br></pre></td></tr></table></figure>
+
+<h1 id="七-参考"><a href="#七-参考" class="headerlink" title="七.  参考"></a>七.  参考</h1><ul>
+<li><a href="https://www.kagura.me/dev/20190324005534.html" target="_blank" rel="noopener">kagura.me</a>   神楽</li>
+<li><a href="https://lncn.org/" target="_blank" rel="noopener">lncn.org</a>   免费节点</li>
+<li><a href="https://ji-f.pw/signin" target="_blank" rel="noopener">几鸡-学习助理</a> 台湾学习助理</li>
+<li><a href="http://dl.geewan.com/%E6%96%90%E8%AE%AF%E8%B7%AF%E7%94%B1-Phicomm/%E6%9C%80%E6%96%B0%E5%85%8D%E6%8B%86%E6%9C%BA%E6%96%90%E8%AE%AFK1K2%E5%88%B7%E6%9E%81%E7%8E%A9%E5%9B%BA%E4%BB%B6%E6%95%99%E7%A8%8B.rar" target="_blank" rel="noopener">geewan</a> 斐讯k2/极路由固件教程</li>
+<li><a href="https://install.appcenter.ms/users/clashx/apps/clashx-pro/distribution_groups/public" target="_blank" rel="noopener">ClashX Pro</a></li>
+</ul>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wx.png" alt="">
+          </li>
+        
+          <li class="item">
+            
+              <span>支付宝扫一扫</span>
+            
+            <img src="/images/zfb.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2019/10/03/Dual-System-win10/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2019/10/28/daily-note/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+    <div id="comment" class="vcomment" ></div>
+    <script>
+        var notify = 'false' == true ? true : false;
+        var verify = 'false' == true ? true : false;
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+            return GUEST_INFO.indexOf(item) > -1
+        });
+        guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+        window.valine = new Valine({
+            el: '.vcomment',
+            notify: notify,
+            verify: verify,
+            appId: "qe3Kl6NAUeYp0pQjDQJn2K50-gzGzoHsz",
+            appKey: "bIsb5tY0ibN5kvEYaTvmXkBL",
+            avatar:'mm',
+            placeholder: "Keep coding !",
+            guest_info:guest_info,
+            pageSize:'10'
+        });
+    </script>
+  
+    
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
