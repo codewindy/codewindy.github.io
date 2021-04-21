@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
 
-  <html class="light page-home">
+  <html class="light page-search">
 
 
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>codewindy</title>
+  <title>search | codewindy</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -16,12 +16,13 @@
   
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="codewindy">
-<meta property="og:url" content="https://codewindy.github.io/page/5/index.html">
+<meta property="og:title" content="search">
+<meta property="og:url" content="https://codewindy.github.io/search/index.html">
 <meta property="og:site_name" content="codewindy">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-04-21T23:43:16.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="codewindy">
+<meta name="twitter:title" content="search">
 
   
 
@@ -90,43 +91,87 @@ ga('send', 'pageview');
 
 
   
+    <span id="toolbox-mobile" class="toolbox-mobile">Home</span>
+  
+
+  <div class="content content-search">
+  <div class="page-header">
 
   
-  <div class="content-home text-center">
-  <a class="avatar" href="/">
-    <img src="/images/avatar.png" alt="" />
-  </a>
-  <h1 class="name" style="font-family: calligraffittiregular">
-    codewindy
-  </h1>
-  <div class="slogan">
-    How do you spend your time?
+
+  
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">Home</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
   </div>
 
-  <hr>
 
-  <ul class="text-center nav">
+
+  <div class="box-blog-info">
+    <a class="avatar" href="/">
+      <img src="/images/avatar.png" alt="" />
+    </a>
+    <div class="info">
+      <h3 class="name" style="font-family: calligraffittiregular">
+        codewindy
+      </h3>
+      <div class="slogan">
+        How do you spend your time?
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="wrap-search-box">
+    <div class="search-box">
+      <input id="input-search"  class="input-search" type="text" placeholder="search">
+      <i class="icon-search"></i>
+    </div>
+  </div>
+
+  <ul id="list-search" class="list-search">
     
-      <li class="item">
-        
-          <a href="/archives">Blog</a>
-        
-        <span>|</span>
-      </li>
-    
-      <li class="item">
-        
-          <a href="https://github.com/codewindy" rel="noopener noreferrer" target="_blank">Github</a>
-        
-        <span>|</span>
-      </li>
-    
-      <li class="item">
-        
-          <a href="https://www.v2ex.com" rel="noopener noreferrer" target="_blank">V2ex</a>
-        
-        <span>|</span>
-      </li>
+      <li class="tip">Can you find the bug of world ~</li>
     
   </ul>
 
@@ -186,6 +231,48 @@ ga('send', 'pageview');
 </div>
 
 
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+    <div id="comment" class="vcomment" ></div>
+    <script>
+        var notify = 'false' == true ? true : false;
+        var verify = 'false' == true ? true : false;
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+            return GUEST_INFO.indexOf(item) > -1
+        });
+        guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+        window.valine = new Valine({
+            el: '.vcomment',
+            notify: notify,
+            verify: verify,
+            appId: "qe3Kl6NAUeYp0pQjDQJn2K50-gzGzoHsz",
+            appKey: "bIsb5tY0ibN5kvEYaTvmXkBL",
+            avatar:'mm',
+            placeholder: "Keep coding !",
+            guest_info:guest_info,
+            pageSize:'10'
+        });
+    </script>
+  
+    
+
+  </div>
 
   
 

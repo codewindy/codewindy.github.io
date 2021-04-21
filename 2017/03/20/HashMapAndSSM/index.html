@@ -101,14 +101,14 @@ ga('send', 'pageview');
 
 
   
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+    <span id="toolbox-mobile" class="toolbox-mobile">Home</span>
   
 
   <div class="post-header CENTER">
    
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">盒子</span>
+      <span class="toolbox-entry-text">Home</span>
       <i class="icon-angle-down"></i>
       <i class="icon-home"></i>
     </a>
@@ -122,39 +122,6 @@ ga('send', 'pageview');
             target="_self"
             >
             博客
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/category/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            分类
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/tag/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            标签
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/link/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            友链
           </a>
         </li>
       
@@ -249,7 +216,7 @@ ga('send', 'pageview');
 若为树，则在树中通过key.equals(k)查找，O(logn)；
 若为链表，则在链表中通过key.equals(k)查找，O(n)。</code></pre></li>
 <li><p>Hashmap的原理</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过hash的方法，通过put和get存储和获取对象。存储对象时，我们将K/V传给put方法时，它调用hashCode计算hash从而得到bucket位置，进一步存储，HashMap会根据当前bucket的占用情况自动调整容量(超过Load Facotr则resize为原来的2倍)。获取对象时，我们将K传给get，它调用hashCode计算hash从而得到bucket位置，并进一步调用equals()方法确定键值对。如果发生碰撞的时候，Hashmap通过链表将产生碰撞冲突的元素组织起来，在Java 8中，如果一个bucket中碰撞冲突的元素超过某个限制(默认是8)，则使用红黑树来替换链表，从而提高速度。</span><br></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">通过hash的方法，通过put和get存储和获取对象。存储对象时，我们将K/V传给put方法时，它调用hashCode计算hash从而得到bucket位置，进一步存储，HashMap会根据当前bucket的占用情况自动调整容量(超过<span class="keyword">Load</span> Facotr则<span class="keyword">resize</span>为原来的<span class="number">2</span>倍)。获取对象时，我们将K传给<span class="keyword">get</span>，它调用hashCode计算<span class="keyword">hash</span>从而得到<span class="keyword">bucket</span>位置，并进一步调用equals()方法确定键值对。如果发生碰撞的时候，Hashmap通过链表将产生碰撞冲突的元素组织起来，在<span class="keyword">Java</span> <span class="number">8</span>中，如果一个<span class="keyword">bucket</span>中碰撞冲突的元素超过某个限制(默认是<span class="number">8</span>)，则使用红黑树来替换链表，从而提高速度。</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <ul>
@@ -279,7 +246,7 @@ ga('send', 'pageview');
     <div class="inner-donation">
       <span class="btn-donation">支持一下</span>
       <div class="donation-body">
-        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <div class="tip text-center">扫一扫，支持codewindy</div>
         <ul>
         
           <li class="item">
@@ -343,39 +310,6 @@ ga('send', 'pageview');
               target="_self"
               >
               博客
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/category/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              分类
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/tag/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              标签
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/link/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              友链
             </a>
           </li>
         

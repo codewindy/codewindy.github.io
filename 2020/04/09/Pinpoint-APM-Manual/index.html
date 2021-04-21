@@ -100,14 +100,14 @@ ga('send', 'pageview');
 
 
   
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+    <span id="toolbox-mobile" class="toolbox-mobile">Home</span>
   
 
   <div class="post-header CENTER">
    
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">盒子</span>
+      <span class="toolbox-entry-text">Home</span>
       <i class="icon-angle-down"></i>
       <i class="icon-home"></i>
     </a>
@@ -121,39 +121,6 @@ ga('send', 'pageview');
             target="_self"
             >
             博客
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/category/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            分类
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/tag/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            标签
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/link/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            友链
           </a>
         </li>
       
@@ -249,27 +216,27 @@ ga('send', 'pageview');
 <li>解压 <code>tar -xvf jdk-8u202-linux-x64.tar.gz -C /usr/local/java/</code></li>
 <li>最后<code>vim /etc/profile</code> 添加</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1.8.0_202</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java/jdk1.8.0_202</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br></pre></td></tr></table></figure>
 
 <h1 id="Hbase环境配置"><a href="#Hbase环境配置" class="headerlink" title="Hbase环境配置"></a>Hbase环境配置</h1><ul>
 <li>解压hbase  <code>tar -xvf hbase-2.2.4-bin.tar.gz</code></li>
 <li>修改hbase的配置文件<code>vim /root/hbase-2.2.4/conf/hbase-env.sh</code> 中添加一行</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">配置java_home</span><br><span class="line">export JAVA_HOME=/usr/local/java/jdk1.8.0_202/</span><br><span class="line">使用外部zookeeper管理hbase</span><br><span class="line">export HBASE_MANAGES_ZK=flase</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">配置java_home</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/usr/local/java/jdk1.8.0_202/</span><br><span class="line">使用外部zookeeper管理hbase</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">HBASE_MANAGES_ZK</span>=flase</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>修改hbase的配置文件<code>vim /root/hbase-2.2.4/conf/hbase-site.xml</code> 中添加一行 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> &lt;configuration&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">          &lt;name&gt;hbase.rootdir&lt;/name&gt;</span><br><span class="line">          &lt;value&gt;/root/hbase-2.2.4/data/hbase&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">          &lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt;</span><br><span class="line">          &lt;value&gt;/root/hbase-2.2.4/data/zookeeper&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">          &lt;name&gt;hbase.master.port&lt;/name&gt;</span><br><span class="line">          &lt;value&gt;60000&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">      &lt;property&gt;</span><br><span class="line">          &lt;name&gt;hbase.regionserver.port&lt;/name&gt;</span><br><span class="line">          &lt;value&gt;60020&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">  &lt;/configuration&gt;</span><br><span class="line">* 启动hbase  `cd /root/hbase-2.2.4/bin` 并执行`./start-hbase.sh`</span><br><span class="line">* 打开 `http://127.0.0.1:16010/master-status` 查看hbase web管控台</span><br><span class="line">* 导入pinpoint到hbase 即解压`pinpoint-2.0.1.tar.gz`后得到`/root/pinpoint-2.0.1/hbase/scripts/hbase-create.hbase `的sql文件并拷贝到`hbase的bin目录`</span><br><span class="line">* `./root/hbase-2.2.4/bin/hbase shell hbase-create.hbase `执行之后可以`status &apos;detailed&apos;`查看数据</span><br></pre></td></tr></table></figure>
+<figure class="highlight xquery"><table><tr><td class="code"><pre><span class="line"> <span class="xml"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span></span><br><span class="line"><span class="xml">      </span><span class="xml"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span></span><br><span class="line"><span class="xml">          </span><span class="xml"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.rootdir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></span><br><span class="line"><span class="xml">          </span><span class="xml"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/root/hbase-2.2.4/data/hbase<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></span><br><span class="line"><span class="xml">      </span><span class="xml"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span></span><br><span class="line"><span class="xml">          </span><span class="xml"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.zookeeper.property.dataDir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></span><br><span class="line"><span class="xml">          </span><span class="xml"><span class="tag">&lt;<span class="name">value</span>&gt;</span>/root/hbase-2.2.4/data/zookeeper<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></span><br><span class="line"><span class="xml">      </span><span class="xml"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span></span><br><span class="line"><span class="xml">          </span><span class="xml"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.master.port<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></span><br><span class="line"><span class="xml">          </span><span class="xml"><span class="tag">&lt;<span class="name">value</span>&gt;</span>60000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></span><br><span class="line"><span class="xml">      </span><span class="xml"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span></span><br><span class="line"><span class="xml">          </span><span class="xml"><span class="tag">&lt;<span class="name">name</span>&gt;</span>hbase.regionserver.port<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span></span><br><span class="line"><span class="xml">          </span><span class="xml"><span class="tag">&lt;<span class="name">value</span>&gt;</span>60020<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span></span><br><span class="line">* 启动hbase  `cd /root/hbase-<span class="number">2.2</span>.<span class="number">4</span>/bin` 并执行`./start-hbase.sh`</span><br><span class="line">* 打开 `http://<span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">16010</span>/master-status` 查看hbase web管控台</span><br><span class="line">* 导入pinpoint到hbase 即解压`pinpoint-<span class="number">2.0</span>.<span class="number">1</span>.tar.gz`后得到`/root/pinpoint-<span class="number">2.0</span>.<span class="number">1</span>/hbase/scripts/hbase-create.hbase `的sql文件并拷贝到`hbase的bin目录`</span><br><span class="line">* `./root/hbase-<span class="number">2.2</span>.<span class="number">4</span>/bin/hbase shell hbase-create.hbase `执行之后可以`status <span class="string">'detailed'</span>`查看数据</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>在浏览器打开查看hbase <a href="http://10.211.55.4:16010/master-status" target="_blank" rel="noopener">http://10.211.55.4:16010/master-status</a></p>
 <p><img src="https://i.loli.net/2020/04/12/lhTfJuGYrSxb146.jpg" alt="Xnip2020-04-12_19-34-34_hbase.jpg"></p>
 </li>
 </ul>
-<h1 id="配置web和collector"><a href="#配置web和collector" class="headerlink" title="配置web和collector"></a>配置web和collector</h1>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">* 解压tomcat `tar -xvf apache-tomcat-9.0.34.tar.gz`并重命名`cp -R apache-tomcat-9.0.34 web`</span><br><span class="line">* 修改tomcat 的默认端口号`vim /root/web/conf/server.xml`找到8080 修改成5050</span><br><span class="line">* 将web部署到webapps里面重命名为ROOT.war `cp -R pinpoint-web-2.0.1.war /root/web/webapps/ROOT.war`</span><br><span class="line">* 启动tomcat  `进入cd /root/web/bin`目录并执行`./startup.sh `</span><br><span class="line">* 修改ROOT.war 默认配置文件绑定zookeeper的实际地址</span><br><span class="line">  /进入目录 </span><br><span class="line">  cd web/webapps/ROOT/WEB-INF/classes/</span><br><span class="line">  修改hbase.properties中 </span><br><span class="line">  hbase.client.host=127.0.0.1</span><br><span class="line">  修改pinpoint-web.properties 中</span><br><span class="line">  pinpoint.zookeeper.address=127.0.0.1</span><br><span class="line">  进入目录</span><br><span class="line">  cd /root/web/webapps/ROOT/WEB-INF/classes/profiles/local</span><br><span class="line">  修改hbase-env.properties </span><br><span class="line">  hbase.client.host=127.0.0.1</span><br><span class="line">  修改pinpoint-web-env.properties </span><br><span class="line">  pinpoint.zookeeper.address=127.0.0.1</span><br><span class="line">  进入目录</span><br><span class="line">  cd /root/web/webapps/ROOT/WEB-INF/classes/profiles/release</span><br><span class="line">  修改hbase-env.properties </span><br><span class="line">  hbase.client.host=127.0.0.1</span><br><span class="line">  修改pinpoint-web-env.properties </span><br><span class="line">  pinpoint.zookeeper.address=127.0.0.1</span><br><span class="line">* collector基本和web配置步骤一致</span><br></pre></td></tr></table></figure>
+<h1 id="配置web和collector"><a href="#配置web和collector" class="headerlink" title="配置web和collector"></a>配置web和collector</h1>  <figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">* 解压tomcat `tar -xvf apache-tomcat<span class="number">-9.0</span><span class="number">.34</span>.tar.gz`并重命名`cp -R apache-tomcat<span class="number">-9.0</span><span class="number">.34</span> web`</span><br><span class="line">* 修改tomcat 的默认端口号`vim /root/web/conf/server.xml`找到<span class="number">8080</span> 修改成<span class="number">5050</span></span><br><span class="line">* 将web部署到webapps里面重命名为ROOT.war `cp -R pinpoint-web<span class="number">-2.0</span><span class="number">.1</span>.war /root/web/webapps/ROOT.war`</span><br><span class="line">* 启动tomcat  `进入cd /root/web/bin`目录并执行`./startup.sh `</span><br><span class="line">* 修改ROOT.war 默认配置文件绑定zookeeper的实际地址</span><br><span class="line">  /进入目录 </span><br><span class="line">  cd web/webapps/ROOT/WEB-INF/classes/</span><br><span class="line">  修改hbase.properties中 </span><br><span class="line">  hbase.client.host=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">  修改pinpoint-web.properties 中</span><br><span class="line">  pinpoint.zookeeper.address=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">  进入目录</span><br><span class="line">  cd /root/web/webapps/ROOT/WEB-INF/classes/profiles/local</span><br><span class="line">  修改hbase-env.properties </span><br><span class="line">  hbase.client.host=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">  修改pinpoint-web-env.properties </span><br><span class="line">  pinpoint.zookeeper.address=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">  进入目录</span><br><span class="line">  cd /root/web/webapps/ROOT/WEB-INF/classes/profiles/release</span><br><span class="line">  修改hbase-env.properties </span><br><span class="line">  hbase.client.host=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">  修改pinpoint-web-env.properties </span><br><span class="line">  pinpoint.zookeeper.address=<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">* collector基本和web配置步骤一致</span><br></pre></td></tr></table></figure>
 
-<h1 id="配置agent"><a href="#配置agent" class="headerlink" title="配置agent"></a>配置agent</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 打包springboot项目并整合agent参数`java -javaagent:/root/pinpoint-agent-2.0.1/pinpoint-bootstrap-2.0.1.jar -Dpinpoint.agentId=应用服务名id -Dpinpoint.applicationName=应用服务名id -jar mongodb-1.0.jar`</span><br><span class="line">java -javaagent:/root/pinpoint-agent-2.0.1/pinpoint-bootstrap-2.0.1.jar -Dpinpoint.agentId=codewindy-mongodb -Dpinpoint.applicationName=codewindy-mongodb -jar mongodb-1.0.jar</span><br></pre></td></tr></table></figure>
+<h1 id="配置agent"><a href="#配置agent" class="headerlink" title="配置agent"></a>配置agent</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">* 打包springboot项目并整合agent参数`java -javaagent:/root/pinpoint-agent-2.0.1/pinpoint-bootstrap-2.0.1.jar -Dpinpoint.agentId=应用服务名id -Dpinpoint.applicationName=应用服务名id -jar mongodb-1.0.jar`</span><br><span class="line">java -javaagent:/root/pinpoint-agent-2.0.1/pinpoint-bootstrap-2.0.1.jar -Dpinpoint.agentId=codewindy-mongodb -Dpinpoint.applicationName=codewindy-mongodb -jar mongodb-1.0.jar</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://i.loli.net/2020/04/12/mvInzeOaYPy4QXf.jpg" alt="Xnip2020-04-12_20-05-48pinpoint_init.jpg"><br><img src="https://i.loli.net/2020/04/12/mCT5Esp69j3DrlS.jpg" alt="Xnip2020-04-12_20-06-41_pinpoint_callTree.jpg"></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
@@ -290,7 +257,7 @@ ga('send', 'pageview');
     <div class="inner-donation">
       <span class="btn-donation">支持一下</span>
       <div class="donation-body">
-        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <div class="tip text-center">扫一扫，支持codewindy</div>
         <ul>
         
           <li class="item">
@@ -354,39 +321,6 @@ ga('send', 'pageview');
               target="_self"
               >
               博客
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/category/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              分类
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/tag/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              标签
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/link/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              友链
             </a>
           </li>
         

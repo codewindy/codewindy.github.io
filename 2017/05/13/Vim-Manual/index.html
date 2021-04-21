@@ -95,14 +95,14 @@ ga('send', 'pageview');
 
 
   
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+    <span id="toolbox-mobile" class="toolbox-mobile">Home</span>
   
 
   <div class="post-header CENTER">
    
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">盒子</span>
+      <span class="toolbox-entry-text">Home</span>
       <i class="icon-angle-down"></i>
       <i class="icon-home"></i>
     </a>
@@ -116,39 +116,6 @@ ga('send', 'pageview');
             target="_self"
             >
             博客
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/category/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            分类
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/tag/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            标签
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/link/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            友链
           </a>
         </li>
       
@@ -317,7 +284,7 @@ ga('send', 'pageview');
 <li><dl><dt>查找并替换s 命令 gi 全局忽略大小写<br>起始地址,结束地址@pattern@string@gi</dt><dd>.,$-1s/id/ID/gi</dd></dl></li>
 </ol>
 <hr>
-<pre><code><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">   1、vim 单文件中查找方法</span><br><span class="line"></span><br><span class="line">   正常模式下使用 / 或 ? 命令执行向后搜索或向前搜索</span><br><span class="line"></span><br><span class="line">   /love	从光标位置向前搜索关键词 love</span><br><span class="line">   ?love	从光标位置向后搜索关键词 love</span><br><span class="line"></span><br><span class="line">   正常模式下使用 n 或 N 命令执行 向前查找 或 向后查找 下一个关键词</span><br><span class="line"></span><br><span class="line">   :set ic		忽略大小写命令，ic 为 ignore case 缩写</span><br><span class="line">   :set is		边输入边显示匹配结果，is 是 incsearch 命令的缩写</span><br><span class="line">   :set hls	高亮显示匹配结果，hls 为 highlight search 缩写</span><br><span class="line"></span><br><span class="line">   可将上述设置放入.vimrc 文件中，设为默认搜索设置</span><br><span class="line"></span><br><span class="line">   :set noic nois nohls	将取消上述设置</span><br><span class="line"></span><br><span class="line">   :noh	暂时取消高亮显示，不会影响下次高亮显示匹配结果</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   2、vim 多文件查找方法</span><br><span class="line"></span><br><span class="line">   正常模式下使用 :vim 或 :vimgrep 命令执行多文件搜索</span><br><span class="line"></span><br><span class="line">   搜索的时候涉及到选取文件问题，这里主要用到 * 作为通配符</span><br><span class="line">   ** 表示文件夹及子文件夹下的所有文件</span><br><span class="line"></span><br><span class="line">   搜索 love 关键词</span><br><span class="line">   :vim/love/*						当前文件夹下的所有文件</span><br><span class="line">   :vim/love/**					当前文件夹及子目录下的所有文件</span><br><span class="line">   :vim/love/**/*.php				当前文件夹及子目录下的所有 php 文件</span><br><span class="line">   :vim/love/*.php aa/**/*.php		当前文件夹下的 php 文件和 aa 目录及子目录下的 php 文件</span><br><span class="line"></span><br><span class="line">   使用 ** 和 * 可任意组合出想要搜索的文件</span><br><span class="line"></span><br><span class="line">   :cw			查看搜索结果</span><br><span class="line">   :ccl		关闭搜索结果</span><br><span class="line">   :cn			查找下一个</span><br><span class="line">   :cp			查找上一个</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   3、vim 单文件替换方法</span><br><span class="line"></span><br><span class="line">   单文件中使用 :s 命令进行替换操作</span><br><span class="line"></span><br><span class="line">   替换操作会涉及几个常用的标记</span><br><span class="line"><span class="meta">   %</span><span class="bash"> 所有行  g 单行内所有匹配项  i 忽略大小写  c  确认是否替换</span></span><br><span class="line"></span><br><span class="line">   关键词 old 替换为 new</span><br><span class="line">   :s/old/new				将光标所在行第一个 old 替换为 new</span><br><span class="line">   :s/old/new/g			将光标所在行所有 old 替换为 new</span><br><span class="line">   :%s/old/new/gc			全文执行替换,询问是否替换</span><br><span class="line">   :3,10s/old/new/gic		将第3行到第10行内容替换，忽略大小写，且每个询问是否替换</span><br><span class="line"></span><br><span class="line">   g i c 可自由组合</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4. vim 多文件操作</span><br><span class="line">设置vim中默认使用选择缓冲区寄存器 “*：</span><br><span class="line"></span><br><span class="line">set clipboard = unnamed</span><br><span class="line">则可以直接通过y,p和系统选择缓冲区进行数据交换。</span><br><span class="line"></span><br><span class="line">Vimer们对高效的追求永无止境。还有其他更好地方法吗？</span><br><span class="line"></span><br><span class="line">你可能想到了，vim寄存器。对，使用vim寄存器 “+p 粘贴即可。根本不用考虑是否自动缩进，是否paste模式，直接原文传递！:</span><br><span class="line"></span><br><span class="line">"+p</span><br><span class="line">要说vim寄存器，就要从vim文件间的复制粘贴说起。</span><br><span class="line"></span><br><span class="line">Vim中，若要复制当前行，普通模式下按 yy 即可，在要粘贴的地方按 p 。这是vim将复制内容保存到了自己的寄存器中的缘故。如果在其他地方执行yy，新的内容将覆盖掉原寄存器中内容。如果想保存原寄存器中内容而同时增加新 的内容呢？这时就要在yy前增加标签了。标签以双引号开始，跟着的是标签名称，可以是数字0-9，也可以是26个字母，然后就是复制操作，这样就把复制内 容保存到该标签寄存器里。通过下面命令显示所有寄存器内容：:</span><br><span class="line"></span><br><span class="line">:reg</span><br><span class="line">其中注意两个特殊的寄存器：”* 和 “+。这两个寄存器是和系统相通的，前者关联系统选择缓冲区，后者关联系统剪切板。通过它们可以和其他程序进行数据交换。</span><br><span class="line"></span><br><span class="line">备注：</span><br><span class="line">若寄存器列表里无”* 或 “+ 寄存器，则可能是由于没有安装vim的图形界面所致。Debian/Ubuntu下可以通过安装vim-gnome解决。</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install vim-gnome</span></span><br><span class="line">选择缓冲区和系统剪切板啥子区别？让我们继续研究。</span><br><span class="line"></span><br><span class="line">选择缓冲区和剪切板</span><br><span class="line">不同于Windows，Linux系统里存在两个剪切板：一个叫做选择缓冲区(X11 selection buffer)，另一个才是剪切板(clipboard)。</span><br><span class="line"></span><br><span class="line">选择缓冲区是实时的，当使用鼠标或键盘选择内容时，内容已经存在于选择缓冲区了，这或许就是选择缓冲区的由来吧。</span><br><span class="line"></span><br><span class="line">使用下面的命令查看选择缓冲区的内容：:</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> xclip -out</span></span><br><span class="line">如果没有xclip命令，Debian/Ubuntu下可以通过如下命令安装：:</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install xclip</span></span><br><span class="line">可以使用鼠标中键或键入Shift+Insert来粘贴选择缓冲区的内容。但对于有些GUI程序，比如gedit，只能通过鼠标中键调用选择缓冲区的内容，使用Shift+Insert的话，调用的是剪切板的内容。</span><br><span class="line"></span><br><span class="line">剪切板和Windows的剪切板类似，在选择文字内容后，执行Ctrl + c或在菜单里选择‘复制’的话，这时内容才存放到剪切板里。</span><br><span class="line"></span><br><span class="line">使用下面的命令查看剪切板的内容：:</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> xclip -out -sel clipboard</span></span><br><span class="line">而使用剪切板的内容，则是Ctrl+v。 但在有些情况下，比如gnome-terminal，不能直接使用Ctrl+c，Ctrl+v，这时就要用Shift+Ctrl+c，Shift+Ctrl+v代替。</span><br><span class="line"></span><br><span class="line">原格式粘贴</span><br><span class="line">好了，了解了选择缓冲区和剪切板，下面就是实现保留格式粘贴的完美解决方案：</span><br></pre></td></tr></table></figure></code></pre><h2 id="vim文件间复制粘贴的完美方案，文件传输的中转使用选择缓冲区。"><a href="#vim文件间复制粘贴的完美方案，文件传输的中转使用选择缓冲区。" class="headerlink" title="vim文件间复制粘贴的完美方案，文件传输的中转使用选择缓冲区。"></a>vim文件间复制粘贴的完美方案，文件传输的中转使用选择缓冲区。</h2><ol>
+<pre><code><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">   1、vim 单文件中查找方法</span><br><span class="line"></span><br><span class="line">   正常模式下使用 / 或 ? 命令执行向后搜索或向前搜索</span><br><span class="line"></span><br><span class="line">   /love	从光标位置向前搜索关键词 love</span><br><span class="line">   ?love	从光标位置向后搜索关键词 love</span><br><span class="line"></span><br><span class="line">   正常模式下使用 n 或 N 命令执行 向前查找 或 向后查找 下一个关键词</span><br><span class="line"></span><br><span class="line">   :set ic		忽略大小写命令，ic 为 ignore case 缩写</span><br><span class="line">   :set is		边输入边显示匹配结果，is 是 incsearch 命令的缩写</span><br><span class="line">   :set hls	高亮显示匹配结果，hls 为 highlight search 缩写</span><br><span class="line"></span><br><span class="line">   可将上述设置放入.vimrc 文件中，设为默认搜索设置</span><br><span class="line"></span><br><span class="line">   :set noic nois nohls	将取消上述设置</span><br><span class="line"></span><br><span class="line">   :noh	暂时取消高亮显示，不会影响下次高亮显示匹配结果</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   2、vim 多文件查找方法</span><br><span class="line"></span><br><span class="line">   正常模式下使用 :vim 或 :vimgrep 命令执行多文件搜索</span><br><span class="line"></span><br><span class="line">   搜索的时候涉及到选取文件问题，这里主要用到 * 作为通配符</span><br><span class="line">   ** 表示文件夹及子文件夹下的所有文件</span><br><span class="line"></span><br><span class="line">   搜索 love 关键词</span><br><span class="line">   :vim/love/*						当前文件夹下的所有文件</span><br><span class="line">   :vim/love/**					当前文件夹及子目录下的所有文件</span><br><span class="line">   :vim/love/**/*.php				当前文件夹及子目录下的所有 php 文件</span><br><span class="line">   :vim/love/*.php aa/**/*.php		当前文件夹下的 php 文件和 aa 目录及子目录下的 php 文件</span><br><span class="line"></span><br><span class="line">   使用 ** 和 * 可任意组合出想要搜索的文件</span><br><span class="line"></span><br><span class="line">   :cw			查看搜索结果</span><br><span class="line">   :ccl		关闭搜索结果</span><br><span class="line">   :cn			查找下一个</span><br><span class="line">   :cp			查找上一个</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   3、vim 单文件替换方法</span><br><span class="line"></span><br><span class="line">   单文件中使用 :s 命令进行替换操作</span><br><span class="line"></span><br><span class="line">   替换操作会涉及几个常用的标记</span><br><span class="line"><span class="meta">   %</span><span class="bash"> 所有行  g 单行内所有匹配项  i 忽略大小写  c  确认是否替换</span></span><br><span class="line"></span><br><span class="line">   关键词 old 替换为 new</span><br><span class="line">   :s/old/new				将光标所在行第一个 old 替换为 new</span><br><span class="line">   :s/old/new/g			将光标所在行所有 old 替换为 new</span><br><span class="line">   :%s/old/new/gc			全文执行替换,询问是否替换</span><br><span class="line">   :3,10s/old/new/gic		将第3行到第10行内容替换，忽略大小写，且每个询问是否替换</span><br><span class="line"></span><br><span class="line">   g i c 可自由组合</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4. vim 多文件操作</span><br><span class="line">设置vim中默认使用选择缓冲区寄存器 “*：</span><br><span class="line"></span><br><span class="line">set clipboard = unnamed</span><br><span class="line">则可以直接通过y,p和系统选择缓冲区进行数据交换。</span><br><span class="line"></span><br><span class="line">Vimer们对高效的追求永无止境。还有其他更好地方法吗？</span><br><span class="line"></span><br><span class="line">你可能想到了，vim寄存器。对，使用vim寄存器 “+p 粘贴即可。根本不用考虑是否自动缩进，是否paste模式，直接原文传递！:</span><br><span class="line"></span><br><span class="line">"+p</span><br><span class="line">要说vim寄存器，就要从vim文件间的复制粘贴说起。</span><br><span class="line"></span><br><span class="line">Vim中，若要复制当前行，普通模式下按 yy 即可，在要粘贴的地方按 p 。这是vim将复制内容保存到了自己的寄存器中的缘故。如果在其他地方执行yy，新的内容将覆盖掉原寄存器中内容。如果想保存原寄存器中内容而同时增加新 的内容呢？这时就要在yy前增加标签了。标签以双引号开始，跟着的是标签名称，可以是数字0-9，也可以是26个字母，然后就是复制操作，这样就把复制内 容保存到该标签寄存器里。通过下面命令显示所有寄存器内容：:</span><br><span class="line"></span><br><span class="line">:reg</span><br><span class="line">其中注意两个特殊的寄存器：”* 和 “+。这两个寄存器是和系统相通的，前者关联系统选择缓冲区，后者关联系统剪切板。通过它们可以和其他程序进行数据交换。</span><br><span class="line"></span><br><span class="line">备注：</span><br><span class="line">若寄存器列表里无”* 或 “+ 寄存器，则可能是由于没有安装vim的图形界面所致。Debian/Ubuntu下可以通过安装vim-gnome解决。</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install vim-gnome</span></span><br><span class="line">选择缓冲区和系统剪切板啥子区别？让我们继续研究。</span><br><span class="line"></span><br><span class="line">选择缓冲区和剪切板</span><br><span class="line">不同于Windows，Linux系统里存在两个剪切板：一个叫做选择缓冲区(X11 selection buffer)，另一个才是剪切板(clipboard)。</span><br><span class="line"></span><br><span class="line">选择缓冲区是实时的，当使用鼠标或键盘选择内容时，内容已经存在于选择缓冲区了，这或许就是选择缓冲区的由来吧。</span><br><span class="line"></span><br><span class="line">使用下面的命令查看选择缓冲区的内容：:</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> xclip -out</span></span><br><span class="line">如果没有xclip命令，Debian/Ubuntu下可以通过如下命令安装：:</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt-get install xclip</span></span><br><span class="line">可以使用鼠标中键或键入Shift+Insert来粘贴选择缓冲区的内容。但对于有些GUI程序，比如gedit，只能通过鼠标中键调用选择缓冲区的内容，使用Shift+Insert的话，调用的是剪切板的内容。</span><br><span class="line"></span><br><span class="line">剪切板和Windows的剪切板类似，在选择文字内容后，执行Ctrl + c或在菜单里选择‘复制’的话，这时内容才存放到剪切板里。</span><br><span class="line"></span><br><span class="line">使用下面的命令查看剪切板的内容：:</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> xclip -out -sel clipboard</span></span><br><span class="line">而使用剪切板的内容，则是Ctrl+v。 但在有些情况下，比如gnome-terminal，不能直接使用Ctrl+c，Ctrl+v，这时就要用Shift+Ctrl+c，Shift+Ctrl+v代替。</span><br><span class="line"></span><br><span class="line">原格式粘贴</span><br><span class="line">好了，了解了选择缓冲区和剪切板，下面就是实现保留格式粘贴的完美解决方案：</span><br></pre></td></tr></table></figure></code></pre><h2 id="vim文件间复制粘贴的完美方案，文件传输的中转使用选择缓冲区。"><a href="#vim文件间复制粘贴的完美方案，文件传输的中转使用选择缓冲区。" class="headerlink" title="vim文件间复制粘贴的完美方案，文件传输的中转使用选择缓冲区。"></a>vim文件间复制粘贴的完美方案，文件传输的中转使用选择缓冲区。</h2><ol>
 <li><p><strong>vim 编辑多个文件<code>:vsplit   :sp 水平分割 垂直切分窗口  Ctrl+6  两文件间的切换</code></strong></p>
 <ul>
 <li><p>在终端里输入<br>vim file1 file2 … filen便可以打开所有想要打开的文件</p>
@@ -339,7 +306,7 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>who |wc -l  5人同时登陆在线  last<br>tail -f catalina.out 打印log</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">方案一：</span><br><span class="line">选择文本内容</span><br><span class="line">vim普通模式下按 “*p 将选择缓冲区中内容粘贴进来</span><br><span class="line">方案二：</span><br><span class="line">复制文件内容</span><br><span class="line">vim普通模式下按 “+ p 将剪切板内容粘贴进来</span><br></pre></td></tr></table></figure>
+ <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">方案一：</span><br><span class="line">选择文本内容</span><br><span class="line">vim普通模式下按 “*<span class="selector-tag">p</span> 将选择缓冲区中内容粘贴进来</span><br><span class="line">方案二：</span><br><span class="line">复制文件内容</span><br><span class="line">vim普通模式下按 “+ <span class="selector-tag">p</span> 将剪切板内容粘贴进来</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -358,7 +325,7 @@ ga('send', 'pageview');
     <div class="inner-donation">
       <span class="btn-donation">支持一下</span>
       <div class="donation-body">
-        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <div class="tip text-center">扫一扫，支持codewindy</div>
         <ul>
         
           <li class="item">
@@ -422,39 +389,6 @@ ga('send', 'pageview');
               target="_self"
               >
               博客
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/category/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              分类
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/tag/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              标签
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/link/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              友链
             </a>
           </li>
         

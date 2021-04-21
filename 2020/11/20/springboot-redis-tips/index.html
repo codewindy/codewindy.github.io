@@ -95,14 +95,14 @@ ga('send', 'pageview');
 
 
   
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+    <span id="toolbox-mobile" class="toolbox-mobile">Home</span>
   
 
   <div class="post-header CENTER">
    
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">盒子</span>
+      <span class="toolbox-entry-text">Home</span>
       <i class="icon-angle-down"></i>
       <i class="icon-home"></i>
     </a>
@@ -116,39 +116,6 @@ ga('send', 'pageview');
             target="_self"
             >
             博客
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/category/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            分类
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/tag/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            标签
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/link/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            友链
           </a>
         </li>
       
@@ -229,7 +196,7 @@ ga('send', 'pageview');
 
 </li>
 </ul>
-<h1 id="二-解决"><a href="#二-解决" class="headerlink" title="二. 解决"></a>二. 解决</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Example 37. Enabling periodic cluster topology view updates</span><br><span class="line">RedisClusterClient clusterClient = RedisClusterClient.create(RedisURI.create(<span class="string">"localhost"</span>, <span class="number">6379</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ClusterTopologyRefreshOptions topologyRefreshOptions = ClusterTopologyRefreshOptions.builder()</span><br><span class="line">                                .enableAdaptiveRefreshTrigger(RefreshTrigger.MOVED_REDIRECT, RefreshTrigger.PERSISTENT_RECONNECTS)</span><br><span class="line">                                .adaptiveRefreshTriggersTimeout(<span class="number">30</span>, TimeUnit.SECONDS)</span><br><span class="line">                                .build();</span><br><span class="line"></span><br><span class="line">clusterClient.setOptions(ClusterClientOptions.builder()</span><br><span class="line">                                .topologyRefreshOptions(topologyRefreshOptions)</span><br><span class="line">                                .build());</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">clusterClient.shutdown();</span><br></pre></td></tr></table></figure>
+<h1 id="二-解决"><a href="#二-解决" class="headerlink" title="二. 解决"></a>二. 解决</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"># Example 37. Enabling periodic cluster topology view updates</span><br><span class="line">RedisClusterClient clusterClient = RedisClusterClient.create(RedisURI.create(<span class="string">"localhost"</span>, <span class="number">6379</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ClusterTopologyRefreshOptions topologyRefreshOptions = ClusterTopologyRefreshOptions.builder()</span><br><span class="line">                                .enableAdaptiveRefreshTrigger(RefreshTrigger.MOVED_REDIRECT, RefreshTrigger.PERSISTENT_RECONNECTS)</span><br><span class="line">                                .adaptiveRefreshTriggersTimeout(<span class="number">30</span>, TimeUnit.SECONDS)</span><br><span class="line">                                .build();</span><br><span class="line"></span><br><span class="line">clusterClient.setOptions(ClusterClientOptions.builder()</span><br><span class="line">                                .topologyRefreshOptions(topologyRefreshOptions)</span><br><span class="line">                                .build());</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">clusterClient.shutdown();</span><br></pre></td></tr></table></figure>
 
 <h1 id="三-参考"><a href="#三-参考" class="headerlink" title="三. 参考"></a>三. 参考</h1><ul>
 <li><a href="https://www.colabug.com/2020/0107/6815444/" target="_blank" rel="noopener">redis整合letture自动拓扑更新</a></li>
@@ -247,7 +214,7 @@ ga('send', 'pageview');
     <div class="inner-donation">
       <span class="btn-donation">支持一下</span>
       <div class="donation-body">
-        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <div class="tip text-center">扫一扫，支持codewindy</div>
         <ul>
         
           <li class="item">
@@ -311,39 +278,6 @@ ga('send', 'pageview');
               target="_self"
               >
               博客
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/category/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              分类
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/tag/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              标签
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/link/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              友链
             </a>
           </li>
         

@@ -95,14 +95,14 @@ ga('send', 'pageview');
 
 
   
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+    <span id="toolbox-mobile" class="toolbox-mobile">Home</span>
   
 
   <div class="post-header CENTER">
    
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">盒子</span>
+      <span class="toolbox-entry-text">Home</span>
       <i class="icon-angle-down"></i>
       <i class="icon-home"></i>
     </a>
@@ -116,39 +116,6 @@ ga('send', 'pageview');
             target="_self"
             >
             博客
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/category/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            分类
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/tag/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            标签
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/link/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            友链
           </a>
         </li>
       
@@ -229,7 +196,7 @@ ga('send', 'pageview');
 <li>理解http 1.0 和http 1.1 和http2.0 的区别</li>
 <li>在对外提供接口的情况下，如何设计和保证数据的安全可靠性<a id="more"></a>
 <h1 id="二-原理"><a href="#二-原理" class="headerlink" title="二. 原理"></a>二. 原理</h1></li>
-<li><a href="http://www.ichenpeng.net/1176592" target="_blank" rel="noopener">www.ichenpeng.net</a><h1 id="三-应用"><a href="#三-应用" class="headerlink" title="三. 应用"></a>三. 应用</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.codewindy.mongodb.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.hutool.core.date.DateUtil;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.core.map.MapUtil;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.crypto.SecureUtil;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.crypto.asymmetric.KeyType;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.crypto.asymmetric.RSA;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.crypto.asymmetric.Sign;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.crypto.asymmetric.SignAlgorithm;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.http.HttpRequest;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.lang3.RandomStringUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.HttpHeaders;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.MediaType;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> codewindy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020-01-14 8:59 PM</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> * https://www.bookstack.cn/read/hutool/093507f34fe0715d.md</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestAESByHutool</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1. 生成公钥和私钥并指定加密type 和长度</span></span><br><span class="line"></span><br><span class="line">        RSA rsa = <span class="keyword">new</span> RSA();</span><br><span class="line">        String privateKeyBase64 = rsa.getPrivateKeyBase64();</span><br><span class="line">        String publicKeyBase64 = rsa.getPublicKeyBase64();</span><br><span class="line">        System.out.println(<span class="string">"keyPair.getPrivate() 私钥= "</span> + privateKeyBase64);</span><br><span class="line">        System.out.println(<span class="string">"keyPair.getPublic() 公钥= "</span> + publicKeyBase64);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2. 获取待加密的敏感原始数据</span></span><br><span class="line">        String content = HttpRequest</span><br><span class="line">                .get(<span class="string">"https://api.myip.com/"</span>)</span><br><span class="line">                <span class="comment">//超时，毫秒</span></span><br><span class="line">                .timeout(<span class="number">20000</span>)</span><br><span class="line">                .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)</span><br><span class="line">                .execute()</span><br><span class="line">                .body();</span><br><span class="line">        <span class="comment">//3. 每次生成AES 16 位随机密码</span></span><br><span class="line">        String aesKey = RandomStringUtils.randomNumeric(<span class="number">16</span>);</span><br><span class="line">        System.out.println(<span class="string">"每次生成AES 16 位随机密码aesKey = "</span> + aesKey);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 使用公钥加密 aes对称密码 后的key</span></span><br><span class="line">        String encryptAesKey = rsa.encryptBase64(aesKey, KeyType.PrivateKey);</span><br><span class="line">        System.out.println(<span class="string">"使用公钥加密 aes对称密码 后的encryptAesKey = "</span> + encryptAesKey);</span><br><span class="line">        <span class="comment">//5. AES 加密后的内容</span></span><br><span class="line">        String encryptContent = SecureUtil.aes(aesKey.getBytes()).encryptBase64(content);</span><br><span class="line">        System.out.println(<span class="string">"AES 加密后的内容 encryptContent = "</span> + encryptContent);</span><br><span class="line"></span><br><span class="line">        Sign sign = SecureUtil.sign(SignAlgorithm.MD5withRSA);</span><br><span class="line">        <span class="keyword">byte</span>[] signedContent = sign.sign(content.getBytes());</span><br><span class="line">        System.err.println(<span class="string">"对原始数据进行签名signedContent = "</span> + signedContent);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 模拟获取request对象里面的parameters</span></span><br><span class="line">        String urlPath = <span class="string">"/admin/queryUserInfo"</span>;</span><br><span class="line">        String httpMethod = <span class="string">"POST"</span>;</span><br><span class="line">        <span class="keyword">long</span> clientTimeStamp = DateUtil.currentSeconds();</span><br><span class="line">        HashMap&lt;String, Object&gt; requestParams = MapUtil.newHashMap();</span><br><span class="line">        requestParams.put(<span class="string">"urlPath"</span>, urlPath);</span><br><span class="line">        requestParams.put(<span class="string">"httpMethod"</span>, httpMethod);</span><br><span class="line"><span class="comment">//        requestParams.put("clientSign", request.getClientSign());</span></span><br><span class="line">        requestParams.put(<span class="string">"clientTimeStamp"</span>, clientTimeStamp + <span class="string">""</span>);</span><br><span class="line">        String sign2String = MapUtil.sortJoin(MapUtil.sort(requestParams), <span class="string">"&amp;"</span>, <span class="string">"="</span>, <span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        String calculateSign = SecureUtil.hmacSha1(aesKey.getBytes()).digestHex(sign2String);</span><br><span class="line"><span class="comment">//        calculateSign计算出来的sign和request 请求里面的参数clientSign进行比较，如果不一致说明数据被篡改了s</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"计算出来的sign和request 请求里面的参数clientSign 进行比较 = "</span> + calculateSign);</span><br><span class="line">        System.out.println(<span class="string">"解密-----------------------------------------------------"</span>);</span><br><span class="line">        <span class="comment">//6. 使用私钥解密后的key</span></span><br><span class="line"></span><br><span class="line">        String decryptAesKey = rsa.decryptStr(encryptAesKey, KeyType.PublicKey);</span><br><span class="line">        System.out.println(<span class="string">"使用私钥解密后的decryptAesKey = "</span> + decryptAesKey);</span><br><span class="line">        <span class="comment">//7. 解密得到明文的 aes 对称密码 解密加密的content数据</span></span><br><span class="line"></span><br><span class="line">        String decryptContent = SecureUtil.aes(decryptAesKey.getBytes()).decryptStr(encryptContent);</span><br><span class="line">        System.out.println(<span class="string">"解密得到明文的 aes 对称密码 解密加密的content数据 = "</span> + decryptContent);</span><br><span class="line">        <span class="comment">//8. 签名和验签 https://hutool.cn/docs/#/crypto/%E7%AD%BE%E5%90%8D%E5%92%8C%E9%AA%8C%E8%AF%81-Sign</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> verify = sign.verify(content.getBytes(), signedContent);</span><br><span class="line">        System.err.println(<span class="string">"验签状态verify = "</span> + verify);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><a href="http://www.ichenpeng.net/1176592" target="_blank" rel="noopener">www.ichenpeng.net</a><h1 id="三-应用"><a href="#三-应用" class="headerlink" title="三. 应用"></a>三. 应用</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.codewindy.mongodb.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.hutool.core.date.DateUtil;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.core.map.MapUtil;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.crypto.SecureUtil;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.crypto.asymmetric.KeyType;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.crypto.asymmetric.RSA;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.crypto.asymmetric.Sign;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.crypto.asymmetric.SignAlgorithm;</span><br><span class="line"><span class="keyword">import</span> cn.hutool.http.HttpRequest;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.lang3.RandomStringUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.HttpHeaders;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.MediaType;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> codewindy</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2020-01-14 8:59 PM</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.0.0</span></span><br><span class="line"><span class="comment"> * https://www.bookstack.cn/read/hutool/093507f34fe0715d.md</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestAESByHutool</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1. 生成公钥和私钥并指定加密type 和长度</span></span><br><span class="line"></span><br><span class="line">        RSA rsa = <span class="keyword">new</span> RSA();</span><br><span class="line">        String privateKeyBase64 = rsa.getPrivateKeyBase64();</span><br><span class="line">        String publicKeyBase64 = rsa.getPublicKeyBase64();</span><br><span class="line">        System.out.println(<span class="string">"keyPair.getPrivate() 私钥= "</span> + privateKeyBase64);</span><br><span class="line">        System.out.println(<span class="string">"keyPair.getPublic() 公钥= "</span> + publicKeyBase64);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2. 获取待加密的敏感原始数据</span></span><br><span class="line">        String content = HttpRequest</span><br><span class="line">                .get(<span class="string">"https://api.myip.com/"</span>)</span><br><span class="line">                <span class="comment">//超时，毫秒</span></span><br><span class="line">                .timeout(<span class="number">20000</span>)</span><br><span class="line">                .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)</span><br><span class="line">                .execute()</span><br><span class="line">                .body();</span><br><span class="line">        <span class="comment">//3. 每次生成AES 16 位随机密码</span></span><br><span class="line">        String aesKey = RandomStringUtils.randomNumeric(<span class="number">16</span>);</span><br><span class="line">        System.out.println(<span class="string">"每次生成AES 16 位随机密码aesKey = "</span> + aesKey);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4. 使用公钥加密 aes对称密码 后的key</span></span><br><span class="line">        String encryptAesKey = rsa.encryptBase64(aesKey, KeyType.PrivateKey);</span><br><span class="line">        System.out.println(<span class="string">"使用公钥加密 aes对称密码 后的encryptAesKey = "</span> + encryptAesKey);</span><br><span class="line">        <span class="comment">//5. AES 加密后的内容</span></span><br><span class="line">        String encryptContent = SecureUtil.aes(aesKey.getBytes()).encryptBase64(content);</span><br><span class="line">        System.out.println(<span class="string">"AES 加密后的内容 encryptContent = "</span> + encryptContent);</span><br><span class="line"></span><br><span class="line">        Sign sign = SecureUtil.sign(SignAlgorithm.MD5withRSA);</span><br><span class="line">        <span class="keyword">byte</span>[] signedContent = sign.sign(content.getBytes());</span><br><span class="line">        System.err.println(<span class="string">"对原始数据进行签名signedContent = "</span> + signedContent);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 模拟获取request对象里面的parameters</span></span><br><span class="line">        String urlPath = <span class="string">"/admin/queryUserInfo"</span>;</span><br><span class="line">        String httpMethod = <span class="string">"POST"</span>;</span><br><span class="line">        <span class="keyword">long</span> clientTimeStamp = DateUtil.currentSeconds();</span><br><span class="line">        HashMap&lt;String, Object&gt; requestParams = MapUtil.newHashMap();</span><br><span class="line">        requestParams.put(<span class="string">"urlPath"</span>, urlPath);</span><br><span class="line">        requestParams.put(<span class="string">"httpMethod"</span>, httpMethod);</span><br><span class="line"><span class="comment">//        requestParams.put("clientSign", request.getClientSign());</span></span><br><span class="line">        requestParams.put(<span class="string">"clientTimeStamp"</span>, clientTimeStamp + <span class="string">""</span>);</span><br><span class="line">        String sign2String = MapUtil.sortJoin(MapUtil.sort(requestParams), <span class="string">"&amp;"</span>, <span class="string">"="</span>, <span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">        String calculateSign = SecureUtil.hmacSha1(aesKey.getBytes()).digestHex(sign2String);</span><br><span class="line"><span class="comment">//        calculateSign计算出来的sign和request 请求里面的参数clientSign进行比较，如果不一致说明数据被篡改了s</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"计算出来的sign和request 请求里面的参数clientSign 进行比较 = "</span> + calculateSign);</span><br><span class="line">        System.out.println(<span class="string">"解密-----------------------------------------------------"</span>);</span><br><span class="line">        <span class="comment">//6. 使用私钥解密后的key</span></span><br><span class="line"></span><br><span class="line">        String decryptAesKey = rsa.decryptStr(encryptAesKey, KeyType.PublicKey);</span><br><span class="line">        System.out.println(<span class="string">"使用私钥解密后的decryptAesKey = "</span> + decryptAesKey);</span><br><span class="line">        <span class="comment">//7. 解密得到明文的 aes 对称密码 解密加密的content数据</span></span><br><span class="line"></span><br><span class="line">        String decryptContent = SecureUtil.aes(decryptAesKey.getBytes()).decryptStr(encryptContent);</span><br><span class="line">        System.out.println(<span class="string">"解密得到明文的 aes 对称密码 解密加密的content数据 = "</span> + decryptContent);</span><br><span class="line">        <span class="comment">//8. 签名和验签 https://hutool.cn/docs/#/crypto/%E7%AD%BE%E5%90%8D%E5%92%8C%E9%AA%8C%E8%AF%81-Sign</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">boolean</span> verify = sign.verify(content.getBytes(), signedContent);</span><br><span class="line">        System.err.println(<span class="string">"验签状态verify = "</span> + verify);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -250,7 +217,7 @@ ga('send', 'pageview');
     <div class="inner-donation">
       <span class="btn-donation">支持一下</span>
       <div class="donation-body">
-        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <div class="tip text-center">扫一扫，支持codewindy</div>
         <ul>
         
           <li class="item">
@@ -314,39 +281,6 @@ ga('send', 'pageview');
               target="_self"
               >
               博客
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/category/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              分类
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/tag/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              标签
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/link/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              友链
             </a>
           </li>
         

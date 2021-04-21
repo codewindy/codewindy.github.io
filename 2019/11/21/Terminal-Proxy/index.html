@@ -98,14 +98,14 @@ ga('send', 'pageview');
 
 
   
-    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+    <span id="toolbox-mobile" class="toolbox-mobile">Home</span>
   
 
   <div class="post-header CENTER">
    
   <div class="toolbox">
     <a class="toolbox-entry" href="/">
-      <span class="toolbox-entry-text">盒子</span>
+      <span class="toolbox-entry-text">Home</span>
       <i class="icon-angle-down"></i>
       <i class="icon-home"></i>
     </a>
@@ -119,39 +119,6 @@ ga('send', 'pageview');
             target="_self"
             >
             博客
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/category/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            分类
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/tag/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            标签
-          </a>
-        </li>
-      
-        <li class="item-toolbox">
-          <a
-            class="CIRCLE"
-            href="/link/"
-            rel="noopener noreferrer"
-            target="_self"
-            >
-            友链
           </a>
         </li>
       
@@ -237,13 +204,13 @@ ga('send', 'pageview');
 </ul>
 <h1 id="三-实现"><a href="#三-实现" class="headerlink" title="三. 实现"></a>三. 实现</h1><ul>
 <li><p>打开<a href="https://www.diggui.com/" target="_blank" rel="noopener">https://www.diggui.com/</a> 查询<code>github.com</code>的A 记录并添加到<code>sudo vim /etc/hosts</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">A:github.com@8.8.8.8</span><br><span class="line">; &lt;&lt;&gt;&gt; DiG diggui.com &lt;&lt;&gt;&gt; @8.8.8.8 github.com A</span><br><span class="line">; (1 server found)</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 46485</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1</span><br><span class="line"></span><br><span class="line">;; OPT PSEUDOSECTION:</span><br><span class="line">; EDNS: version: 0, flags:; udp: 512</span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;github.com.			IN	A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">github.com.		59	IN	A	140.82.113.4</span><br><span class="line"></span><br><span class="line">;; Query time: 9 msec</span><br><span class="line">;; SERVER: 8.8.8.8#53(8.8.8.8)</span><br><span class="line">;; WHEN: Tue Jan 14 14:24:33 UTC 2020</span><br><span class="line">;; MSG SIZE  rcvd: 55</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">A:github.com@8.8.8.8</span><br><span class="line">; &lt;&lt;&gt;&gt; DiG diggui.com &lt;&lt;&gt;&gt; @8.8.8.8 github.com A</span><br><span class="line">; (1 server found)</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 46485</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1</span><br><span class="line"></span><br><span class="line">;; OPT PSEUDOSECTION:</span><br><span class="line">; EDNS: version: 0, flags:; udp: 512</span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;github.com.			IN	A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">github.com.		59	IN	A	140.82.113.4</span><br><span class="line"></span><br><span class="line">;; Query time: 9 msec</span><br><span class="line">;; SERVER: 8.8.8.8#53(8.8.8.8)</span><br><span class="line">;; WHEN: Tue Jan 14 14:24:33 UTC 2020</span><br><span class="line">;; MSG SIZE  rcvd: 55</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在<code>~/.zshrc</code>文件中配置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alias setroxy='export http_proxy=http://127.0.0.1:1087;</span><br><span class="line">export https_proxy=http://127.0.0.1:1087;'</span><br><span class="line">alias unsetproxy='unset http_proxy https_proxy'</span><br><span class="line">alias ip='curl cip.cc'</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">alias setroxy='export http_proxy=http://127.0.0.1:1087;</span><br><span class="line">export https_proxy=http://127.0.0.1:1087;'</span><br><span class="line">alias unsetproxy='unset http_proxy https_proxy'</span><br><span class="line">alias ip='curl cip.cc'</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>只配置git代理</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"> #</span><span class="bash">设置</span></span><br><span class="line"> git config --global http.proxy 'socks5://127.0.0.1:1086' </span><br><span class="line"> git config --global https.proxy 'socks5://127.0.0.1:1086'</span><br><span class="line"><span class="meta"> #</span><span class="bash">取消</span></span><br><span class="line"> git config --global --unset http.proxy</span><br><span class="line"> git config --global --unset https.proxy</span><br><span class="line"> git clone https://github.com/codewindy/blog.git --config "http.proxy=127.0.0.1:1086"</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta"> #</span><span class="bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:1086</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:7891</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta"> #</span><span class="bash">设置</span></span><br><span class="line"> git config --global http.proxy 'socks5://127.0.0.1:1086' </span><br><span class="line"> git config --global https.proxy 'socks5://127.0.0.1:1086'</span><br><span class="line"><span class="meta"> #</span><span class="bash">取消</span></span><br><span class="line"> git config --global --unset http.proxy</span><br><span class="line"> git config --global --unset https.proxy</span><br><span class="line"> git clone https://github.com/codewindy/blog.git --config "http.proxy=127.0.0.1:1086"</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta"> #</span><span class="bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:1086</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:7891</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在斐讯k2路由器刷机geewan或者openwrt/LEDE等石像鬼系统，直接配置ssr节点在路由器里面实现全局代理<br><img src="https://i.loli.net/2019/11/22/2SZVI5WJmxYLdOP.jpg" alt="Xnip2019-11-22_21-36-42.jpg"></p>
 <h1 id="四-效果"><a href="#四-效果" class="headerlink" title="四. 效果"></a>四. 效果</h1><p><img src="https://i.loli.net/2019/11/21/NalKSW27cfmC5pR.jpg" alt="Xnip2019-11-21_22-02-55.jpg"></p>
@@ -266,7 +233,7 @@ ga('send', 'pageview');
     <div class="inner-donation">
       <span class="btn-donation">支持一下</span>
       <div class="donation-body">
-        <div class="tip text-center">扫一扫，支持forsigner</div>
+        <div class="tip text-center">扫一扫，支持codewindy</div>
         <ul>
         
           <li class="item">
@@ -330,39 +297,6 @@ ga('send', 'pageview');
               target="_self"
               >
               博客
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/category/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              分类
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/tag/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              标签
-            </a>
-          </li>
-        
-          <li class="item-toolbox">
-            <a
-              class="CIRCLE"
-              href="/link/"
-              rel="noopener noreferrer"
-              target="_self"
-              >
-              友链
             </a>
           </li>
         
