@@ -388,30 +388,6 @@ ga('send', 'pageview');
     
     
 
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-    <div id="comment" class="vcomment" ></div>
-    <script>
-        var notify = 'false' == true ? true : false;
-        var verify = 'false' == true ? true : false;
-        var GUEST_INFO = ['nick','mail','link'];
-        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-            return GUEST_INFO.indexOf(item) > -1
-        });
-        guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
-        window.valine = new Valine({
-            el: '.vcomment',
-            notify: notify,
-            verify: verify,
-            appId: "qe3Kl6NAUeYp0pQjDQJn2K50-gzGzoHsz",
-            appKey: "bIsb5tY0ibN5kvEYaTvmXkBL",
-            avatar:'mm',
-            placeholder: "Keep coding !",
-            guest_info:guest_info,
-            pageSize:'10'
-        });
-    </script>
-  
     
 
   </div>
