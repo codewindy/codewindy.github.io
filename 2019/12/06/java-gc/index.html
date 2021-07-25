@@ -7,7 +7,7 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>java-9-cms-gc | codewindy</title>
+  <title>java gc问题分析 | codewindy</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -18,14 +18,14 @@
   <meta name="description" content="Java中9种常见的CMS GC问题分析与解决一. 背景 主要针对 Hotspot VM 中“CMS + ParNew”组合的一些使用场景进行总结。重点通过部分源码对根因进行分析以及对排查方法进行总结，排查过程会省略较多，另外本文专业术语较多，有一定的阅读门槛，如未介绍清楚，还请自行查阅相关材料。">
 <meta name="keywords" content="jvm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java-9-cms-gc">
+<meta property="og:title" content="java gc问题分析">
 <meta property="og:url" content="https://codewindy.github.io/2019/12/06/java-gc/index.html">
 <meta property="og:site_name" content="codewindy">
 <meta property="og:description" content="Java中9种常见的CMS GC问题分析与解决一. 背景 主要针对 Hotspot VM 中“CMS + ParNew”组合的一些使用场景进行总结。重点通过部分源码对根因进行分析以及对排查方法进行总结，排查过程会省略较多，另外本文专业术语较多，有一定的阅读门槛，如未介绍清楚，还请自行查阅相关材料。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-07-25T07:49:01.176Z">
+<meta property="og:updated_time" content="2021-07-25T08:29:58.642Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java-9-cms-gc">
+<meta name="twitter:title" content="java gc问题分析">
 <meta name="twitter:description" content="Java中9种常见的CMS GC问题分析与解决一. 背景 主要针对 Hotspot VM 中“CMS + ParNew”组合的一些使用场景进行总结。重点通过部分源码对根因进行分析以及对排查方法进行总结，排查过程会省略较多，另外本文专业术语较多，有一定的阅读门槛，如未介绍清楚，还请自行查阅相关材料。">
 
   
@@ -158,7 +158,7 @@ ga('send', 'pageview');
 <div class="content content-post CENTER">
    <article id="post-java-gc" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">java-9-cms-gc</h1>
+    <h1 class="post-title">java gc问题分析</h1>
 
     <div class="article-meta">
       <span>
