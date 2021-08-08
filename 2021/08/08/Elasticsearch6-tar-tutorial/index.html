@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>ElasticSearch 6.2.2 环境搭建以及使用部署 | codewindy</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="java,">
+  
+
+  <meta name="description" content="Elasticsearch tar.gz方式集群服务的安装下载文件 elasticsearch-6.2.2.tar.gz 一、Elasticsearch集群服务的安装###1.环境介绍 ###2.java版本 ###3.新建用户、用户组(1)创建用户组 groupadd hadoop   (2)新建用户并指定用户组为 hadoop用户组,并自动建立登录目录 useradd es -g hadoo">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ElasticSearch 6.2.2 环境搭建以及使用部署">
+<meta property="og:url" content="https://codewindy.github.io/2021/08/08/Elasticsearch6-tar-tutorial/index.html">
+<meta property="og:site_name" content="codewindy">
+<meta property="og:description" content="Elasticsearch tar.gz方式集群服务的安装下载文件 elasticsearch-6.2.2.tar.gz 一、Elasticsearch集群服务的安装###1.环境介绍 ###2.java版本 ###3.新建用户、用户组(1)创建用户组 groupadd hadoop   (2)新建用户并指定用户组为 hadoop用户组,并自动建立登录目录 useradd es -g hadoo">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://codewindy.github.io/2021/08/08/img/linux/es/0.png">
+<meta property="og:image" content="https://codewindy.github.io/2021/08/08/img/linux/es/1.png">
+<meta property="og:image" content="https://codewindy.github.io/2021/08/08/img/linux/es/2.png">
+<meta property="og:updated_time" content="2021-08-08T08:18:09.721Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ElasticSearch 6.2.2 环境搭建以及使用部署">
+<meta name="twitter:description" content="Elasticsearch tar.gz方式集群服务的安装下载文件 elasticsearch-6.2.2.tar.gz 一、Elasticsearch集群服务的安装###1.环境介绍 ###2.java版本 ###3.新建用户、用户组(1)创建用户组 groupadd hadoop   (2)新建用户并指定用户组为 hadoop用户组,并自动建立登录目录 useradd es -g hadoo">
+<meta name="twitter:image" content="https://codewindy.github.io/2021/08/08/img/linux/es/0.png">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+</head>
+</html>
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">Home</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">Home</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Elasticsearch-tar-gz方式集群服务的安装"><span class="toc-text">Elasticsearch tar.gz方式集群服务的安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Elasticsearch集群服务的安装"><span class="toc-text">一、Elasticsearch集群服务的安装</span></a></li></ol>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-Elasticsearch6-tar-tutorial" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">ElasticSearch 6.2.2 环境搭建以及使用部署</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2021.08.08</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>codewindy</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <script src="/assets/js/APlayer.min.js"> </script><h2 id="Elasticsearch-tar-gz方式集群服务的安装"><a href="#Elasticsearch-tar-gz方式集群服务的安装" class="headerlink" title="Elasticsearch tar.gz方式集群服务的安装"></a>Elasticsearch tar.gz方式集群服务的安装</h2><p>下载文件 <a href="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.2.2.tar.gz" target="_blank" rel="noopener">elasticsearch-6.2.2.tar.gz</a></p>
+<h2 id="一、Elasticsearch集群服务的安装"><a href="#一、Elasticsearch集群服务的安装" class="headerlink" title="一、Elasticsearch集群服务的安装"></a>一、Elasticsearch集群服务的安装</h2><p>###1.环境介绍<br> <img src="../img/linux/es/0.png" alt="0.png"><br>###2.java版本<br> <img src="../img/linux/es/1.png" alt="1.png"><br>###3.新建用户、用户组<br>(1)创建用户组</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">groupadd hadoop</span></span><br></pre></td></tr></table></figure>
+
+<p> (2)新建用户并指定用户组为 hadoop用户组,并自动建立登录目录<br> <figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">useradd es -g hadoop -n -m</span></span><br></pre></td></tr></table></figure></p>
+<p>(3)设置es用户密码</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">passwd es</span></span><br></pre></td></tr></table></figure>
+
+<p>###4.上传安装包 elasticsearch-6.2.2.tar.gz<br>上传elasticsearch-6.2.2.tar.gz安装包到/home/es/目录下</p>
+<p>(1)创建安装目录、软件存放目录</p>
+<p>进入/home/es/目录下</p>
+<figure class="highlight hsp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">mkdir</span> app 	<span class="meta"># 软件安装目录</span></span><br><span class="line"><span class="keyword">mkdir</span> soft 	<span class="meta"># 安装包存储目录</span></span><br></pre></td></tr></table></figure>
+
+<p> (2)修改文件权限<br> <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">chmod</span> <span class="selector-tag">u</span>+<span class="selector-tag">x</span> <span class="selector-tag">elasticsearch-6</span><span class="selector-class">.2</span><span class="selector-class">.2</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure></p>
+<p>(3)解压文件</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xvf</span> <span class="selector-tag">elasticsearch-6</span><span class="selector-class">.2</span><span class="selector-class">.2</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+
+<p>(4)重命名文件夹</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">mv</span> <span class="selector-tag">elasticsearch-6</span><span class="selector-class">.2</span><span class="selector-class">.2</span> <span class="selector-tag">elasticsearch</span></span><br></pre></td></tr></table></figure>
+
+<p>(5)剪切到安装目录</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">mv elasticsearch <span class="regexp">/home/</span>es<span class="regexp">/app/</span></span><br></pre></td></tr></table></figure>
+
+<p> <img src="../img/linux/es/2.png" alt="2.png"></p>
+<p>(6)创建elasticsearch数据目录</p>
+<p>进入/home/es/app/elasticsearch/</p>
+<figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">mkdir</span> <span class="class"><span class="keyword">data</span>  #结果目录/home/es/app/elasticsearch/<span class="keyword">data</span></span></span><br></pre></td></tr></table></figure>
+
+<p>(7)修改elasticsearch的拥有者设为 es 群组的使用者 hadoop</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">chown -R <span class="string">es:</span>hadoop <span class="regexp">/home/</span>es<span class="regexp">/app/</span>elasticsearch</span><br></pre></td></tr></table></figure>
+
+<p>###5.修改elasticsearch配置文件<br>(1)修改配置文件elasticsearch/config/elasticsearch.yml</p>
+<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># ======================== Elasticsearch Configuration =========================</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># NOTE: Elasticsearch comes with reasonable defaults for most settings.</span></span><br><span class="line"><span class="meta">#       Before you set out to tweak and tune the configuration, make sure you</span></span><br><span class="line"><span class="meta">#       understand what are you trying to accomplish and the consequences.</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># The primary way of configuring a node is via this file. This template lists</span></span><br><span class="line"><span class="meta"># the most important settings you may want to configure for a production cluster.</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Please consult the documentation for further information on configuration options:</span></span><br><span class="line"><span class="meta"># https://www.elastic.co/guide/en/elasticsearch/reference/index.html</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># ---------------------------------- Cluster -----------------------------------</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Use a descriptive name for your cluster:</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#cluster.name: my-application</span></span><br><span class="line"><span class="meta"># 集群的名称 </span></span><br><span class="line">cluster.name: elasticsearch </span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># ------------------------------------ Node ------------------------------------</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Use a descriptive name for the node:</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#node.name: node-1</span></span><br><span class="line"><span class="meta"># 节点名称，不同机器节点名称不相同 </span></span><br><span class="line">node.name: hadoop72 </span><br><span class="line"><span class="meta"># 指定该节点是否有资格被选举成为master节点,默认是true,es是默认集群中的第一台机器为master，如果这台机挂了就会重新选举master </span></span><br><span class="line">node.master: <span class="literal">true</span> </span><br><span class="line"><span class="meta"># 允许该节点存储数据(默认开启) </span></span><br><span class="line">node.data: <span class="literal">true</span> </span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Add custom attributes to the node:</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#node.attr.rack: r1</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># ----------------------------------- Paths ------------------------------------</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Path to directory where to store the data (separate multiple locations by comma):</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#path.data: /path/to/data</span></span><br><span class="line"><span class="meta"># 索引数据的存储路径 </span></span><br><span class="line">path.data: /home/es/app/elasticsearch/data </span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Path to log files:</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#path.logs: /path/to/logs</span></span><br><span class="line"><span class="meta"># 日志文件的存储路径 </span></span><br><span class="line">path.logs: /home/es/app/elasticsearch/logs </span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># ----------------------------------- Memory -----------------------------------</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Lock the memory on startup:</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#bootstrap.memory_lock: true</span></span><br><span class="line">bootstrap.system_call_filter: <span class="literal">false</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Make sure that the heap size is set to about half the memory available</span></span><br><span class="line"><span class="meta"># on the system and that the owner of the process is allowed to use this</span></span><br><span class="line"><span class="meta"># limit.</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Elasticsearch performs poorly when the system is swapping the memory.</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># ---------------------------------- Network -----------------------------------</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Set the bind address to a specific IP (IPv4 or IPv6):</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#network.host: 192.168.0.1</span></span><br><span class="line"><span class="meta"># 绑定的ip地址 </span></span><br><span class="line">network.host: <span class="number">192.168</span><span class="number">.0</span><span class="number">.209</span> </span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Set a custom port for HTTP:</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#http.port: 9200</span></span><br><span class="line"><span class="meta"># 设置对外服务的http端口,默认为9200 </span></span><br><span class="line">http.port: <span class="number">9200</span> </span><br><span class="line"><span class="meta"># 设置节点间交互的tcp端口,默认是9300 </span></span><br><span class="line">transport.tcp.port: <span class="number">9300</span> </span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># For more information, consult the network module documentation.</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># --------------------------------- Discovery ---------------------------------- </span></span><br><span class="line"><span class="meta"># </span></span><br><span class="line"><span class="meta"># Pass an initial list of hosts to perform discovery when new node is started: </span></span><br><span class="line"><span class="meta"># The default list of hosts is ["127.0.0.1", "[::1]"] </span></span><br><span class="line"><span class="meta"># </span></span><br><span class="line"><span class="meta">#discovery.zen.ping.unicast.hosts: ["host1", "host2"] </span></span><br><span class="line"><span class="meta">#Elasticsearch将绑定到可用的环回地址，并将扫描端口9300到9305以尝试连接到运行在同一台服务器上的其他节点。 </span></span><br><span class="line"><span class="meta">#这提供了自动集群体验，而无需进行任何配置。数组设置或逗号分隔的设置。每个值的形式应该是host:port或host </span></span><br><span class="line"><span class="meta">#（如果没有设置，port默认设置会transport.profiles.default.port 回落到transport.tcp.port）。 </span></span><br><span class="line"><span class="meta">#请注意，IPv6主机必须放在括号内。默认为127.0.0.1, [::1] </span></span><br><span class="line">discovery.zen.ping.unicast.hosts: [<span class="string">"192.168.0.209:9300"</span>, <span class="string">"192.168.0.214:9300"</span>, <span class="string">"192.168.0.215:9300"</span>] </span><br><span class="line">discovery.zen.fd.ping_timeout: <span class="number">120</span>s </span><br><span class="line">discovery.zen.fd.ping_retries: <span class="number">6</span> </span><br><span class="line">discovery.zen.fd.ping_interval: <span class="number">30</span>s </span><br><span class="line">client.transport.ping_timeout : <span class="number">60</span>s </span><br><span class="line"><span class="meta"># </span></span><br><span class="line"><span class="meta"># Prevent the "split brain" by configuring the majority of nodes (total number of master-eligible nodes / 2 + 1): </span></span><br><span class="line"><span class="meta"># </span></span><br><span class="line"><span class="meta">#discovery.zen.minimum_master_nodes: </span></span><br><span class="line"><span class="meta"># 如果没有这种设置,遭受网络故障的集群就有可能将集群分成两个独立的集群 - 分裂的大脑 - 这将导致数据丢失 </span></span><br><span class="line">discovery.zen.minimum_master_nodes: <span class="number">2</span> </span><br><span class="line"><span class="meta"># </span></span><br><span class="line"><span class="meta"># For more information, consult the zen discovery module documentation. </span></span><br><span class="line"><span class="meta"># </span></span><br><span class="line"><span class="meta"># ---------------------------------- Gateway -----------------------------------</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Block initial recovery after a full cluster restart until N nodes are started:</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#gateway.recover_after_nodes: 3</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># For more information, consult the gateway module documentation.</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># ---------------------------------- Various -----------------------------------</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># Require explicit names when deleting indices:</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#action.destructive_requires_name: true</span></span><br></pre></td></tr></table></figure>
+
+<p>(2)调整JVM内存 elasticsearch/config/jvm.options</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">-Xms2g</span></span><br><span class="line"><span class="deletion">-Xmx2g</span></span><br></pre></td></tr></table></figure>
+
+<p>(3)修改系统配置</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">vim</span> /etc/security/limits.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+
+<p>切换root用户，在Linux系统上，可以通过编辑 /etc/security/limits.conf 文件为特定用户设置持久限制。要将用户的最大打开文件数设置es为65536<br>请将以下行添加到limits.conf文件中：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">es</span> <span class="string">soft</span> <span class="string">nofile</span> <span class="number">65536</span></span><br><span class="line"><span class="string">es</span> <span class="string">hard</span> <span class="string">nofile</span> <span class="number">65536</span></span><br><span class="line"><span class="string">es</span> <span class="string">soft</span> <span class="string">nproc</span> <span class="number">16384</span></span><br><span class="line"><span class="string">es</span> <span class="string">hard</span> <span class="string">nproc</span> <span class="number">16384</span></span><br><span class="line"><span class="string">es</span> <span class="string">soft</span> <span class="string">stack</span> <span class="number">10240</span></span><br><span class="line"><span class="comment"># 此更改仅在es用户下次打开新会话时生效。</span></span><br></pre></td></tr></table></figure>
+
+<p>(4)修改 /etc/sysctl.conf</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">vim</span> /etc/sysctl.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+
+<p>添加以下配置</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">vm.max_map_count</span> = <span class="number">655360</span></span><br></pre></td></tr></table></figure>
+
+<p>执行以下命令立即生效</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sysctl -p</span></span><br></pre></td></tr></table></figure>
+
+<p>(5)开放9200、9300端口，其中一台主机开放5601端口</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>sysconfig<span class="regexp">/iptables</span></span><br></pre></td></tr></table></figure>
+
+<p>添加如下配置</p>
+<figure class="highlight pf"><table><tr><td class="code"><pre><span class="line">-A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">5601</span> -j ACCEPT</span><br><span class="line">-A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">9200</span> -j ACCEPT</span><br><span class="line">-A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">9300</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
+
+<p>重启防火墙</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">service iptables restart</span></span><br></pre></td></tr></table></figure>
+
+<p>###6.启动es<br>es不能以root用户启动，切换到es用户<br>切换到elsaticsearch目录下的bin文件夹，执行后台启动命令</p>
+<figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="string">./elasticsearch</span> -d</span><br></pre></td></tr></table></figure>
+
+<p>查看elasticsearch是否启动</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">ps</span> -ef|<span class="keyword">grep</span> elasticsearch</span><br></pre></td></tr></table></figure>
+
+<p>停止服务</p>
+<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">kill</span> -<span class="number">9</span> 进程号</span><br><span class="line">ps -ef|<span class="keyword">grep</span> elasticsearch</span><br></pre></td></tr></table></figure>
+
+<p>验证服务是否正常</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">curl -<span class="built_in">i</span> <span class="string">"http://192.168.0.209:9200"</span></span><br></pre></td></tr></table></figure>
+
+<p>##二、安装Kibana<br>下载文件 <a href="https://artifacts.elastic.co/downloads/kibana/kibana-6.2.2-darwin-x86_64.tar.gz" target="_blank" rel="noopener">kibana-6.2.2-linux-x86_64.tar.gz</a><br>###1.修改文件权限</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">chmod</span> <span class="selector-tag">u</span>+<span class="selector-tag">x</span> <span class="selector-tag">kibana-6</span><span class="selector-class">.2</span><span class="selector-class">.2-linux-x86_64</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+
+<p>###2.解压<br>文件解压到/home/es/app/kibana/目录下</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">tar</span> <span class="selector-tag">-xvf</span> <span class="selector-tag">kibana-6</span><span class="selector-class">.2</span><span class="selector-class">.2-linux-x86_64</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
+
+<p>###3.修改配置文件<br>修改配置文件 config/kibana.yml,每台服务器修改为对应的ip</p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">server.host:</span> <span class="string">"192.168.0.209"</span></span><br><span class="line"><span class="symbol">elasticsearch.url:</span> <span class="string">"http://192.168.0.209:9200"</span></span><br></pre></td></tr></table></figure>
+
+<p>###4.启动kibana<br>切换到kibana目录下的bin文件夹，执行后台启动命令</p>
+<figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">nohup ./kibana &amp;</span><br><span class="line">【注意】：使用此命令依然会打印日志,但运行 Ctrl+C 后不会关闭进程, 不可直接关闭<span class="keyword">shell</span><span class="bash">窗口，须运行 <span class="built_in">exit</span>命令退出shell窗口</span></span><br></pre></td></tr></table></figure>
+
+<p>停止命令</p>
+<figure class="highlight excel"><table><tr><td class="code"><pre><span class="line">fuser -<span class="built_in">n</span> tcp <span class="number">5601</span></span><br></pre></td></tr></table></figure>
+
+<p>关闭进程 </p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">kill</span> <span class="number">-9</span> 进程号</span><br></pre></td></tr></table></figure>
+
+<p>###5.访问地址</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">http:<span class="regexp">//</span><span class="number">192.168</span>.<span class="number">209.128</span>:<span class="number">5601</span><span class="regexp">/app/</span>kibana</span><br></pre></td></tr></table></figure>
+
+<p>##三、Elasticsearch基础操作<br>1.检查集群的健康状况</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="builtin-name">GET</span>	/_cat/health?v</span><br></pre></td></tr></table></figure>
+
+<p>2.查看集群中索引</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="builtin-name">GET</span>	/_cat/indices?v</span><br></pre></td></tr></table></figure>
+
+<p>3.集群健康</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="builtin-name">GET</span> _cat/health?v</span><br></pre></td></tr></table></figure>
+
+<p>4.磁盘使用情况</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="builtin-name">GET</span> _cat/allocation?v</span><br></pre></td></tr></table></figure>
+
+<p>5.内存使用情况 </p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="builtin-name">GET</span> _cat/nodes?v</span><br></pre></td></tr></table></figure>
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持codewindy</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wx.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2021/08/08/Elasticsearch7-docker-tutorial/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="hide pull-right" href="/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+<!-- Gitalk评论插件通用代码 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '4a826e7e0c60ad01dacc',
+  clientSecret: '511911362023e9b195a12b5fdd71ae032922257a',
+  repo: 'gittalk4blog',
+  owner: 'codewindy',
+  // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+  // 50个字符串则会报错.
+  // id: location.pathname.split('/').pop().substring(0, 49),
+  id: md5(location.pathname),
+  admin: ['codewindy'],
+  // facebook-like distraction free mode
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+<!-- Gitalk代码结束 -->
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
