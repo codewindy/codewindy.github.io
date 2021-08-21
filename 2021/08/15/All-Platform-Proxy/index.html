@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/08/15/7ROWiqKFtPoaDJn.png">
 <meta property="og:image" content="https://i.loli.net/2021/08/16/QOqDbYjIrzEZfsV.png">
 <meta property="og:image" content="https://i.loli.net/2021/08/16/ojxNsJm8Inf2D4r.png">
-<meta property="og:updated_time" content="2021-08-16T13:43:38.356Z">
+<meta property="og:updated_time" content="2021-08-21T00:10:51.578Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全平台高速上网的方法">
 <meta name="twitter:description" content="全平台上网方式背景 由于自己有全平台设备导致各个设备上网尤其是Youtube和Twitter就很繁琐，现在发现了一种全新的全局上网可以覆盖全平台，而且成本很低，最重要的是速度又快又稳定  整个过程 Redmi k40 安卓手机充当者路由器的角色, 连接WiFi或使用4G流量，然后发射热点提供正向代理以及流量转发  我的设备如下表    设备名 系统 软件    Redmi k40 Android">
@@ -245,6 +245,7 @@ ga('send', 'pageview');
 <li>其实一开始是想着抓包或者直接Root Explore 后获取<code>/data/usr/0/com.pandavpn.androidproxy</code> 目录下找到了对应的服务器地址以及连接账号密码但是用ssr试了发现无法使用应该是被限制了而且密码是每次连接随机生成的还加上了超时机制等于是作罢</li>
 <li><img src="https://i.loli.net/2021/08/16/QOqDbYjIrzEZfsV.png" alt="panda_VPN_2021-08-15.jpg"></li>
 <li>在ios 以及macos 端也可以照着这种方式实现高速刷Twitter</li>
+<li>ios端shadowrocket 在连接热点的时候手动设置http代理有的软件可能还是无法使用，最好设置socket5代理，即 点击 + 号在类型里面填socket5 并填入热点的ip 地址<code>192.168.167.5</code>以及 every proxy 上配置的自定义代理端口号1088 就能使用了</li>
 <li><img src="https://i.loli.net/2021/08/16/ojxNsJm8Inf2D4r.png" alt="image.png"></li>
 </ul>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
