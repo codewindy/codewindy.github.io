@@ -24,7 +24,7 @@
 <meta property="og:description" content="常用 Git 命令清单。几个专用名词的译名如下。 Workspace：工作区 Index / Stage：暂存区 Repository：仓库区（或本地仓库） Remote：远程仓库">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://ot2hu9qoc.bkt.clouddn.com/17-8-28/5617535.jpg">
-<meta property="og:updated_time" content="2021-04-18T10:05:55.924Z">
+<meta property="og:updated_time" content="2022-02-12T07:28:13.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GIT Manual">
 <meta name="twitter:description" content="常用 Git 命令清单。几个专用名词的译名如下。 Workspace：工作区 Index / Stage：暂存区 Repository：仓库区（或本地仓库） Remote：远程仓库">
@@ -152,7 +152,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#新建代码库"><span class="toc-text">新建代码库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看3种状态"><span class="toc-text">查看3种状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#增加-删除文件"><span class="toc-text">增加/删除文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码提交"><span class="toc-text">代码提交</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分支"><span class="toc-text">分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#标签"><span class="toc-text">标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看信息"><span class="toc-text">查看信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#远程同步"><span class="toc-text">远程同步</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#撤销"><span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-up-GitHub-push-with-SSH-keys"><span class="toc-text">Set up GitHub push with SSH keys</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#新建代码库"><span class="toc-text">新建代码库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看3种状态"><span class="toc-text">查看3种状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#增加-删除文件"><span class="toc-text">增加/删除文件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码提交"><span class="toc-text">代码提交</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分支"><span class="toc-text">分支</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#标签"><span class="toc-text">标签</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#查看信息"><span class="toc-text">查看信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#远程同步"><span class="toc-text">远程同步</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#撤销"><span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Set-up-GitHub-push-with-SSH-keys"><span class="toc-text">Set up GitHub push with SSH keys</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#注释规范"><span class="toc-text">注释规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分支规范"><span class="toc-text">分支规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Label规范"><span class="toc-text">Label规范</span></a></li></ol></li></ol>
   </div>
 
 
@@ -233,6 +233,25 @@ ga('send', 'pageview');
 
 <h1 id="Set-up-GitHub-push-with-SSH-keys"><a href="#Set-up-GitHub-push-with-SSH-keys" class="headerlink" title="Set up GitHub push with SSH keys"></a>Set up GitHub push with SSH keys</h1><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">Create a repo. Make sure there is at least one file in it (even just the README) Generate ssh key:</span><br><span class="line"></span><br><span class="line">ssh-keygen -t rsa -C "your_email@example.com"</span><br><span class="line">Copy the contents of the file ~/.ssh/id_rsa.pub to your SSH keys in your GitHub account settings. Test SSH key:</span><br><span class="line"></span><br><span class="line">ssh -T git@github.com</span><br><span class="line">clone the repo:</span><br><span class="line">git clone git://github.com/username/your-repository</span><br><span class="line">Now cd to your git clone folder and do:</span><br><span class="line"></span><br><span class="line">git remote set-url origin git@github.com:username/your-repository.git</span><br><span class="line">Now try editing a file (try the README) and then do:</span><br><span class="line"></span><br><span class="line">git add -A</span><br><span class="line">git commit -am "my update msg"</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
 
+<h2 id="注释规范"><a href="#注释规范" class="headerlink" title="注释规范"></a>注释规范</h2><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">feature：新增feature</span><br><span class="line">fix: 修复bug</span><br><span class="line">docs: 仅仅修改了文档，比如README, CHANGELOG, CONTRIBUTE等等</span><br><span class="line">sql: 新增、修改SQL文件</span><br><span class="line">style: 仅仅修改了空格、格式缩进、符号等等，不改变代码逻辑</span><br><span class="line">refactor: 代码重构，没有加新功能或者修复bug</span><br><span class="line">perf: 优化相关，比如提升性能、体验</span><br><span class="line"><span class="keyword">test: </span>测试用例，包括单元测试、集成测试等</span><br><span class="line">chore: 改变构建流程、或者增加依赖库、工具等</span><br><span class="line">revert: 回滚到上一个版本</span><br></pre></td></tr></table></figure>
+
+<p>每个commit必须包含以上注释，方便review。</p>
+<h2 id="分支规范"><a href="#分支规范" class="headerlink" title="分支规范"></a>分支规范</h2><ul>
+<li>master分支：生产分支，用于存放发布到生产环境的代码。该分支只能从其他分支合并，不能直接修改推送。</li>
+<li>feature/*分支：功能分支，用来开发新功能。开发完成后合入测试或者生产分支，被合并后删除。</li>
+<li>hotfix/*分支：补丁分支，用来紧急修复生产环境的缺陷。开发完成后合入测试或者生产分支，被合并后删除。</li>
+<li>环境分支：可选项，如果有要求可以加测试环境的分支，规范同生产分支。</li>
+</ul>
+<p>每次开发从master分支中检出，命名为feature/version_no，开发完成后通过pull request/merger request合入环境分支进行测试，最后合入master分支。上线部署后，在master分支增加版本号tag。</p>
+<h2 id="Label规范"><a href="#Label规范" class="headerlink" title="Label规范"></a>Label规范</h2><ul>
+<li>feature：新功能</li>
+<li>enhancement：性能优化或者功能增强</li>
+<li>bug：问题修复</li>
+<li>backend：后端功能（如果前后端代码都有）</li>
+<li>frontend：前端功能（如果前后端代码都有）</li>
+<li>其他特性label</li>
+</ul>
+<p>Issues和Pull Request/Merge Request最好都加上Label，方便分类。</p>
 <ul>
 <li><a href="https://blog.csdn.net/zeng6325998/article/details/109320301?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242" target="_blank" rel="noopener">git rebase教程</a></li>
 <li><a href="https://blog.csdn.net/u010176097/article/details/96875148" target="_blank" rel="noopener">git rebase push commit</a></li>
