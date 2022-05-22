@@ -4,7 +4,7 @@
   <html class="light page-post">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <title>ElasticSearch 7.9.0 环境搭建以及部署 | codewindy</title>
@@ -12,22 +12,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="java,">
+    <meta name="keywords" content="java," />
   
 
   <meta name="description" content="ELK Docker环境搭建以及部署背景 ElasticSearch 7.9.0  安装部署以及使用">
-<meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElasticSearch 7.9.0 环境搭建以及部署">
 <meta property="og:url" content="https://codewindy.github.io/2021/08/08/Elasticsearch7-docker-tutorial/index.html">
 <meta property="og:site_name" content="codewindy">
 <meta property="og:description" content="ELK Docker环境搭建以及部署背景 ElasticSearch 7.9.0  安装部署以及使用">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="https://i.loli.net/2021/08/08/t4Uuj8hTvMzcxPp.png">
-<meta property="og:updated_time" content="2021-09-12T06:43:32.538Z">
+<meta property="article:published_time" content="2021-08-08T08:00:56.000Z">
+<meta property="article:modified_time" content="2021-09-12T06:43:32.538Z">
+<meta property="article:author" content="codewindy">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ElasticSearch 7.9.0 环境搭建以及部署">
-<meta name="twitter:description" content="ELK Docker环境搭建以及部署背景 ElasticSearch 7.9.0  安装部署以及使用">
 <meta name="twitter:image" content="https://i.loli.net/2021/08/08/t4Uuj8hTvMzcxPp.png">
 
   
@@ -91,8 +91,8 @@ ga('send', 'pageview');
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
 
 
@@ -152,7 +152,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ELK-Docker环境搭建以及部署"><span class="toc-text">ELK Docker环境搭建以及部署</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#步骤"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ELK-Docker%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8A%E9%83%A8%E7%BD%B2"><span class="toc-text">ELK Docker环境搭建以及部署</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a>
   </div>
 
 
@@ -195,53 +195,52 @@ ga('send', 'pageview');
     
       <script src="/assets/js/APlayer.min.js"> </script><h2 id="ELK-Docker环境搭建以及部署"><a href="#ELK-Docker环境搭建以及部署" class="headerlink" title="ELK Docker环境搭建以及部署"></a>ELK Docker环境搭建以及部署</h2><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><ul>
 <li><p>ElasticSearch 7.9.0  安装部署以及使用</p>
-<a id="more"></a>
+<span id="more"></span>
 <h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1></li>
 <li><p>docker 安装</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://get.docker.com/gpg</span><br><span class="line">rpmkeys --import ./gpg</span><br><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br><span class="line">sudo systemctl restart docker</span><br><span class="line">vim /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  "registry-mirrors": [</span><br><span class="line">    "https://hub-mirror.c.163.com",</span><br><span class="line">    "https://mirror.baidubce.com"</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo systemctl daemon-reload</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo systemctl restart docker</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://get.docker.com/gpg</span><br><span class="line">rpmkeys --import ./gpg</span><br><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br><span class="line">sudo systemctl restart docker</span><br><span class="line">vim /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [</span><br><span class="line">    &quot;https://hub-mirror.c.163.com&quot;,</span><br><span class="line">    &quot;https://mirror.baidubce.com&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo systemctl daemon-reload</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sudo systemctl restart docker</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>docker-compose 安装</p>
-<figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">$ sudo curl -L <span class="symbol">https:</span>/<span class="regexp">/github.com/docker</span><span class="regexp">/compose/releases</span><span class="regexp">/download/</span><span class="number">1.27</span>.<span class="number">4</span>/docker-compose-<span class="string">`uname -s`</span>-<span class="string">`uname -m`</span> &gt; <span class="regexp">/usr/local</span><span class="regexp">/bin/docker</span>-compose</span><br><span class="line"></span><br><span class="line"><span class="comment"># 国内用户可以使用以下方式加快下载</span></span><br><span class="line">$ sudo curl -L <span class="symbol">https:</span>/<span class="regexp">/download.fastgit.org/docker</span><span class="regexp">/compose/releases</span><span class="regexp">/download/</span><span class="number">1.27</span>.<span class="number">4</span>/docker-compose-<span class="string">`uname -s`</span>-<span class="string">`uname -m`</span> &gt; <span class="regexp">/usr/local</span><span class="regexp">/bin/docker</span>-compose</span><br><span class="line"></span><br><span class="line">$ sudo chmod +x /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br><span class="line"></span><br><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">$ sudo curl -L https:<span class="regexp">//gi</span>thub.com<span class="regexp">/docker/</span>compose<span class="regexp">/releases/</span>download<span class="regexp">/1.27.4/</span>docker-compose-`uname -s`-`uname -m` &gt; <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>docker-compose</span><br><span class="line"></span><br><span class="line"><span class="comment"># 国内用户可以使用以下方式加快下载</span></span><br><span class="line">$ sudo curl -L https:<span class="regexp">//</span>download.fastgit.org<span class="regexp">/docker/</span>compose<span class="regexp">/releases/</span>download<span class="regexp">/1.27.4/</span>docker-compose-`uname -s`-`uname -m` &gt; <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>docker-compose</span><br><span class="line"></span><br><span class="line">$ sudo chmod +x <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>docker-compose</span><br><span class="line"></span><br><span class="line">sudo ln -s <span class="regexp">/usr/</span>local<span class="regexp">/bin/</span>docker-compose <span class="regexp">/usr/</span>bin/docker-compose</span><br><span class="line"></span><br><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>docker-compose.yml 配置</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="symbol">version:</span> <span class="string">"3.1"</span></span><br><span class="line"><span class="symbol">services:</span></span><br><span class="line"><span class="symbol">  elasticsearch:</span></span><br><span class="line"><span class="symbol">	image:</span> daocloud.io<span class="meta-keyword">/library/</span>elasticsearch:<span class="number">7.9</span><span class="number">.0</span></span><br><span class="line"><span class="symbol">	restart:</span> always</span><br><span class="line"><span class="symbol">	container_name:</span> elasticsearch</span><br><span class="line"><span class="symbol">	ports:</span></span><br><span class="line">	  - <span class="number">9200</span>:<span class="number">9200</span></span><br><span class="line"><span class="symbol">	environment:</span></span><br><span class="line">      - <span class="string">"ES_JAVA_OPTS=-Xms512m -Xmx512m"</span></span><br><span class="line">      - discovery.type=single-node</span><br><span class="line"><span class="symbol">  kibana:</span></span><br><span class="line"><span class="symbol">	image:</span> daocloud.io<span class="meta-keyword">/library/</span>kibana:<span class="number">7.9</span><span class="number">.0</span></span><br><span class="line"><span class="symbol">	restart:</span> always</span><br><span class="line"><span class="symbol">	container_name:</span> kibana</span><br><span class="line"><span class="symbol">	ports:</span></span><br><span class="line">	  - <span class="number">5601</span>:<span class="number">5601</span></span><br><span class="line"><span class="symbol">	environment:</span></span><br><span class="line">	  - elasticsearch_url=http:<span class="comment">//192.168.106.129:9200</span></span><br><span class="line"><span class="symbol">	depends_on:</span></span><br><span class="line">	  - elasticsearch</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight nestedtext"><table><tr><td class="code"><pre><span class="line"><span class="attribute">version</span><span class="punctuation">:</span> <span class="string">&quot;3.1&quot;</span></span><br><span class="line"><span class="attribute">services</span><span class="punctuation">:</span></span><br><span class="line">  <span class="attribute">elasticsearch</span><span class="punctuation">:</span></span><br><span class="line">	<span class="attribute">image</span><span class="punctuation">:</span> <span class="string">daocloud.io/library/elasticsearch:7.9.0</span></span><br><span class="line">	<span class="attribute">restart</span><span class="punctuation">:</span> <span class="string">always</span></span><br><span class="line">	<span class="attribute">container_name</span><span class="punctuation">:</span> <span class="string">elasticsearch</span></span><br><span class="line">	<span class="attribute">ports</span><span class="punctuation">:</span></span><br><span class="line">	  <span class="bullet">-</span> <span class="string">9200:9200</span></span><br><span class="line">	<span class="attribute">environment</span><span class="punctuation">:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;ES_JAVA_OPTS=-Xms512m -Xmx512m&quot;</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">discovery.type=single-node</span></span><br><span class="line">  <span class="attribute">kibana</span><span class="punctuation">:</span></span><br><span class="line">	<span class="attribute">image</span><span class="punctuation">:</span> <span class="string">daocloud.io/library/kibana:7.9.0</span></span><br><span class="line">	<span class="attribute">restart</span><span class="punctuation">:</span> <span class="string">always</span></span><br><span class="line">	<span class="attribute">container_name</span><span class="punctuation">:</span> <span class="string">kibana</span></span><br><span class="line">	<span class="attribute">ports</span><span class="punctuation">:</span></span><br><span class="line">	  <span class="bullet">-</span> <span class="string">5601:5601</span></span><br><span class="line">	<span class="attribute">environment</span><span class="punctuation">:</span></span><br><span class="line">	  <span class="bullet">-</span> <span class="string">elasticsearch_url=http://192.168.106.129:9200</span></span><br><span class="line">	<span class="attribute">depends_on</span><span class="punctuation">:</span></span><br><span class="line">	  <span class="bullet">-</span> <span class="string">elasticsearch</span></span><br></pre></td></tr></table></figure></li>
 <li><p>docker-compose -d 启动</p>
 </li>
 <li><p>启动docker-compose 失败后问题解决</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">ERROR: [2] bootstrap checks failed</span><br><span class="line">[1]: max virtual memory areas vm.max_map_count [65530] is too low, increase <span class="keyword">to</span> at least [262144]</span><br><span class="line">[2]: the<span class="built_in"> default discovery settings </span>are unsuitable <span class="keyword">for</span> production use; at least one of [discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes] must be configured</span><br><span class="line"></span><br><span class="line">在 /etc/sysctl.conf文件最后添加一行</span><br><span class="line">vm.<span class="attribute">max_map_count</span>=262144</span><br><span class="line">sysctl -p</span><br><span class="line"></span><br><span class="line">进入容器config/elasticsearch.yml中修改 discovery.seed_hosts: [<span class="string">"127.0.0.1"</span>, <span class="string">"[::1]"</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight inform7"><table><tr><td class="code"><pre><span class="line">ERROR: <span class="comment">[2]</span> bootstrap checks failed</span><br><span class="line"><span class="comment">[1]</span>: max virtual memory areas vm.max_map_count <span class="comment">[65530]</span> <span class="keyword">is</span> too low, increase to at least <span class="comment">[262144]</span></span><br><span class="line"><span class="comment">[2]</span>: the default discovery settings <span class="keyword">are</span> unsuitable for production use; at least one <span class="keyword">of</span> <span class="comment">[discovery.seed_hosts, discovery.seed_providers, cluster.initial_master_nodes]</span> must be configured</span><br><span class="line"></span><br><span class="line">在 /etc/sysctl.conf文件最后添加一行</span><br><span class="line">vm.max_map_count=262144</span><br><span class="line">sysctl -p</span><br><span class="line"></span><br><span class="line">进入容器config/elasticsearch.yml中修改 discovery.seed_hosts: <span class="comment">[&quot;127.0.0.1&quot;, &quot;<span class="comment">[::1]</span>&quot;]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><img src="https://i.loli.net/2021/08/08/t4Uuj8hTvMzcxPp.png" alt="image-20210804223814572.png"></p>
 </li>
-<li><p><a href="http://192.168.106.129:9200/_cat/health?pretty" target="_blank" rel="noopener">http://192.168.106.129:9200/_cat/health?pretty</a>  查询节点状态</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1.检查集群的健康状况</span><br><span class="line"></span><br><span class="line">GET	/_cat/health?v</span><br><span class="line"></span><br><span class="line">2.查看集群中索引</span><br><span class="line"></span><br><span class="line">GET	/_cat/indices?v</span><br><span class="line"></span><br><span class="line">3.集群健康</span><br><span class="line"></span><br><span class="line">GET _cat/health?v</span><br><span class="line"></span><br><span class="line">4.磁盘使用情况</span><br><span class="line"></span><br><span class="line">GET _cat/allocation?v</span><br><span class="line"></span><br><span class="line">5.内存使用情况 </span><br><span class="line"></span><br><span class="line">GET _cat/nodes?v</span><br></pre></td></tr></table></figure>
+<li><p><a target="_blank" rel="noopener" href="http://192.168.106.129:9200/_cat/health?pretty">http://192.168.106.129:9200/_cat/health?pretty</a>  查询节点状态</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">1.检查集群的健康状况</span><br><span class="line"></span><br><span class="line">GET	/_cat/health?v</span><br><span class="line"></span><br><span class="line">2.查看集群中索引</span><br><span class="line"></span><br><span class="line">GET	/_cat/indices?v</span><br><span class="line"></span><br><span class="line">3.集群健康</span><br><span class="line"></span><br><span class="line">GET _cat/health?v</span><br><span class="line"></span><br><span class="line">4.磁盘使用情况</span><br><span class="line"></span><br><span class="line">GET _cat/allocation?v</span><br><span class="line"></span><br><span class="line">5.内存使用情况 </span><br><span class="line"></span><br><span class="line">GET _cat/nodes?v</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装ik分词器最好先下载到本地后通过搭建http服务的方式安装</p>
-<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line">跟es版本对应安装记住 通过http 方式安装可以自己用nginx 服务或者everything 搭建</span><br><span class="line">.<span class="meta-keyword">/es/</span>bin/elasticsearch-plugin install http:<span class="comment">//xxx.elasticsearch-analysis-ik-7.9.0.zip -v</span></span><br><span class="line">docker restart es_containerId</span><br><span class="line"></span><br><span class="line">POST _analyze</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"analyzer"</span>:<span class="string">"ik_max_word"</span>,</span><br><span class="line">  <span class="string">"text"</span>:<span class="string">"东方财富中国平安"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">跟es版本对应安装记住 通过http 方式安装可以自己用nginx 服务或者everything 搭建</span><br><span class="line">./es/bin/elasticsearch-<span class="keyword">plugin</span> install http:<span class="comment">//xxx.elasticsearch-analysis-ik-7.9.0.zip -v</span></span><br><span class="line">docker restart es_containerId</span><br><span class="line"></span><br><span class="line"><span class="keyword">POST</span> _analyze</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;analyzer&quot;</span>:<span class="string">&quot;ik_max_word&quot;</span>,</span><br><span class="line">  <span class="string">&quot;text&quot;</span>:<span class="string">&quot;东方财富中国平安&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
-<li><a href="https://elasticsearch.cn/download/" target="_blank" rel="noopener">elasticsearch 中文社区</a> 下载elasticsearch 以及kibana和ik-analyzer</li>
-<li><a href="https://www.yuque.com/susuxuechang/rwicpv" target="_blank" rel="noopener">elasticsearch 语雀详细文档</a> 语雀以及看云kancloud文档</li>
-<li><a href="https://github.com/medcl/elasticsearch-analysis-ik" target="_blank" rel="noopener">elasticsearch-analysis-ik</a></li>
-<li><a href="https://www.runoob.com/docker/docker-compose.html" target="_blank" rel="noopener">docker和docker-compose安装</a></li>
-<li><a href="https://rstyro.github.io/blog/2020/09/10/Elasticsearch7%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/" target="_blank" rel="noopener">Elasticsearch7使用详解</a></li>
-<li><a href="https://tech.meituan.com/2019/12/05/aqs-theory-and-apply.html" target="_blank" rel="noopener">aqs-theory-and-apply</a></li>
-<li><a href="https://lrh1993.gitbooks.io/android_interview_guide/content/java/concurrence/synchronized-reentrantlock.html" target="_blank" rel="noopener">synchronized-reentrantlock</a></li>
-<li><a href="https://dunwu.github.io/db-tutorial/nosql/elasticsearch/elasticsearch-interview.html" target="_blank" rel="noopener">elasticsearch-interview.html</a> 倒排索引</li>
-<li><a href="http://luokangyuan.com/hashmapxue-xi-bi-ji/" target="_blank" rel="noopener">hashmapxue-xi-bi-ji</a></li>
-<li><a href="https://www.bilibili.com/video/BV1Qz411e7yx?p=37" target="_blank" rel="noopener">千峰教育es</a> 千峰教育es 视频下载</li>
-<li><a href="https://oy6090.top/posts/c8221b76/#%E4%B8%83%E3%80%81elasticsearch-Rest-Client" target="_blank" rel="noopener">elasticsearch-Rest-Client</a></li>
-<li><a href="https://www.yuque.com/xiongsanxiansheng/qfvqxo" target="_blank" rel="noopener">es文档</a>  es文档</li>
-<li><a href="https://oy6090.top/posts/949df4a0/" target="_blank" rel="noopener">docker教程</a>  docker 教程</li>
-<li><a href="https://www.yuque.com/xiongsanxiansheng/nlrnxo/mgm32s" target="_blank" rel="noopener">yuque.com</a> 减小docker 体积</li>
-<li><a href="https://sekibetu.com/elasticsearch02.html" target="_blank" rel="noopener">sekibetu.com</a> elasticsearch02</li>
-<li><a href="https://sekibetu.com/rabbitmq01.html" target="_blank" rel="noopener">rabbitmq01</a></li>
-<li><a href="https://sekibetu.com/gmqj.html" target="_blank" rel="noopener">gmqj</a></li>
-<li><a href="https://www.jianshu.com/p/addefe15f3e9" target="_blank" rel="noopener">ES倒排索引为什么查询速度会这么快</a></li>
-<li><a href="https://somersames.xyz/2020/03/20/ES7%E4%B8%AD%E5%A4%A7%E5%B0%8F%E5%86%99%E4%B8%8D%E6%95%8F%E6%84%9F%E7%9A%84%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D/" target="_blank" rel="noopener">ES7中大小写不敏感的模糊匹配</a></li>
-<li><a href="https://blog.creekorful.org/2020/12/how-to-setup-easily-elk-docker-swarm/" target="_blank" rel="noopener">how-to-setup-easily-elk-docker-swarm</a></li>
+<li><a target="_blank" rel="noopener" href="https://elasticsearch.cn/download/">elasticsearch 中文社区</a> 下载elasticsearch 以及kibana和ik-analyzer</li>
+<li><a target="_blank" rel="noopener" href="https://www.yuque.com/susuxuechang/rwicpv">elasticsearch 语雀详细文档</a> 语雀以及看云kancloud文档</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/medcl/elasticsearch-analysis-ik">elasticsearch-analysis-ik</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/docker/docker-compose.html">docker和docker-compose安装</a></li>
+<li><a target="_blank" rel="noopener" href="https://rstyro.github.io/blog/2020/09/10/Elasticsearch7%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/">Elasticsearch7使用详解</a></li>
+<li><a target="_blank" rel="noopener" href="https://tech.meituan.com/2019/12/05/aqs-theory-and-apply.html">aqs-theory-and-apply</a></li>
+<li><a target="_blank" rel="noopener" href="https://lrh1993.gitbooks.io/android_interview_guide/content/java/concurrence/synchronized-reentrantlock.html">synchronized-reentrantlock</a></li>
+<li><a target="_blank" rel="noopener" href="https://dunwu.github.io/db-tutorial/nosql/elasticsearch/elasticsearch-interview.html">elasticsearch-interview.html</a> 倒排索引</li>
+<li><a target="_blank" rel="noopener" href="http://luokangyuan.com/hashmapxue-xi-bi-ji/">hashmapxue-xi-bi-ji</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Qz411e7yx?p=37">千峰教育es</a> 千峰教育es 视频下载</li>
+<li><a target="_blank" rel="noopener" href="https://oy6090.top/posts/c8221b76/#%E4%B8%83%E3%80%81elasticsearch-Rest-Client">elasticsearch-Rest-Client</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.yuque.com/xiongsanxiansheng/qfvqxo">es文档</a>  es文档</li>
+<li><a target="_blank" rel="noopener" href="https://oy6090.top/posts/949df4a0/">docker教程</a>  docker 教程</li>
+<li><a target="_blank" rel="noopener" href="https://www.yuque.com/xiongsanxiansheng/nlrnxo/mgm32s">yuque.com</a> 减小docker 体积</li>
+<li><a target="_blank" rel="noopener" href="https://sekibetu.com/elasticsearch02.html">sekibetu.com</a> elasticsearch02</li>
+<li><a target="_blank" rel="noopener" href="https://sekibetu.com/rabbitmq01.html">rabbitmq01</a></li>
+<li><a target="_blank" rel="noopener" href="https://sekibetu.com/gmqj.html">gmqj</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/addefe15f3e9">ES倒排索引为什么查询速度会这么快</a></li>
+<li><a target="_blank" rel="noopener" href="https://somersames.xyz/2020/03/20/ES7%E4%B8%AD%E5%A4%A7%E5%B0%8F%E5%86%99%E4%B8%8D%E6%95%8F%E6%84%9F%E7%9A%84%E6%A8%A1%E7%B3%8A%E5%8C%B9%E9%85%8D/">ES7中大小写不敏感的模糊匹配</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.creekorful.org/2020/12/how-to-setup-easily-elk-docker-swarm/">how-to-setup-easily-elk-docker-swarm</a></li>
 </ul>
 
     

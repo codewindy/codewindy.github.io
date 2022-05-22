@@ -4,7 +4,7 @@
   <html class="light page-post">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <title>HashMap | codewindy</title>
@@ -12,26 +12,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="hashmap,">
+    <meta name="keywords" content="hashmap," />
   
 
-  <meta name="description" content="HashMap的JDK 源码注释 基于Map接口实现、允许null键/值、非同步、不保证有序(比如插入的顺序)、也不保证序不随时间变化。 Capacity就是bucket的大小，Load factor就是bucket填满程度的最大比例。如果对迭代性能要求很高的话不要把capacity设置过大，也不要把load factor设置过小。当bucket中的entries的数目大于capacity*loa">
-<meta name="keywords" content="hashmap">
+  <meta name="description" content="HashMap的JDK 源码注释 基于Map接口实现、允许null键&#x2F;值、非同步、不保证有序(比如插入的顺序)、也不保证序不随时间变化。 Capacity就是bucket的大小，Load factor就是bucket填满程度的最大比例。如果对迭代性能要求很高的话不要把capacity设置过大，也不要把load factor设置过小。当bucket中的entries的数目大于capacity*loa">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HashMap">
 <meta property="og:url" content="https://codewindy.github.io/2017/03/20/HashMapAndSSM/index.html">
 <meta property="og:site_name" content="codewindy">
-<meta property="og:description" content="HashMap的JDK 源码注释 基于Map接口实现、允许null键/值、非同步、不保证有序(比如插入的顺序)、也不保证序不随时间变化。 Capacity就是bucket的大小，Load factor就是bucket填满程度的最大比例。如果对迭代性能要求很高的话不要把capacity设置过大，也不要把load factor设置过小。当bucket中的entries的数目大于capacity*loa">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:description" content="HashMap的JDK 源码注释 基于Map接口实现、允许null键&#x2F;值、非同步、不保证有序(比如插入的顺序)、也不保证序不随时间变化。 Capacity就是bucket的大小，Load factor就是bucket填满程度的最大比例。如果对迭代性能要求很高的话不要把capacity设置过大，也不要把load factor设置过小。当bucket中的entries的数目大于capacity*loa">
+<meta property="og:locale">
 <meta property="og:image" content="http://ot2hu9qoc.bkt.clouddn.com/17-8-11/46599362.jpg">
 <meta property="og:image" content="http://ot2hu9qoc.bkt.clouddn.com/17-8-20/23337435.jpg">
 <meta property="og:image" content="http://ot2hu9qoc.bkt.clouddn.com/17-8-20/66747192.jpg">
 <meta property="og:image" content="http://ot2hu9qoc.bkt.clouddn.com/17-8-11/81747139.jpg">
 <meta property="og:image" content="http://ot2hu9qoc.bkt.clouddn.com/17-8-20/29168157.jpg">
-<meta property="og:updated_time" content="2021-04-18T10:05:55.924Z">
+<meta property="article:published_time" content="2017-03-20T15:25:00.000Z">
+<meta property="article:modified_time" content="2021-04-18T10:05:55.924Z">
+<meta property="article:author" content="codewindy">
+<meta property="article:tag" content="hashmap">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HashMap">
-<meta name="twitter:description" content="HashMap的JDK 源码注释 基于Map接口实现、允许null键/值、非同步、不保证有序(比如插入的顺序)、也不保证序不随时间变化。 Capacity就是bucket的大小，Load factor就是bucket填满程度的最大比例。如果对迭代性能要求很高的话不要把capacity设置过大，也不要把load factor设置过小。当bucket中的entries的数目大于capacity*loa">
 <meta name="twitter:image" content="http://ot2hu9qoc.bkt.clouddn.com/17-8-11/46599362.jpg">
 
   
@@ -95,8 +95,8 @@ ga('send', 'pageview');
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
 
 
@@ -156,7 +156,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap的JDK-源码注释"><span class="toc-text">HashMap的JDK 源码注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap-的总结归纳"><span class="toc-text">HashMap 的总结归纳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集合框架schema"><span class="toc-text">集合框架schema</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringMVC-的处理流程和ssm整合"><span class="toc-text">SpringMVC 的处理流程和ssm整合</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap%E7%9A%84JDK-%E6%BA%90%E7%A0%81%E6%B3%A8%E9%87%8A"><span class="toc-text">HashMap的JDK 源码注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HashMap-%E7%9A%84%E6%80%BB%E7%BB%93%E5%BD%92%E7%BA%B3"><span class="toc-text">HashMap 的总结归纳</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6schema"><span class="toc-text">集合框架schema</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringMVC-%E7%9A%84%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B%E5%92%8Cssm%E6%95%B4%E5%90%88"><span class="toc-text">SpringMVC 的处理流程和ssm整合</span></a></li></ol>
   </div>
 
 
@@ -201,7 +201,7 @@ ga('send', 'pageview');
 <li>基于Map接口实现、允许null键/值、非同步、不保证有序(比如插入的顺序)、也不保证序不随时间变化。</li>
 <li>Capacity就是bucket的大小，Load factor就是bucket填满程度的最大比例。如果对迭代性能要求很高的话不要把capacity设置过大，也不要把load factor设置过小。当bucket中的entries的数目大于capacity*load factor时就需要调整bucket的大小为当前的2倍。</li>
 </ol>
-<a id="more"></a>
+<span id="more"></span>
 <ol start="3">
 <li><p>put函数的实现</p>
 <pre><code>对key的hashCode()做hash，然后再计算index;
@@ -216,7 +216,7 @@ ga('send', 'pageview');
 若为树，则在树中通过key.equals(k)查找，O(logn)；
 若为链表，则在链表中通过key.equals(k)查找，O(n)。</code></pre></li>
 <li><p>Hashmap的原理</p>
- <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">通过hash的方法，通过put和get存储和获取对象。存储对象时，我们将K/V传给put方法时，它调用hashCode计算hash从而得到bucket位置，进一步存储，HashMap会根据当前bucket的占用情况自动调整容量(超过<span class="keyword">Load</span> Facotr则<span class="keyword">resize</span>为原来的<span class="number">2</span>倍)。获取对象时，我们将K传给<span class="keyword">get</span>，它调用hashCode计算<span class="keyword">hash</span>从而得到<span class="keyword">bucket</span>位置，并进一步调用equals()方法确定键值对。如果发生碰撞的时候，Hashmap通过链表将产生碰撞冲突的元素组织起来，在<span class="keyword">Java</span> <span class="number">8</span>中，如果一个<span class="keyword">bucket</span>中碰撞冲突的元素超过某个限制(默认是<span class="number">8</span>)，则使用红黑树来替换链表，从而提高速度。</span><br></pre></td></tr></table></figure>
+ <figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">通过hash的方法，通过<span class="keyword">put</span>和<span class="keyword">get</span>存储和获取对象。存储对象时，我们将K/V传给<span class="keyword">put</span>方法时，它调用hashCode计算hash从而得到bucket位置，进一步存储，HashMap会根据当前bucket的占用情况自动调整容量(超过Load Facotr则resize为原来的<span class="number">2</span>倍)。获取对象时，我们将K传给<span class="keyword">get</span>，它调用hashCode计算hash从而得到bucket位置，并进一步调用<span class="keyword">equals</span>()方法确定键值对。如果发生碰撞的时候，Hashmap通过链表将产生碰撞冲突的元素组织起来，在Java <span class="number">8</span>中，如果一个bucket中碰撞冲突的元素超过某个限制(默认是<span class="number">8</span>)，则使用红黑树来替换链表，从而提高速度。</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <ul>
@@ -227,13 +227,13 @@ ga('send', 'pageview');
 <li>你知道hash的实现吗？为什么要这样实现？</li>
 <li>如果HashMap的大小超过了负载因子(load factor)定义的容量，怎么办？</li>
 </ul>
-<h2 id="HashMap-的总结归纳"><a href="#HashMap-的总结归纳" class="headerlink" title="HashMap 的总结归纳"></a>HashMap 的总结归纳</h2><p><img src="http://ot2hu9qoc.bkt.clouddn.com/17-8-11/46599362.jpg" alt></p>
-<h2 id="集合框架schema"><a href="#集合框架schema" class="headerlink" title="集合框架schema"></a>集合框架schema</h2><p><img src="http://ot2hu9qoc.bkt.clouddn.com/17-8-20/23337435.jpg" alt><br>SpringMVC的处理流程</p>
+<h2 id="HashMap-的总结归纳"><a href="#HashMap-的总结归纳" class="headerlink" title="HashMap 的总结归纳"></a>HashMap 的总结归纳</h2><p><img src="http://ot2hu9qoc.bkt.clouddn.com/17-8-11/46599362.jpg" alt=""></p>
+<h2 id="集合框架schema"><a href="#集合框架schema" class="headerlink" title="集合框架schema"></a>集合框架schema</h2><p><img src="http://ot2hu9qoc.bkt.clouddn.com/17-8-20/23337435.jpg" alt=""><br>SpringMVC的处理流程</p>
 <hr>
-<p><img src="http://ot2hu9qoc.bkt.clouddn.com/17-8-20/66747192.jpg" alt></p>
-<h2 id="SpringMVC-的处理流程和ssm整合"><a href="#SpringMVC-的处理流程和ssm整合" class="headerlink" title="SpringMVC 的处理流程和ssm整合"></a>SpringMVC 的处理流程和ssm整合</h2><p><img src="http://ot2hu9qoc.bkt.clouddn.com/17-8-11/81747139.jpg" alt><br>struts2 的流程图</p>
+<p><img src="http://ot2hu9qoc.bkt.clouddn.com/17-8-20/66747192.jpg" alt=""></p>
+<h2 id="SpringMVC-的处理流程和ssm整合"><a href="#SpringMVC-的处理流程和ssm整合" class="headerlink" title="SpringMVC 的处理流程和ssm整合"></a>SpringMVC 的处理流程和ssm整合</h2><p><img src="http://ot2hu9qoc.bkt.clouddn.com/17-8-11/81747139.jpg" alt=""><br>struts2 的流程图</p>
 <hr>
-<p><img src="http://ot2hu9qoc.bkt.clouddn.com/17-8-20/29168157.jpg" alt></p>
+<p><img src="http://ot2hu9qoc.bkt.clouddn.com/17-8-20/29168157.jpg" alt=""></p>
 
     
   </div>

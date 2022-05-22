@@ -4,7 +4,7 @@
   <html class="light page-post">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <title>Charles-Tips | codewindy</title>
@@ -12,23 +12,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="network,">
+    <meta name="keywords" content="network," />
   
 
   <meta name="description" content="配置Charles 抓包手机和电脑流量一. 背景 学习http和https的区别">
-<meta name="keywords" content="network">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Charles-Tips">
 <meta property="og:url" content="https://codewindy.github.io/2021/01/01/Charles-Tips/index.html">
 <meta property="og:site_name" content="codewindy">
 <meta property="og:description" content="配置Charles 抓包手机和电脑流量一. 背景 学习http和https的区别">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="https://i.loli.net/2021/01/20/CB6srH8SYb5upcF.png">
 <meta property="og:image" content="https://i.loli.net/2021/01/20/hXfjpol7Sg5VLxY.png">
-<meta property="og:updated_time" content="2021-04-18T10:05:55.923Z">
+<meta property="article:published_time" content="2021-01-01T08:58:56.000Z">
+<meta property="article:modified_time" content="2021-04-18T10:05:55.923Z">
+<meta property="article:author" content="codewindy">
+<meta property="article:tag" content="network">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Charles-Tips">
-<meta name="twitter:description" content="配置Charles 抓包手机和电脑流量一. 背景 学习http和https的区别">
 <meta name="twitter:image" content="https://i.loli.net/2021/01/20/CB6srH8SYb5upcF.png">
 
   
@@ -92,8 +92,8 @@ ga('send', 'pageview');
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
 
 
@@ -153,7 +153,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#配置Charles-抓包手机和电脑流量"><span class="toc-text">配置Charles 抓包手机和电脑流量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-步骤"><span class="toc-text">二. 步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-参考"><span class="toc-text">三. 参考</span></a>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AECharles-%E6%8A%93%E5%8C%85%E6%89%8B%E6%9C%BA%E5%92%8C%E7%94%B5%E8%84%91%E6%B5%81%E9%87%8F"><span class="toc-text">配置Charles 抓包手机和电脑流量</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E8%83%8C%E6%99%AF"><span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E6%AD%A5%E9%AA%A4"><span class="toc-text">二. 步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E5%8F%82%E8%80%83"><span class="toc-text">三. 参考</span></a>
   </div>
 
 
@@ -195,14 +195,14 @@ ga('send', 'pageview');
   <div class="article-content">
     
       <script src="/assets/js/APlayer.min.js"> </script><h2 id="配置Charles-抓包手机和电脑流量"><a href="#配置Charles-抓包手机和电脑流量" class="headerlink" title="配置Charles 抓包手机和电脑流量"></a>配置Charles 抓包手机和电脑流量</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
-<li>学习http和https的区别<a id="more"></a></li>
+<li>学习http和https的区别<span id="more"></span></li>
 <li>钉钉app 找不到web端入口，且已购买的教程视频课程被禁止下载，通过抓包找到下载接口实现资源保存<h1 id="二-步骤"><a href="#二-步骤" class="headerlink" title="二. 步骤"></a>二. 步骤</h1></li>
 <li>下载charles 4.6.1</li>
 <li>点击<code>help =&gt;SSL Proxying =&gt; Install Charles Root Certificate安装根证书</code></li>
 <li>注意点击trust并选择始终信任<br><img src="https://i.loli.net/2021/01/20/CB6srH8SYb5upcF.png" alt="image.png"></li>
 <li>然后对在<code>SSL Proxying Settings里面配置对应的要抓取的https网站</code><br><img src="https://i.loli.net/2021/01/20/hXfjpol7Sg5VLxY.png" alt="image.png"><h1 id="三-参考"><a href="#三-参考" class="headerlink" title="三. 参考"></a>三. 参考</h1></li>
-<li><a href="https://www.jianshu.com/p/14fdd1a2454a" target="_blank" rel="noopener">https://www.jianshu.com/p/14fdd1a2454a</a></li>
-<li><a href="https://www.bilibili.com/video/BV1mQ4y1N7dn?p=1" target="_blank" rel="noopener">软件测试教程Charles抓包工具测试实战</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/14fdd1a2454a">https://www.jianshu.com/p/14fdd1a2454a</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1mQ4y1N7dn?p=1">软件测试教程Charles抓包工具测试实战</a></li>
 </ul>
 
     

@@ -4,7 +4,7 @@
   <html class="light page-post">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <title>MySQL 开发规范笔记 | codewindy</title>
@@ -12,20 +12,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="codewindy,后端,Spring,Hexo主题,后端开发,SpringBoot,Kafka,backend,Java,nodejs,JavaScript,RabbitMQ">
+    <meta name="keywords" content="codewindy,后端,Spring,Hexo主题,后端开发,SpringBoot,Kafka,backend,Java,nodejs,JavaScript,RabbitMQ" />
   
 
-  <meta name="description" content="表结构设计1、每张表都必须有三个字段：id，gmt_create，gmt_modify，代表主键ID，记录创建时间，记录修改时间。  id：必须是唯一并且递增的非负数数字类型，数据量小并发写入量不高用数据库自增Id，并发写入高或者数据量大有分表需求用雪花算法等id生成器生成。   &amp;gt; `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT">
+  <meta name="description" content="表结构设计1、每张表都必须有三个字段：id，gmt_create，gmt_modify，代表主键ID，记录创建时间，记录修改时间。  id：必须是唯一并且递增的非负数数字类型，数据量小并发写入量不高用数据库自增Id，并发写入高或者数据量大有分表需求用雪花算法等id生成器生成。   &#96;id&#96; int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT &amp;#x2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL 开发规范笔记">
 <meta property="og:url" content="https://codewindy.github.io/2022/02/12/MySQL-Note/index.html">
 <meta property="og:site_name" content="codewindy">
-<meta property="og:description" content="表结构设计1、每张表都必须有三个字段：id，gmt_create，gmt_modify，代表主键ID，记录创建时间，记录修改时间。  id：必须是唯一并且递增的非负数数字类型，数据量小并发写入量不高用数据库自增Id，并发写入高或者数据量大有分表需求用雪花算法等id生成器生成。   &amp;gt; `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-02-12T07:39:28.743Z">
+<meta property="og:description" content="表结构设计1、每张表都必须有三个字段：id，gmt_create，gmt_modify，代表主键ID，记录创建时间，记录修改时间。  id：必须是唯一并且递增的非负数数字类型，数据量小并发写入量不高用数据库自增Id，并发写入高或者数据量大有分表需求用雪花算法等id生成器生成。   &#96;id&#96; int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT &amp;#x2">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-02-12T07:37:52.000Z">
+<meta property="article:modified_time" content="2022-02-12T07:39:28.743Z">
+<meta property="article:author" content="codewindy">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL 开发规范笔记">
-<meta name="twitter:description" content="表结构设计1、每张表都必须有三个字段：id，gmt_create，gmt_modify，代表主键ID，记录创建时间，记录修改时间。  id：必须是唯一并且递增的非负数数字类型，数据量小并发写入量不高用数据库自增Id，并发写入高或者数据量大有分表需求用雪花算法等id生成器生成。   &amp;gt; `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT">
 
   
 
@@ -88,8 +88,8 @@ ga('send', 'pageview');
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
 
 
@@ -149,7 +149,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#表结构设计"><span class="toc-text">表结构设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#索引设计"><span class="toc-text">索引设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL语句"><span class="toc-text">SQL语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">表结构设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E8%AE%BE%E8%AE%A1"><span class="toc-text">索引设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQL%E8%AF%AD%E5%8F%A5"><span class="toc-text">SQL语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
   </div>
 
 
@@ -195,27 +195,27 @@ ga('send', 'pageview');
 <li><code>id</code>：必须是唯一并且递增的非负数数字类型，数据量小并发写入量不高用数据库自增Id，并发写入高或者数据量大有分表需求用雪花算法等id生成器生成。</li>
 </ul>
 <blockquote>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&gt; `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id'</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">`id` <span class="type">int</span>(<span class="number">10</span>) unsigned <span class="keyword">NOT</span> <span class="keyword">NULL</span> AUTO_INCREMENT COMMENT <span class="string">&#x27;id&#x27;</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <ul>
 <li><code>gmt_create</code>：顺序递增，存储每条记录的创建时间，一般场景用<code>datatime</code>类型，有跨时区的需求用<code>timestamp</code>类型。</li>
 </ul>
 <blockquote>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&gt; `gmt_create` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间'</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">`gmt_create` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;创建时间&#x27;</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <ul>
 <li><code>gmt_modify</code>：存储每条记录的修改时间，一般场景用<code>datatime</code>类型，有跨时区的需求用<code>timestamp</code>类型。</li>
 </ul>
 <blockquote>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&gt; `gmt_modify` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间'</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">`gmt_modify` datetime <span class="keyword">NOT</span> <span class="keyword">NULL</span> <span class="keyword">DEFAULT</span> <span class="built_in">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="built_in">CURRENT_TIMESTAMP</span> COMMENT <span class="string">&#x27;修改时间&#x27;</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>2、没有特殊需求都使用<code>innodb</code>存储引擎，并设置<code>id</code>为主键索引<code>PRIMARY KEY</code>。</p>
 <blockquote>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&gt; PRIMARY KEY (`id`)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">PRIMARY</span> KEY (`id`)</span><br></pre></td></tr></table></figure>
 </blockquote>
 <pre><code>因为`id`字段是`innodb`的聚簇索引，使用`id`查询记录的速度最快。</code></pre><p>3、主键<code>id</code>字段的长度不宜太大，因为二级索引都会存储主键的值，而且值越大，比较大小就越耗时。</p>
 <blockquote>
-<p>一般用无符号自增主键<code>int(10)</code>即可，最大值<code>4,294,567,294‬</code>（<code>2,147,283,647‬*2</code>）。需要存储超过该长度的记录可以用<code>bigint(20)</code>。其中<code>int(N)</code>中的N只是显示长度，详见：<a href="https://dev.mysql.com/doc/refman/8.0/en/integer-types.html" target="_blank" rel="noopener">https://dev.mysql.com/doc/refman/8.0/en/integer-types.html</a>。</p>
+<p>一般用无符号自增主键<code>int(10)</code>即可，最大值<code>4,294,567,294‬</code>（<code>2,147,283,647‬*2</code>）。需要存储超过该长度的记录可以用<code>bigint(20)</code>。其中<code>int(N)</code>中的N只是显示长度，详见：<a target="_blank" rel="noopener" href="https://dev.mysql.com/doc/refman/8.0/en/integer-types.html">https://dev.mysql.com/doc/refman/8.0/en/integer-types.html</a>。</p>
 </blockquote>
 <p>4、数据量大的表不要物理删除，使用字段<code>is_deleted</code>来做逻辑删除，1 表示删除，0 表示未删除。</p>
 <blockquote>
@@ -245,7 +245,7 @@ ga('send', 'pageview');
 <p>11、指定表字符集为<code>utf8mb4</code>，不要用<code>utf8</code>，mysql中<code>utf8mb4</code>才是正宗的<code>UTF-8</code>编码。</p>
 <p>12、保证所有表使用同样的排序规则。</p>
 <blockquote>
-<p>排序规则<code>utf8mb4_unicode_ci</code>比<code>utf8mb4_general_ci</code>更精确，推荐都使用<code>utf8mb4_unicode_ci</code>，参考：<a href="https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci" target="_blank" rel="noopener">https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci</a></p>
+<p>排序规则<code>utf8mb4_unicode_ci</code>比<code>utf8mb4_general_ci</code>更精确，推荐都使用<code>utf8mb4_unicode_ci</code>，参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci">https://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci</a></p>
 </blockquote>
 <p>13、禁止使用外键、 一切外键概念在应用层解决 。</p>
 <h2 id="索引设计"><a href="#索引设计" class="headerlink" title="索引设计"></a>索引设计</h2><p>1、 唯一索引名为<code>uk_字段名</code>；普通索引名则为 <code>idx_字段名</code> 。</p>
@@ -260,8 +260,8 @@ ga('send', 'pageview');
 <p>无状态应用迁移、扩容简单，有状态应用迁移、扩容复杂。</p>
 </blockquote>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://gitee.com/sunshanpeng/blog/blob/master/MySQL%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md" target="_blank" rel="noopener">sunshanpeng</a></li>
-<li><a href="https://github.com/jly8866/archer/blob/master/src/docs/mysql_db_design_guide.md" target="_blank" rel="noopener">https://github.com/jly8866/archer/blob/master/src/docs/mysql_db_design_guide.md</a></li>
+<li><a target="_blank" rel="noopener" href="https://gitee.com/sunshanpeng/blog/blob/master/MySQL%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.md">sunshanpeng</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jly8866/archer/blob/master/src/docs/mysql_db_design_guide.md">https://github.com/jly8866/archer/blob/master/src/docs/mysql_db_design_guide.md</a></li>
 </ul>
 
     

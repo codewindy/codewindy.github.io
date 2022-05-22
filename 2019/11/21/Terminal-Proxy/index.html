@@ -4,7 +4,7 @@
   <html class="light page-post">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <title>MacOS 下 Terminal 设置代理上网 | codewindy</title>
@@ -12,23 +12,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="mac,">
+    <meta name="keywords" content="mac," />
   
 
   <meta name="description" content="MacOS Terminal Proxy Settings一.  背景 装完macos系统后，经常使用Terminal终端来写blog提交到github，但是老是丢包，最终通过代理来实现">
-<meta name="keywords" content="mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MacOS 下 Terminal 设置代理上网">
 <meta property="og:url" content="https://codewindy.github.io/2019/11/21/Terminal-Proxy/index.html">
 <meta property="og:site_name" content="codewindy">
 <meta property="og:description" content="MacOS Terminal Proxy Settings一.  背景 装完macos系统后，经常使用Terminal终端来写blog提交到github，但是老是丢包，最终通过代理来实现">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale">
 <meta property="og:image" content="https://i.loli.net/2019/11/22/2SZVI5WJmxYLdOP.jpg">
 <meta property="og:image" content="https://i.loli.net/2019/11/21/NalKSW27cfmC5pR.jpg">
-<meta property="og:updated_time" content="2021-04-18T10:05:55.928Z">
+<meta property="article:published_time" content="2019-11-21T13:34:41.000Z">
+<meta property="article:modified_time" content="2021-04-18T10:05:55.928Z">
+<meta property="article:author" content="codewindy">
+<meta property="article:tag" content="mac">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MacOS 下 Terminal 设置代理上网">
-<meta name="twitter:description" content="MacOS Terminal Proxy Settings一.  背景 装完macos系统后，经常使用Terminal终端来写blog提交到github，但是老是丢包，最终通过代理来实现">
 <meta name="twitter:image" content="https://i.loli.net/2019/11/22/2SZVI5WJmxYLdOP.jpg">
 
   
@@ -92,8 +92,8 @@ ga('send', 'pageview');
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
 
 
@@ -153,7 +153,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-Terminal-Proxy-Settings"><span class="toc-text">MacOS Terminal Proxy Settings</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-背景"><span class="toc-text">一.  背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-准备"><span class="toc-text">二.  准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-实现"><span class="toc-text">三. 实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四-效果"><span class="toc-text">四. 效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-参考"><span class="toc-text">五. 参考</span></a>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-Terminal-Proxy-Settings"><span class="toc-text">MacOS Terminal Proxy Settings</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E8%83%8C%E6%99%AF"><span class="toc-text">一.  背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%87%86%E5%A4%87"><span class="toc-text">二.  准备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E5%AE%9E%E7%8E%B0"><span class="toc-text">三. 实现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-%E6%95%88%E6%9E%9C"><span class="toc-text">四. 效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E5%8F%82%E8%80%83"><span class="toc-text">五. 参考</span></a>
   </div>
 
 
@@ -195,31 +195,29 @@ ga('send', 'pageview');
   <div class="article-content">
     
       <script src="/assets/js/APlayer.min.js"> </script><h2 id="MacOS-Terminal-Proxy-Settings"><a href="#MacOS-Terminal-Proxy-Settings" class="headerlink" title="MacOS Terminal Proxy Settings"></a>MacOS Terminal Proxy Settings</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一.  背景"></a>一.  背景</h1><ul>
-<li>装完macos系统后，经常使用<code>Terminal</code>终端来写blog提交到github，但是老是丢包，最终通过代理来实现<a id="more"></a>
+<li>装完macos系统后，经常使用<code>Terminal</code>终端来写blog提交到github，但是老是丢包，最终通过代理来实现<span id="more"></span>
 
 </li>
 </ul>
 <h1 id="二-准备"><a href="#二-准备" class="headerlink" title="二.  准备"></a>二.  准备</h1><ul>
-<li><a href="https://github.com/qinyuhang/ShadowsocksX-NG-R/releases" target="_blank" rel="noopener">ShadowsocksX-NG</a>  软件并配置好可用的ssr节点</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/qinyuhang/ShadowsocksX-NG-R/releases">ShadowsocksX-NG</a>  软件并配置好可用的ssr节点</li>
 </ul>
 <h1 id="三-实现"><a href="#三-实现" class="headerlink" title="三. 实现"></a>三. 实现</h1><ul>
-<li><p>打开<a href="https://www.diggui.com/" target="_blank" rel="noopener">https://www.diggui.com/</a> 查询<code>github.com</code>的A 记录并添加到<code>sudo vim /etc/hosts</code></p>
+<li><p>打开<a target="_blank" rel="noopener" href="https://www.diggui.com/">https://www.diggui.com/</a> 查询<code>github.com</code>的A 记录并添加到<code>sudo vim /etc/hosts</code></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">A:github.com@8.8.8.8</span><br><span class="line">; &lt;&lt;&gt;&gt; DiG diggui.com &lt;&lt;&gt;&gt; @8.8.8.8 github.com A</span><br><span class="line">; (1 server found)</span><br><span class="line">;; global options: +cmd</span><br><span class="line">;; Got answer:</span><br><span class="line">;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 46485</span><br><span class="line">;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1</span><br><span class="line"></span><br><span class="line">;; OPT PSEUDOSECTION:</span><br><span class="line">; EDNS: version: 0, flags:; udp: 512</span><br><span class="line">;; QUESTION SECTION:</span><br><span class="line">;github.com.			IN	A</span><br><span class="line"></span><br><span class="line">;; ANSWER SECTION:</span><br><span class="line">github.com.		59	IN	A	140.82.113.4</span><br><span class="line"></span><br><span class="line">;; Query time: 9 msec</span><br><span class="line">;; SERVER: 8.8.8.8#53(8.8.8.8)</span><br><span class="line">;; WHEN: Tue Jan 14 14:24:33 UTC 2020</span><br><span class="line">;; MSG SIZE  rcvd: 55</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在<code>~/.zshrc</code>文件中配置</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">alias setroxy='export http_proxy=http://127.0.0.1:1087;</span><br><span class="line">export https_proxy=http://127.0.0.1:1087;'</span><br><span class="line">alias unsetproxy='unset http_proxy https_proxy'</span><br><span class="line">alias ip='curl cip.cc'</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">alias setroxy=&#x27;export http_proxy=http://127.0.0.1:1087;</span><br><span class="line">export https_proxy=http://127.0.0.1:1087;&#x27;</span><br><span class="line">alias unsetproxy=&#x27;unset http_proxy https_proxy&#x27;</span><br><span class="line">alias ip=&#x27;curl cip.cc&#x27;</span><br></pre></td></tr></table></figure></li>
 <li><p>只配置git代理</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta"> #</span><span class="bash">设置</span></span><br><span class="line"> git config --global http.proxy 'socks5://127.0.0.1:1086' </span><br><span class="line"> git config --global https.proxy 'socks5://127.0.0.1:1086'</span><br><span class="line"><span class="meta"> #</span><span class="bash">取消</span></span><br><span class="line"> git config --global --unset http.proxy</span><br><span class="line"> git config --global --unset https.proxy</span><br><span class="line"> git clone https://github.com/codewindy/blog.git --config "http.proxy=127.0.0.1:1086"</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="meta"> #</span><span class="bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:1086</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:7891</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"> #</span><span class="language-bash">设置</span></span><br><span class="line"> git config --global http.proxy &#x27;socks5://127.0.0.1:1086&#x27; </span><br><span class="line"> git config --global https.proxy &#x27;socks5://127.0.0.1:1086&#x27;</span><br><span class="line"><span class="meta prompt_"> #</span><span class="language-bash">取消</span></span><br><span class="line"> git config --global --unset http.proxy</span><br><span class="line"> git config --global --unset https.proxy</span><br><span class="line"> git clone https://github.com/codewindy/blog.git --config &quot;http.proxy=127.0.0.1:1086&quot;</span><br><span class="line"> </span><br><span class="line"><span class="meta prompt_"> </span></span><br><span class="line"><span class="meta prompt_"> #</span><span class="language-bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:1086</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">只对github.com</span></span><br><span class="line">git config --global http.https://github.com.proxy socks5://127.0.0.1:7891</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">取消代理</span></span><br><span class="line">git config --global --unset http.https://github.com.proxy</span><br></pre></td></tr></table></figure></li>
 <li><p>在斐讯k2路由器刷机geewan或者openwrt/LEDE等石像鬼系统，直接配置ssr节点在路由器里面实现全局代理<br><img src="https://i.loli.net/2019/11/22/2SZVI5WJmxYLdOP.jpg" alt="Xnip2019-11-22_21-36-42.jpg"></p>
 <h1 id="四-效果"><a href="#四-效果" class="headerlink" title="四. 效果"></a>四. 效果</h1><p><img src="https://i.loli.net/2019/11/21/NalKSW27cfmC5pR.jpg" alt="Xnip2019-11-21_22-02-55.jpg"></p>
 </li>
 </ul>
 <h1 id="五-参考"><a href="#五-参考" class="headerlink" title="五. 参考"></a>五. 参考</h1><ul>
-<li><a href="https://blog.naaln.com/2019/03/terminal-proxy/" target="_blank" rel="noopener">blog.naaln.com</a></li>
-<li><a href="https://gist.github.com/laispace/666dd7b27e9116faece6" target="_blank" rel="noopener">gist config </a></li>
-<li><a href="https://www.diggui.com/" target="_blank" rel="noopener">https://www.diggui.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.naaln.com/2019/03/terminal-proxy/">blog.naaln.com</a></li>
+<li><a target="_blank" rel="noopener" href="https://gist.github.com/laispace/666dd7b27e9116faece6">gist config </a></li>
+<li><a target="_blank" rel="noopener" href="https://www.diggui.com/">https://www.diggui.com/</a></li>
 </ul>
 
     

@@ -4,7 +4,7 @@
   <html class="light page-post">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <title>事务的隔离级别 | codewindy</title>
@@ -12,21 +12,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="mysql,">
+    <meta name="keywords" content="mysql," />
   
 
   <meta name="description" content="ACID指数据库事务正确执行的四个基本要素分为原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）。一个支持事务（Transaction）的数据库，必需要具有这四种特性，否则在事务过程（Transaction processing）当中无法保证数据的正确性，交易过程极可能达不到交易方的要求 数据库事务的隔离级别有4种，由低到">
-<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事务的隔离级别">
 <meta property="og:url" content="https://codewindy.github.io/2017/05/11/Transaction-Isolation-ACID/index.html">
 <meta property="og:site_name" content="codewindy">
 <meta property="og:description" content="ACID指数据库事务正确执行的四个基本要素分为原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）。一个支持事务（Transaction）的数据库，必需要具有这四种特性，否则在事务过程（Transaction processing）当中无法保证数据的正确性，交易过程极可能达不到交易方的要求 数据库事务的隔离级别有4种，由低到">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-04-18T10:05:55.928Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2017-05-11T08:00:00.000Z">
+<meta property="article:modified_time" content="2021-04-18T10:05:55.928Z">
+<meta property="article:author" content="codewindy">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="事务的隔离级别">
-<meta name="twitter:description" content="ACID指数据库事务正确执行的四个基本要素分为原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）。一个支持事务（Transaction）的数据库，必需要具有这四种特性，否则在事务过程（Transaction processing）当中无法保证数据的正确性，交易过程极可能达不到交易方的要求 数据库事务的隔离级别有4种，由低到">
 
   
 
@@ -89,8 +89,8 @@ ga('send', 'pageview');
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
 
 
@@ -150,7 +150,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Read-uncommitted"><span class="toc-text">Read uncommitted</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Read-committed"><span class="toc-text">Read committed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Repeatable-read"><span class="toc-text">Repeatable read</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Serializable-序列化"><span class="toc-text">Serializable 序列化</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Read-uncommitted"><span class="toc-text">Read uncommitted</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Read-committed"><span class="toc-text">Read committed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Repeatable-read"><span class="toc-text">Repeatable read</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Serializable-%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">Serializable 序列化</span></a></li></ol>
   </div>
 
 
@@ -195,7 +195,7 @@ ga('send', 'pageview');
 <li>ACID指数据库事务正确执行的四个基本要素分为原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）。一个支持事务（Transaction）的数据库，必需要具有这四种特性，否则在事务过程（Transaction processing）当中无法保证数据的正确性，交易过程极可能达不到交易方的要求</li>
 <li>数据库事务的隔离级别有4种，由低到高分别为Read uncommitted 、Read committed 、Repeatable read 、Serializable 。而且，在事务的并发操作中可能会出现脏读，不可重复读，幻读。下面通过事例一一阐述它们的概念与联系。</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
 
 <h2 id="Read-uncommitted"><a href="#Read-uncommitted" class="headerlink" title="Read uncommitted"></a>Read uncommitted</h2><p>读未提交，顾名思义，就是一个事务可以读取另一个未提交事务的数据。</p>
 <p>事例：老板要给程序员发工资，程序员的工资是3.6万/月。但是发工资时老板不小心按错了数字，按成3.9万/月，该钱已经打到程序员的户口，但是事务还没有提交，就在这时，程序员去查看自己这个月的工资，发现比往常多了3千元，以为涨工资了非常高兴。但是老板及时发现了不对，马上回滚差点就提交了的事务，将数字改成3.6万再提交。</p>

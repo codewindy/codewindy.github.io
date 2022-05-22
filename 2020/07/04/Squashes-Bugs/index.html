@@ -4,7 +4,7 @@
   <html class="light page-post">
 
 
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
   <meta charset="utf-8">
   
   <title>bug汇总 | codewindy</title>
@@ -12,21 +12,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="java,">
+    <meta name="keywords" content="java," />
   
 
   <meta name="description" content="Squashes  Bug一. 需要注意⚠️的问题 因为八进制导致的问题，开发中尽量使用String来定义code变量">
-<meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bug汇总">
 <meta property="og:url" content="https://codewindy.github.io/2020/07/04/Squashes-Bugs/index.html">
 <meta property="og:site_name" content="codewindy">
 <meta property="og:description" content="Squashes  Bug一. 需要注意⚠️的问题 因为八进制导致的问题，开发中尽量使用String来定义code变量">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-04-18T10:05:55.928Z">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-07-04T05:42:16.000Z">
+<meta property="article:modified_time" content="2021-04-18T10:05:55.928Z">
+<meta property="article:author" content="codewindy">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bug汇总">
-<meta name="twitter:description" content="Squashes  Bug一. 需要注意⚠️的问题 因为八进制导致的问题，开发中尽量使用String来定义code变量">
 
   
 
@@ -89,8 +89,8 @@ ga('send', 'pageview');
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
 
-</head>
-</html>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
 <body>
 
 
@@ -150,7 +150,7 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Squashes-Bug"><span class="toc-text"> Squashes  Bug</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-需要注意⚠️的问题"><span class="toc-text">一. 需要注意⚠️的问题</span></a>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Squashes-Bug"><span class="toc-text"> Squashes  Bug</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E2%9A%A0%EF%B8%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">一. 需要注意⚠️的问题</span></a>
   </div>
 
 
@@ -192,23 +192,22 @@ ga('send', 'pageview');
   <div class="article-content">
     
       <script src="/assets/js/APlayer.min.js"> </script><h2 id="Squashes-Bug"><a href="#Squashes-Bug" class="headerlink" title=" Squashes  Bug"></a> Squashes  Bug</h2><h1 id="一-需要注意⚠️的问题"><a href="#一-需要注意⚠️的问题" class="headerlink" title="一. 需要注意⚠️的问题"></a>一. 需要注意⚠️的问题</h1><ul>
-<li>因为八进制导致的问题，开发中尽量使用String来定义code变量<a id="more"></a></li>
+<li>因为八进制导致的问题，开发中尽量使用String来定义code变量<span id="more"></span></li>
 <li>数据库字段和代码编写的过程中多注意 <font color="red">数据可能包含多余的空格</font>导致的问题</li>
 <li>在前端传时间参数在后台需要进行处理TimeZone时区的问题</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer code =<span class="number">001001</span>;</span><br><span class="line"><span class="comment">// 结果确是 被转换成8进制code = 513</span></span><br><span class="line">System.out.println(<span class="string">"code = "</span> + code);</span><br><span class="line"><span class="comment">// 引入hutool依赖</span></span><br><span class="line">DateUtil.beginOfDay(startDate);</span><br><span class="line">DateUtil.endOfDay(endDate);</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">code</span> <span class="operator">=</span><span class="number">001001</span>;</span><br><span class="line"><span class="comment">// 结果确是 被转换成8进制code = 513</span></span><br><span class="line">System.out.println(<span class="string">&quot;code = &quot;</span> + code);</span><br><span class="line"><span class="comment">// 引入hutool依赖</span></span><br><span class="line">DateUtil.beginOfDay(startDate);</span><br><span class="line">DateUtil.endOfDay(endDate);</span><br></pre></td></tr></table></figure>
 <ul>
 <li><font color="blue">maven依赖项目common模块</font> 没有deploy到仓库, 导致打包的应用有代码没更新出错</li>
-<li><a href="https://m.jb51.net/article/196376.htm" target="_blank" rel="noopener"><strong>idea out build目录区别以及启动后代码和配置更新问题</strong> </a> </li>
+<li><a target="_blank" rel="noopener" href="https://m.jb51.net/article/196376.htm"><strong>idea out build目录区别以及启动后代码和配置更新问题</strong> </a> </li>
 <li>开发规范 spotbugs p3c插件</li>
-<li><a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md" target="_blank" rel="noopener">angular.js 开发提交规范 </a><code>git commit guidelines</code></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md">angular.js 开发提交规范 </a><code>git commit guidelines</code></li>
 <li>需求串讲责任人开发</li>
 <li>1990年时间查询差1小时问题GMT+8</li>
 <li>harbor rancher chart配置</li>
 <li>sql 隐式转换int str不走索引</li>
 <li>requestParam 不能用post请求</li>
-<li><a href="https://nyimac.gitee.io/2020/12/10/URL%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%81%E7%A8%8B/" target="_blank" rel="noopener">一次web请求触发了哪些操作</a></li>
+<li><a target="_blank" rel="noopener" href="https://nyimac.gitee.io/2020/12/10/URL%E8%AE%BF%E9%97%AE%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%B5%81%E7%A8%8B/">一次web请求触发了哪些操作</a></li>
 </ul>
 
     
