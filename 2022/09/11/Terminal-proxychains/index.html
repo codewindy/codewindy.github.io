@@ -7,26 +7,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>用markdown写ppt | codewindy</title>
+  <title>proxychains代理 | codewindy</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="ppt," />
+    <meta name="keywords" content="proxychains," />
   
 
-  <meta name="description" content="一、背景 经常需要展示工作成果给领导汇报，但是自己不会写ppt，于是乎找到了新的ppt转化方式  slidev是什么？概括起来就是slidev是一个前端框架支持将markdown文件转化成很好的ppt格式展示 Slidev (slide + dev, &#x2F;slʌɪdɪv&#x2F;) 是基于 Web 的幻灯片制作和演示工具。它旨在让开发者专注在 Markdown 中编写内容，同时拥有支持 HTML 和 Vu">
+  <meta name="description" content="终端代理配置一. 背景 目前可以通过All-Platform-Proxy.md 实现代理功能,但是提交代码的终端无法使用到代理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用markdown写ppt">
-<meta property="og:url" content="https://codewindy.github.io/2022/07/02/Sli-Dev-Tutorial/index.html">
+<meta property="og:title" content="proxychains代理">
+<meta property="og:url" content="https://codewindy.github.io/2022/09/11/Terminal-proxychains/index.html">
 <meta property="og:site_name" content="codewindy">
-<meta property="og:description" content="一、背景 经常需要展示工作成果给领导汇报，但是自己不会写ppt，于是乎找到了新的ppt转化方式  slidev是什么？概括起来就是slidev是一个前端框架支持将markdown文件转化成很好的ppt格式展示 Slidev (slide + dev, &#x2F;slʌɪdɪv&#x2F;) 是基于 Web 的幻灯片制作和演示工具。它旨在让开发者专注在 Markdown 中编写内容，同时拥有支持 HTML 和 Vu">
+<meta property="og:description" content="终端代理配置一. 背景 目前可以通过All-Platform-Proxy.md 实现代理功能,但是提交代码的终端无法使用到代理">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-07-02T01:04:02.000Z">
-<meta property="article:modified_time" content="2022-07-02T04:03:46.123Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/15072465/189510527-a7931025-8b88-4536-ae0b-f3ce2afe1bf3.png">
+<meta property="article:published_time" content="2022-09-11T03:29:26.000Z">
+<meta property="article:modified_time" content="2022-09-11T04:36:42.216Z">
 <meta property="article:author" content="codewindy">
-<meta property="article:tag" content="ppt">
+<meta property="article:tag" content="proxychains">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/15072465/189510527-a7931025-8b88-4536-ae0b-f3ce2afe1bf3.png">
 
   
 
@@ -150,20 +152,20 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF"><span class="toc-text">一、背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%AD%A5%E9%AA%A4"><span class="toc-text">二、步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%95%88%E6%9E%9C"><span class="toc-text">三、效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%8F%82%E8%80%83"><span class="toc-text">四、参考</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE"><span class="toc-text">终端代理配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E8%83%8C%E6%99%AF"><span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E8%A7%A3%E5%86%B3"><span class="toc-text">二. 解决</span></a>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-Sli-Dev-Tutorial" class="article article-type-post" itemprop="blogPost">
+   <article id="post-Terminal-proxychains" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">用markdown写ppt</h1>
+    <h1 class="post-title">proxychains代理</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2022.07.02</span>
+        <span>2022.09.11</span>
       </span>
 
       
@@ -191,66 +193,18 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <script src="/assets/js/APlayer.min.js"> </script><h1 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h1><ul>
-<li><p>经常需要展示工作成果给领导汇报，但是自己不会写ppt，于是乎找到了新的ppt转化方式</p>
-</li>
-<li><p>slidev是什么？<strong>概括起来就是slidev是一个前端框架支持将markdown文件转化成很好的ppt格式展示</strong></p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">Slidev (slide + dev, /slʌɪdɪv/) 是基于 Web 的幻灯片制作和演示工具。它旨在让开发者专注在 Markdown 中编写内容，同时拥有支持 HTML 和 Vue 组件的能力，并且能够呈现像素级完美的布局，还在你的演讲稿中内置了互动的演示样例。</span><br><span class="line"></span><br><span class="line">它使用了功能丰富的 markdown 文件来生成精美的幻灯片，具有即时重载的体验。它还拥有很多内置的集成功能，如实时编码、导出 PDF、演讲录制等。由于 Slidev 是由 web 驱动的，因此你可以使用它进行任何操作 —— 具有无限的可能性</span><br></pre></td></tr></table></figure>
-
-
+      <script src="/assets/js/APlayer.min.js"> </script><h2 id="终端代理配置"><a href="#终端代理配置" class="headerlink" title="终端代理配置"></a>终端代理配置</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
+<li>目前可以通过All-Platform-Proxy.md 实现代理功能,但是提交代码的终端无法使用到代理<span id="more"></span>
 
 </li>
 </ul>
-<h1 id="二、步骤"><a href="#二、步骤" class="headerlink" title="二、步骤"></a>二、步骤</h1><ol>
-<li><p>安装必要的前端软件如下表格</p>
-<table>
-<thead>
-<tr>
-<th>软件</th>
-<th>版本号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>vscode</td>
-<td>lastest</td>
-</tr>
-<tr>
-<td>nodejs</td>
-<td>&gt;14 stable</td>
-</tr>
-<tr>
-<td>npm i -D playwright-chromium</td>
-<td>lastest</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>执行以下命令下载slidev到本地实现初始化</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">npm init slidev</span><br></pre></td></tr></table></figure></li>
-<li><p>将ppt导出pdf功能</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">npm i -D playwright-chromium</span><br></pre></td></tr></table></figure></li>
-<li><p>在终端执行 ppt展示过程快捷键</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="left">按f 进全屏 esc退出</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">按o 查看ppt列表</td>
-</tr>
-<tr>
-<td align="left">按左右/空格键选择上一页/下一页</td>
-</tr>
-</tbody></table>
-<h1 id="三、效果"><a href="#三、效果" class="headerlink" title="三、效果"></a>三、效果</h1><ul>
-<li><a target="_blank" rel="noopener" href="http://localhost:3030/">http://localhost:3030/</a></li>
-</ul>
-<h1 id="四、参考"><a href="#四、参考" class="headerlink" title="四、参考"></a>四、参考</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://cn.sli.dev/guide/">https://cn.sli.dev/guide/</a> </li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/be5yond/article/details/120778369">slidev 部署到github pages</a></li>
-<li><a target="_blank" rel="noopener" href="https://programmer-soft-skills.vercel.app/3">程序员的软技能时间管理</a></li>
+<h1 id="二-解决"><a href="#二-解决" class="headerlink" title="二. 解决"></a>二. 解决</h1><ul>
+<li>下载<a target="_blank" rel="noopener" href="https://github.com/shunf4/proxychains-windows/releases">proxychains_0.6.8_win32_x64_debug.zip</a></li>
+<li>解压后并重命名文件<code>proxychains.exe</code></li>
+<li>在path 添加配置<code>C:\Program Files\proxychains_0.6.8_win32_x64_debug</code></li>
+<li>在c盘目录下创建<code>C:\Users\Administrator\.proxychains\proxychains.conf</code>并将配置文件最后面修改  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[ProxyList]</span><br><span class="line">socks5 localhost 10808 </span><br></pre></td></tr></table></figure></li>
+<li>效果图如下，在原来的命令前加<code>proxychains</code> 即可</li>
+<li><img src="https://user-images.githubusercontent.com/15072465/189510527-a7931025-8b88-4536-ae0b-f3ce2afe1bf3.png" alt="2022-09-11_110148proxychains"></li>
 </ul>
 
     
@@ -282,10 +236,10 @@ ga('send', 'pageview');
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2022/05/08/Spring-batch/">
+    <a class="show pull-left" href="/2022/07/02/Sli-Dev-Tutorial/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2022/09/11/Terminal-proxychains/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
