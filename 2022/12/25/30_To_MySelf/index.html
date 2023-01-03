@@ -7,28 +7,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>proxychains代理 | codewindy</title>
+  <title>人生十项原则 | codewindy</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="proxychains," />
+    <meta name="keywords" content="life," />
   
 
-  <meta name="description" content="终端代理配置一. 背景 目前可以通过All-Platform-Proxy.md 实现代理功能,但是提交代码的终端无法使用到代理">
+  <meta name="description" content="30 岁的我十项基本原则1.做事分层级（紧急且重要）                                                                                  2.办事知道目的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="proxychains代理">
-<meta property="og:url" content="https://codewindy.github.io/2022/09/11/Terminal-proxychains/index.html">
+<meta property="og:title" content="人生十项原则">
+<meta property="og:url" content="https://codewindy.github.io/2022/12/25/30_To_MySelf/index.html">
 <meta property="og:site_name" content="codewindy">
-<meta property="og:description" content="终端代理配置一. 背景 目前可以通过All-Platform-Proxy.md 实现代理功能,但是提交代码的终端无法使用到代理">
+<meta property="og:description" content="30 岁的我十项基本原则1.做事分层级（紧急且重要）                                                                                  2.办事知道目的">
 <meta property="og:locale">
-<meta property="og:image" content="https://user-images.githubusercontent.com/15072465/189510527-a7931025-8b88-4536-ae0b-f3ce2afe1bf3.png">
-<meta property="article:published_time" content="2022-09-11T03:29:26.000Z">
-<meta property="article:modified_time" content="2022-09-11T04:36:42.216Z">
+<meta property="article:published_time" content="2022-12-25T08:29:42.000Z">
+<meta property="article:modified_time" content="2023-01-03T13:04:49.938Z">
 <meta property="article:author" content="codewindy">
-<meta property="article:tag" content="proxychains">
+<meta property="article:tag" content="life">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/15072465/189510527-a7931025-8b88-4536-ae0b-f3ce2afe1bf3.png">
 
   
 
@@ -152,20 +150,20 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE"><span class="toc-text">终端代理配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E8%83%8C%E6%99%AF"><span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E8%A7%A3%E5%86%B3"><span class="toc-text">二. 解决</span></a>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#30-%E5%B2%81%E7%9A%84%E6%88%91"><span class="toc-text">30 岁的我</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E9%A1%B9%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99"><span class="toc-text">十项基本原则</span></a></li></ol></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-Terminal-proxychains" class="article article-type-post" itemprop="blogPost">
+   <article id="post-30_To_MySelf" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">proxychains代理</h1>
+    <h1 class="post-title">人生十项原则</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2022.09.11</span>
+        <span>2022.12.25</span>
       </span>
 
       
@@ -193,19 +191,7 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <script src="/assets/js/APlayer.min.js"> </script><h2 id="终端代理配置"><a href="#终端代理配置" class="headerlink" title="终端代理配置"></a>终端代理配置</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
-<li>目前可以通过All-Platform-Proxy.md 实现代理功能,但是提交代码的终端无法使用到代理<span id="more"></span>
-
-</li>
-</ul>
-<h1 id="二-解决"><a href="#二-解决" class="headerlink" title="二. 解决"></a>二. 解决</h1><ul>
-<li>下载<a target="_blank" rel="noopener" href="https://github.com/shunf4/proxychains-windows/releases">proxychains_0.6.8_win32_x64_debug.zip</a></li>
-<li>解压后并重命名文件<code>proxychains.exe</code></li>
-<li>在path 添加配置<code>C:\Program Files\proxychains_0.6.8_win32_x64_debug</code></li>
-<li>在c盘目录下创建<code>C:\Users\Administrator\.proxychains\proxychains.conf</code>并将配置文件最后面修改  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[ProxyList]</span><br><span class="line">socks5 localhost 10808 </span><br></pre></td></tr></table></figure></li>
-<li>效果图如下，在原来的命令前加<code>proxychains</code> 即可</li>
-<li><img src="https://user-images.githubusercontent.com/15072465/189510527-a7931025-8b88-4536-ae0b-f3ce2afe1bf3.png" alt="2022-09-11_110148proxychains"></li>
-</ul>
+      <script src="/assets/js/APlayer.min.js"> </script><h2 id="30-岁的我"><a href="#30-岁的我" class="headerlink" title="30 岁的我"></a>30 岁的我</h2><h3 id="十项基本原则"><a href="#十项基本原则" class="headerlink" title="十项基本原则"></a>十项基本原则</h3><p>1.做事分层级（紧急且重要）                                                                                  </br><br>2.办事知道目的                                                                                                </br><br>3.人生不试错                                                                                                </br><br>4.沟通书面化                                                                                                </br><br>5.所有的事都要量化                                                                                          </br><br>6.执行快、准、全                                                                                            </br><br>7.勇于承担责任                                                                                              </br><br>8.处理问题不手软（快速、果断）                                                                              </br><br>9.管控业务的全过程                                                                                          </br><br>10.结果论英雄                                                                                               </br><br></br><br>帮大家总结一下人生十项原则。                                                                                </br><br>1.做事情要分主次、优先级，做好时间管理。紧急且重要，紧急，重要~                                             </br><br>2.做事情要有目的性，结婚也要清楚对方的目的~                                                                 </br><br>3.人生要尽量减少试错，出现问题一定要多总结错误，同时要多学习别人的经验，减少原创性方案~                     </br><br>4.沟通要书面化，表现形式可以具体到邮件，信息等，主要以文字的书面形式表达，提高可信度~                       </br><br>5.做事情要量化，工作中要用数据表现，分配工作人物具体到人~                                                   </br><br>6.知心合一的做事情，坚持一万小时定律，想到了就要做～                                                        </br><br>7.勇于承担责任，“穷人的孩子早当家”。多承担责任，有压力才能进步~                                             </br><br>8.处理问题要快速、果断，当断不断，必留后患。做生意的人处理问题一定要大胆果断~                               </br><br>9.管控业务全过程，及时解决出现的问题，能够帮助快速达成业务。想清楚了业务的全过程，才能做~                   </br><br>10.以结果论英雄，结果是衡量一切事情好坏的根本指标，只要没做好结果，都是错误的~                              </br></p>
 
     
   </div>
@@ -236,10 +222,10 @@ ga('send', 'pageview');
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2022/07/02/Sli-Dev-Tutorial/">
+    <a class="show pull-left" href="/2022/09/11/Terminal-proxychains/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2022/12/25/30_To_MySelf/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
