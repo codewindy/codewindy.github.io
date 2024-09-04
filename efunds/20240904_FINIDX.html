@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 
 
-  <html class="light page-post">
+  <html class="light page-page">
 
 
 <head>
   <meta charset="utf-8">
   
-  <title>MacOS 配置JDK和Gradle环境变量 | codewindy</title>
+  <title>codewindy</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="mac," />
+    <meta name="keywords" content="codewindy,后端,Spring,Hexo主题,后端开发,SpringBoot,Kafka,backend,Java,nodejs,JavaScript,RabbitMQ" />
   
 
-  <meta name="description" content="MacOS JDK &amp; Gradle &amp; Maven Settings一. 背景 mac系统下配置开发环境变量">
-<meta property="og:type" content="article">
-<meta property="og:title" content="MacOS 配置JDK和Gradle环境变量">
-<meta property="og:url" content="https://codewindy.github.io/2020/01/02/MacOS-jdk-gradle/index.html">
+  <meta name="description" content="期权美股别碰中概累计亏3000u 20240904     coin360 https:&#x2F;&#x2F;coin360.com&#x2F;    coinmarketcap https:&#x2F;&#x2F;coinmarketcap.com&#x2F;   cryptobubbles https:&#x2F;&#x2F;cryptobubbles.net&#x2F;   CRYPTO TRADE https:&#x2F;&#x2F;www.onesatoshi.hk&#x2F;    https:&#x2F;&#x2F;w">
+<meta property="og:type" content="website">
+<meta property="og:title" content="codewindy">
+<meta property="og:url" content="https://codewindy.github.io/efunds/20240904_FINIDX.html">
 <meta property="og:site_name" content="codewindy">
-<meta property="og:description" content="MacOS JDK &amp; Gradle &amp; Maven Settings一. 背景 mac系统下配置开发环境变量">
+<meta property="og:description" content="期权美股别碰中概累计亏3000u 20240904     coin360 https:&#x2F;&#x2F;coin360.com&#x2F;    coinmarketcap https:&#x2F;&#x2F;coinmarketcap.com&#x2F;   cryptobubbles https:&#x2F;&#x2F;cryptobubbles.net&#x2F;   CRYPTO TRADE https:&#x2F;&#x2F;www.onesatoshi.hk&#x2F;    https:&#x2F;&#x2F;w">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-01-02T12:46:41.000Z">
-<meta property="article:modified_time" content="2024-09-04T04:47:31.510Z">
+<meta property="article:published_time" content="2024-09-04T04:47:31.646Z">
+<meta property="article:modified_time" content="2024-09-04T04:47:31.646Z">
 <meta property="article:author" content="codewindy">
-<meta property="article:tag" content="mac">
 <meta name="twitter:card" content="summary">
 
   
@@ -151,20 +150,20 @@ ga('send', 'pageview');
 
   <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOS-JDK-amp-Gradle-amp-Maven-Settings"><span class="toc-text">MacOS JDK &amp; Gradle &amp; Maven Settings</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E8%83%8C%E6%99%AF"><span class="toc-text">一. 背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%87%86%E5%A4%87%E6%9D%A1%E4%BB%B6"><span class="toc-text">二. 准备条件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E6%AD%A5%E9%AA%A4"><span class="toc-text">三. 步骤</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-%E5%8F%82%E8%80%83"><span class="toc-text">四. 参考</span></a>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%9F%E6%9D%83%E7%BE%8E%E8%82%A1%E5%88%AB%E7%A2%B0%E4%B8%AD%E6%A6%82%E7%B4%AF%E8%AE%A1%E4%BA%8F3000u"><span class="toc-text">期权美股别碰中概累计亏3000u</span></a></li></ol>
   </div>
 
 
 
 <div class="content content-post CENTER">
-   <article id="post-MacOS-jdk-gradle" class="article article-type-post" itemprop="blogPost">
+   <article id="page-undefined" class="article article-type-page" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">MacOS 配置JDK和Gradle环境变量</h1>
+    <h1 class="post-title">(no title)</h1>
 
     <div class="article-meta">
       <span>
         <i class="icon-calendar"></i>
-        <span>2020.01.02</span>
+        <span>2024.09.04</span>
       </span>
 
       
@@ -192,32 +191,93 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <h2 id="MacOS-JDK-amp-Gradle-amp-Maven-Settings"><a href="#MacOS-JDK-amp-Gradle-amp-Maven-Settings" class="headerlink" title="MacOS JDK &amp; Gradle &amp; Maven Settings"></a>MacOS JDK &amp; Gradle &amp; Maven Settings</h2><h1 id="一-背景"><a href="#一-背景" class="headerlink" title="一. 背景"></a>一. 背景</h1><ul>
-<li>mac系统下配置开发环境变量</li>
-</ul>
-<span id="more"></span>
-<h1 id="二-准备条件"><a href="#二-准备条件" class="headerlink" title="二. 准备条件"></a>二. 准备条件</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/downloads/jdk13-downloads-5672538.html">下载<code>jdk 1.8</code></a></li>
-<li>国内镜像地址 <a target="_blank" rel="noopener" href="https://injdk.cn/">https://injdk.cn/</a></li>
-<li><a target="_blank" rel="noopener" href="https://gradle.org/next-steps/?version=4.10.3&format=bin">下载<code>gradle 4.10.3</code></a></li>
-<li><a target="_blank" rel="noopener" href="http://mirror.bit.edu.cn/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.zip">下载<code>maven 3.6.3</code></a></li>
-</ul>
-<h1 id="三-步骤"><a href="#三-步骤" class="headerlink" title="三. 步骤"></a>三. 步骤</h1><ul>
-<li><p><code>vim /etc/profile</code>然后按住<code>shift +G</code> 添加以下脚本后执行<code>source /etc/profile</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">JAVA_HOME=&quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/Home/&quot;</span><br><span class="line">CLASS_PATH=&quot;$JAVA_HOME/lib&quot;</span><br><span class="line">PATH=&quot;.:$PATH:$JAVA_HOME/bin&quot;</span><br></pre></td></tr></table></figure></li>
-<li><p><code>vim ~/.bash_profile</code> 配置gradle 和maven</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export M2_HOME=/usr/local/maven3.6.3/</span><br><span class="line">export PATH=$PATH:$M2_HOME/bin</span><br><span class="line">GRADLE_HOME=/usr/local/gradle4.10.3</span><br><span class="line">export GRADLE_HOME</span><br><span class="line">export PATH=$PATH:$GRADLE_HOME/bin</span><br></pre></td></tr></table></figure></li>
-<li><p><code>vim ~/.zshrc</code> 在底部新增<code>source ~/.bash_profile</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">gradle 配置阿里云加速</span></span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123; url &#x27;https://maven.aliyun.com/repository/public/&#x27; &#125;</span><br><span class="line">        mavenLocal()</span><br><span class="line">        mavenCentral()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">在maven 的settings.xml文件中配置jar包仓库本地地址</span> </span><br><span class="line">&lt;localRepository&gt;/usr/local/xl_repo&lt;/localRepository&gt;</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">然后找到mirror配置以下</span></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">    &lt;id&gt;aliyunmaven&lt;/id&gt;</span><br><span class="line">    &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</span><br><span class="line">    &lt;name&gt;阿里云公共仓库&lt;/name&gt;</span><br><span class="line">    &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<h1 id="四-参考"><a href="#四-参考" class="headerlink" title="四. 参考"></a>四. 参考</h1><ul>
-<li><a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/102512.html?spm=a2c40.aliyun_maven_repo.0.0.361865e9b6VaFh">aliyun mirror manual</a></li>
-<li><a target="_blank" rel="noopener" href="https://javalibs.com/">https://javalibs.com/</a> maven repository</li>
-<li><a target="_blank" rel="noopener" href="https://mirrors.huaweicloud.com/java/jdk/8u172-b11/">huaweiCloud mirrors</a></li>
-</ul>
+      <h2 id="期权美股别碰中概累计亏3000u"><a href="#期权美股别碰中概累计亏3000u" class="headerlink" title="期权美股别碰中概累计亏3000u"></a>期权美股别碰中概累计亏3000u</h2><blockquote>
+<p>20240904</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>coin360</th>
+<th><a target="_blank" rel="noopener" href="https://coin360.com/">https://coin360.com/</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>coinmarketcap</td>
+<td><a target="_blank" rel="noopener" href="https://coinmarketcap.com/">https://coinmarketcap.com/</a></td>
+</tr>
+<tr>
+<td>cryptobubbles</td>
+<td><a target="_blank" rel="noopener" href="https://cryptobubbles.net/">https://cryptobubbles.net/</a></td>
+</tr>
+<tr>
+<td>CRYPTO TRADE</td>
+<td><a target="_blank" rel="noopener" href="https://www.onesatoshi.hk/">https://www.onesatoshi.hk/</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://www.cryptocurrencyhongkong.com/en/home">https://www.cryptocurrencyhongkong.com/en/home</a></td>
+</tr>
+<tr>
+<td>恒瑞医药</td>
+<td><a target="_blank" rel="noopener" href="https://xueqiu.com/S/SH600276">https://xueqiu.com/S/SH600276</a></td>
+</tr>
+<tr>
+<td>招商银行</td>
+<td><a target="_blank" rel="noopener" href="https://xueqiu.com/S/SH600036">https://xueqiu.com/S/SH600036</a></td>
+</tr>
+<tr>
+<td>有为财经</td>
+<td><a target="_blank" rel="noopener" href="https://upsort.com/">https://upsort.com/</a></td>
+</tr>
+<tr>
+<td>大盘云图</td>
+<td><a target="_blank" rel="noopener" href="https://dapanyuntu.com/">https://dapanyuntu.com/</a></td>
+</tr>
+<tr>
+<td>沪深300 购买</td>
+<td><a target="_blank" rel="noopener" href="https://app.jiucaishuo.com/pagesE/fed_new/index">https://app.jiucaishuo.com/pagesE/fed_new/index</a></td>
+</tr>
+<tr>
+<td>finviz</td>
+<td><a target="_blank" rel="noopener" href="https://finviz.com/map.ashx">https://finviz.com/map.ashx</a></td>
+</tr>
+<tr>
+<td>rss</td>
+<td><a target="_blank" rel="noopener" href="https://web.follow.is/profile/DIYgod">https://web.follow.is/profile/DIYgod</a></td>
+</tr>
+<tr>
+<td>乌龟量化</td>
+<td><a target="_blank" rel="noopener" href="https://wglh.com/">https://wglh.com/</a></td>
+</tr>
+<tr>
+<td>xau/xag</td>
+<td><a target="_blank" rel="noopener" href="https://www.tradingview.com/symbols/TVC-GOLDSILVER/">https://www.tradingview.com/symbols/TVC-GOLDSILVER/</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a target="_blank" rel="noopener" href="https://www.tradingview.com/symbols/XAUXAG/">https://www.tradingview.com/symbols/XAUXAG/</a></td>
+</tr>
+<tr>
+<td>XAUT</td>
+<td><a target="_blank" rel="noopener" href="https://coinmarketcap.com/currencies/tether-gold/">https://coinmarketcap.com/currencies/tether-gold/</a></td>
+</tr>
+<tr>
+<td>T10Y2Y</td>
+<td><a target="_blank" rel="noopener" href="https://www.tradingview.com/chart/?symbol=T10Y2Y">https://www.tradingview.com/chart/?symbol=T10Y2Y</a></td>
+</tr>
+<tr>
+<td>TLT</td>
+<td><a target="_blank" rel="noopener" href="https://www.tradingview.com/symbols/NASDAQ-TLT/">https://www.tradingview.com/symbols/NASDAQ-TLT/</a></td>
+</tr>
+<tr>
+<td>BTCETH</td>
+<td><a target="_blank" rel="noopener" href="https://www.tradingview.com/symbols/BTCETH/">https://www.tradingview.com/symbols/BTCETH/</a></td>
+</tr>
+<tr>
+<td>DXY</td>
+<td><a target="_blank" rel="noopener" href="https://www.tradingview.com/chart/?symbol=INDEX%3ADXY">https://www.tradingview.com/chart/?symbol=INDEX%3ADXY</a></td>
+</tr>
+</tbody></table>
 
     
   </div>
@@ -248,10 +308,10 @@ ga('send', 'pageview');
 
    
   <div class="box-prev-next clearfix">
-    <a class="show pull-left" href="/2019/12/28/install-postgresql-from-source-code/">
+    <a class="hide pull-left" href="/">
         <i class="icon icon-angle-left"></i>
     </a>
-    <a class="show pull-right" href="/2020/01/14/principle-https/">
+    <a class="hide pull-right" href="/">
         <i class="icon icon-angle-right"></i>
     </a>
   </div>
