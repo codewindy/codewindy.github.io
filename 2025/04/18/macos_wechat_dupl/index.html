@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>macos 微信双开 | codewindy</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="life," />
+  
+
+  <meta name="description" content="macos 微信双开一、背景 需要双开微信办公  二、步骤1. 创建分身sudo cp -R &#x2F;Applications&#x2F;WeChat.app &#x2F;Applications&#x2F;WeChat2.app       2. 给wechat2.app 授权sudo &#x2F;usr&#x2F;libexec&#x2F;PlistBuddy -c &quot;Set :CFBundleIdentifier com.tencent.xinW">
+<meta property="og:type" content="article">
+<meta property="og:title" content="macos 微信双开">
+<meta property="og:url" content="https://codewindy.github.io/2025/04/18/macos_wechat_dupl/index.html">
+<meta property="og:site_name" content="codewindy">
+<meta property="og:description" content="macos 微信双开一、背景 需要双开微信办公  二、步骤1. 创建分身sudo cp -R &#x2F;Applications&#x2F;WeChat.app &#x2F;Applications&#x2F;WeChat2.app       2. 给wechat2.app 授权sudo &#x2F;usr&#x2F;libexec&#x2F;PlistBuddy -c &quot;Set :CFBundleIdentifier com.tencent.xinW">
+<meta property="og:locale">
+<meta property="og:image" content="https://img.erpweb.eu.org/imgs/2025/08/18f791b24142ede0.png">
+<meta property="article:published_time" content="2025-04-18T02:58:56.000Z">
+<meta property="article:modified_time" content="2025-08-06T04:10:24.027Z">
+<meta property="article:author" content="codewindy">
+<meta property="article:tag" content="life">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.erpweb.eu.org/imgs/2025/08/18f791b24142ede0.png">
+
+  
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbeddx" rel="stylesheet">
+
+
+  
+
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-38189205-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?57e94d016e201fba3603a8a2b0263af0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+	(function(){
+	    var bp = document.createElement('script');
+	    var curProtocol = window.location.protocol.split(':')[0];
+	    if (curProtocol === 'https') {
+	        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+	    }
+	    else {
+	        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	    }
+	    var s = document.getElementsByTagName("script")[0];
+	    s.parentNode.insertBefore(bp, s);
+	})();
+  </script>
+
+
+
+  
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script async src="https://umami-chi-teal.vercel.app/fexo" data-website-id="10ef6804-f78a-474d-a8e8-d06f5c737608"></script>
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">Home</span>
+  
+
+  <div class="post-header CENTER">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">Home</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/search/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#macos-%E5%BE%AE%E4%BF%A1%E5%8F%8C%E5%BC%80"><span class="toc-text">macos 微信双开</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%83%8C%E6%99%AF"><span class="toc-text">一、背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%AD%A5%E9%AA%A4"><span class="toc-text">二、步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E5%88%86%E8%BA%AB"><span class="toc-text">1. 创建分身</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%BB%99wechat2-app-%E6%8E%88%E6%9D%83"><span class="toc-text">2. 给wechat2.app 授权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%AD%BE%E5%90%8D"><span class="toc-text">3. 签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BF%90%E8%A1%8C%E5%BE%AE%E4%BF%A1"><span class="toc-text">4. 运行微信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%8A%8A%E7%AC%AC%E4%BA%8C%E4%B8%AA%E5%BE%AE%E4%BF%A1%E6%94%BE%E5%88%B0-docker-%E6%A0%8F%E5%8D%B3%E5%8F%AF"><span class="toc-text">5. 把第二个微信放到 docker 栏即可</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8F%82%E8%80%83"><span class="toc-text">三、参考</span></a>
+  </div>
+
+
+
+<div class="content content-post CENTER">
+   <article id="post-macos_wechat_dupl" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">macos 微信双开</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2025.04.18</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>codewindy</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h2 id="macos-微信双开"><a href="#macos-微信双开" class="headerlink" title="macos 微信双开"></a>macos 微信双开</h2><h1 id="一、背景"><a href="#一、背景" class="headerlink" title="一、背景"></a>一、背景</h1><ul>
+<li>需要双开微信办公</li>
+</ul>
+<h1 id="二、步骤"><a href="#二、步骤" class="headerlink" title="二、步骤"></a>二、步骤</h1><h3 id="1-创建分身"><a href="#1-创建分身" class="headerlink" title="1. 创建分身"></a>1. 创建分身</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo cp -R /Applications/WeChat.app /Applications/WeChat2.app      </span><br></pre></td></tr></table></figure>
+<h3 id="2-给wechat2-app-授权"><a href="#2-给wechat2-app-授权" class="headerlink" title="2. 给wechat2.app 授权"></a>2. 给wechat2.app 授权</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo /usr/libexec/PlistBuddy -c &quot;Set :CFBundleIdentifier com.tencent.xinWeChat2&quot; /Applications/WeChat2.app/Contents/Info.plist</span><br></pre></td></tr></table></figure>
+<h3 id="3-签名"><a href="#3-签名" class="headerlink" title="3. 签名"></a>3. 签名</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo codesign --force --deep --sign - /Applications/WeChat2.app         </span><br></pre></td></tr></table></figure>
+
+<h3 id="4-运行微信"><a href="#4-运行微信" class="headerlink" title="4. 运行微信"></a>4. 运行微信</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup /Applications/WeChat2.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;  </span><br></pre></td></tr></table></figure>
+
+<h3 id="5-把第二个微信放到-docker-栏即可"><a href="#5-把第二个微信放到-docker-栏即可" class="headerlink" title="5. 把第二个微信放到 docker 栏即可"></a>5. 把第二个微信放到 docker 栏即可</h3><p><img src="https://img.erpweb.eu.org/imgs/2025/08/18f791b24142ede0.png" alt=""></p>
+<h1 id="三、参考"><a href="#三、参考" class="headerlink" title="三、参考"></a>三、参考</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/D1237890/article/details/147544117">https://blog.csdn.net/D1237890/article/details/147544117</a></li>
+</ul>
+
+    
+  </div>
+
+</article>
+
+
+   
+  <div class="text-center donation">
+    <div class="inner-donation">
+      <span class="btn-donation">支持一下</span>
+      <div class="donation-body">
+        <div class="tip text-center">扫一扫，支持codewindy</div>
+        <ul>
+        
+          <li class="item">
+            
+              <span>微信扫一扫</span>
+            
+            <img src="/images/wx.png" alt="">
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2022/12/25/30_To_MySelf/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2025/08/06/Futu_Open_Card/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/search/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              搜索
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+
+<!-- Gitalk评论插件通用代码 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<script>
+const gitalk = new Gitalk({
+  clientID: '4a826e7e0c60ad01dacc',
+  clientSecret: '511911362023e9b195a12b5fdd71ae032922257a',
+  repo: 'gittalk4blog',
+  owner: 'codewindy',
+  // 在这里设置一下截取前50个字符串, 这是因为 github 对 label 的长度有了要求, 如果超过
+  // 50个字符串则会报错.
+  // id: location.pathname.split('/').pop().substring(0, 49),
+  id: md5(location.pathname),
+  admin: ['codewindy'],
+  // facebook-like distraction free mode
+  distractionFreeMode: false
+})
+gitalk.render('gitalk-container')
+</script>
+<!-- Gitalk代码结束 -->
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
